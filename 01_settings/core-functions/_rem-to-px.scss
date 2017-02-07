@@ -1,0 +1,45 @@
+
+/* -------------------------------------------------------------------------
+ * REM TO PX
+ *
+ * Returns PX equivalent value using a given REM value.
+ * By default, uses $s-core-font-size on the conversion, and the returned value is rounded.
+ *
+ * s-core-rem-to-px(1.143rem) == 16px
+ * (based on 14px $s-core-font-size)
+ */
+
+
+@function s-core-rem-to-px($value, $rounded: true, $root-font-size: $s-core-font-size) {
+
+  @if ($value == 0) {
+    @return 0;
+  }
+
+  @each $_given-values in
+    $value
+    $root-font-size {
+
+    @if (type-of($_given-values) != number) {
+      @error "s-core-rem-to-px: `#{$_given-values}` needs to be a number.";
+    }
+
+  }
+
+  @if (unit($value) != "rem") {
+    @error "s-core-rem-to-px: `#{$value}` needs to be a rem value.";
+  }
+
+  @if (unit($root-font-size) != "px") {
+    @error "s-core-rem-to-px: `#{$root-font-size}` needs to be a pixel value.";
+  }
+
+  $value-px: ($root-font-size * s-core-strip-units($value)) * 1px;
+
+  @if ($rounded != true) {
+    @return $value-px;
+  }
+
+  @return round($value-px);
+
+}

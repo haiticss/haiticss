@@ -1,0 +1,38 @@
+
+/* -------------------------------------------------------------------------
+ * ASPECT RATIOS
+ *
+ * Used to support some objects, material and components
+ */
+
+
+$s-aspect-ratios: (
+  1:1,
+  4:3,
+  3:2,
+  16:9,
+  2:1,
+) !default;
+
+$s-golden-ratio: 1.618;
+
+
+////////////////////////////////////////////////////////////////////////////////
+//                               W A R N I N G                                //
+//                  DO NOT MODIFY ANYTHING BEYOND THIS POINT                  //
+////////////////////////////////////////////////////////////////////////////////
+
+/* SAFE CHECKING
+ * Check that the chosen ratios are numbers.
+ */
+
+@each $width, $height in $s-aspect-ratios {
+
+  @if (type-of($width) != number) {
+    @error "`$s-aspect-ratios: #{$width}` needs to be a number.";
+  }
+
+  @if (type-of($height) != number) {
+    @error "`$s-aspect-ratios: #{$height}` needs to be a number.";
+  }
+}

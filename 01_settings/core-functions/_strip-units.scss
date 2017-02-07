@@ -1,0 +1,22 @@
+
+/* -------------------------------------------------------------------------
+ * STRIP UNITS
+ *
+ * Returns the unitless number of a given value.
+ * Useful for calculations and unit conversion.
+ *
+ * s-core-strip-units(16px) == 16
+ */
+
+@function s-core-strip-units($value) {
+
+  @if (type-of($value) != number) {
+    @error "s-core-strip-units: `#{$value}` needs to be a number.";
+  }
+
+  @if not unitless($value) {
+    @return $value / ($value * 0 + 1);
+  }
+
+  @return $value;
+}

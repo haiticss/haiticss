@@ -1,0 +1,25 @@
+{
+  "name": "haiticss",
+  "version": "0.1.0",
+  "description": "Just another baseline perspective to wear any project with the ITCSS architecture",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danifornells/haiticss.git"
+  },
+  "keywords": [
+    "sass",
+    "bem",
+    "itcss",
+    "bemit"
+  ],
+  "author": "Daniel Fornells",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/danifornells/haiticss/issues"
+  },
+  "homepage": "https://github.com/danifornells/haiticss#readme",
+  "devDependencies": {
+    "stylelint": "^7.1.0",
+    "stylelint-scss": "^1.3.4"
+  }
+}

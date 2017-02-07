@@ -1,0 +1,23 @@
+
+/* -------------------------------------------------------------------------
+ * COLORS STATE
+ *
+ * Define all state colors
+ */
+
+$s-color-state-success:       #36ba33 !default;
+$s-color-state-info:          #20a0de !default;
+$s-color-state-warning:       #f99500 !default;
+$s-color-state-danger:        #c1101f !default;
+
+
+/* AS AN OBJECT
+ * Used in utilities
+ */
+
+$s-colors-state: (
+  "success":                  $s-color-state-success,
+  "info":                     $s-color-state-info,
+  "warning":                  $s-color-state-warning,
+  "danger":                   $s-color-state-danger,
+) !default;

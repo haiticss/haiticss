@@ -1,0 +1,21 @@
+
+/* -------------------------------------------------------------------------
+ * BREAKPOINTS
+ *
+ * Define all breakpoints
+ * Extracted from [Google Material Design]
+ * (https://www.google.com/design/spec/layout/adaptive-ui.html)
+ */
+
+
+$s-breakpoints: (
+  "xxs":                    0,
+  "xs":                     480px,
+  "sm":                     600px,
+  "sml":                    840px,
+  "md":                     960px,
+  "lg":                     1280px,
+  "xl":                     1440px,
+  "xxl":                    1600px,
+  "xxxl":                   1920px,
+) !default;

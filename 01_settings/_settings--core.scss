@@ -1,0 +1,39 @@
+
+/* -------------------------------------------------------------------------
+ * CORE
+ *
+ * This core file sets up most important setup variables. They underpin a
+ * lot of calculations based on that values.
+ * Should be modified with caution.
+ * Values should be expressed in PX and will be converted into REM/EM.
+ */
+
+$s-core-font-size:          16px !default;
+$s-core-line-height:        $s-core-font-size * 1.618 !default;
+$s-core-space:              24px !default;
+
+
+////////////////////////////////////////////////////////////////////////////////
+//                               W A R N I N G                                //
+//                  DO NOT MODIFY ANYTHING BEYOND THIS POINT                  //
+////////////////////////////////////////////////////////////////////////////////
+
+/* SAFE CHECKING
+ * Check that the chosen core values are pixel numbers.
+ */
+
+@each $_core-values in
+  $s-core-font-size
+  $s-core-line-height {
+
+  @if (type-of($_core-values) == number) {
+
+    @if (unit($_core-values) != "px") {
+      @error "$core: `#{$_core-values}` needs to be a pixel value.";
+    }
+
+  } @else {
+    @error "$core: `#{$_core-values}` needs to be a number.";
+  }
+
+}

@@ -1,0 +1,46 @@
+
+/* -------------------------------------------------------------------------
+ * PX TO EM
+ *
+ * Returns EM equivalent value using a given PX value and a REM reference
+ * By default, uses $s-core-font-size on the conversion.
+ *
+ * s-core-px-to-em(24px, 1.143rem) == 1.5em
+ * (based on 14px $s-core-font-size)
+ */
+
+
+// Convert px to em relative to the second argument value
+
+@function s-core-px-to-em($value, $reference-value-rem, $root-font-size: $s-core-font-size) {
+
+  @if ($value == 0) {
+    @return 0;
+  }
+
+  @each $_given-values in
+    $value
+    $reference-value-rem
+    $root-font-size {
+
+    @if (type-of($_given-values) != number) {
+      @error "s-core-px-to-em: `#{$_given-values}` needs to be a number.";
+    }
+
+  }
+
+  @if (unit($value) != "px") {
+    @error "s-core-px-to-em: `#{$value}` needs to be a pixel value.";
+  }
+
+  @if (unit($reference-value-rem) != "rem") {
+    @error "s-core-px-to-em: `#{$reference-value-rem}` needs to be a rem value.";
+  }
+
+  @if (unit($root-font-size) != "px") {
+    @error "s-core-px-to-em: `#{$root-font-size}` needs to be a pixel value.";
+  }
+
+  $reference-value-px: s-core-rem-to-px($reference-value-rem, false, $root-font-size);
+  @return s-core-strip-units($value / s-core-strip-units($reference-value-px)) * 1em;
+}

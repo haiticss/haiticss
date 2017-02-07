@@ -1,0 +1,62 @@
+
+/* ==========================================================================
+ * SETTINGS
+ * Project configuration, functions and variables
+ *
+ * config ................. Configuration and feature switches
+ * core ................... Core and setup settings
+ * functions .............. SASS core functions (core- prefixed)
+ * vars ................... Variables and master settings
+   ========================================================================== */
+
+
+/* CONFIG
+ * Configuration and feature switches
+ *
+ * global ................ environment and feature switches
+ * path .................. assets paths
+ */
+
+@import "config/_global";
+@import "config/_path";
+
+
+/* CORE
+ * Core and setup settings
+ */
+
+@import "_settings--core";
+
+
+/* FUNCTIONS
+ * SASS core functions (core- prefixed)
+ *
+ * strip-units ........... returns the unitless number of a given value
+ * rem-to-px ............. returns PX equivalent value using a given REM value
+ * px-to-rem ............. returns REM equivalent value using a given PX value
+ * px-to-em .............. returns EM equivalent value using a given PX value and a REM reference
+ */
+
+@import "core-functions/_strip-units";
+@import "core-functions/_rem-to-px";
+@import "core-functions/_px-to-rem";
+@import "core-functions/_px-to-em";
+
+
+/* VARS
+ * Variables and master settings
+ *
+ * aspect-ratios ......... to support some objects, material and components
+ * breakpoints ........... to determine screen sizes and media queries
+ * colors ................ brand, neutral, state and other colors
+ * spaces ................ to determine common spacing and gutters
+ */
+
+@import "vars/_aspect-ratios";
+@import "vars/_breakpoints";
+@import "vars/_colors-brand";
+@import "vars/_colors-neutral";
+@import "vars/_colors-other";
+@import "vars/_colors-state";
+@import "vars/_fonts";
+@import "vars/_spaces";

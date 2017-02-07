@@ -1,0 +1,35 @@
+
+/* -------------------------------------------------------------------------
+ * PX TO REM
+ *
+ * Returns REM equivalent value using a given PX value.
+ * By default, uses $s-core-font-size on the conversion.
+ *
+ * s-core-px-to-rem(16px) == 1.143rem
+ * (based on 14px $s-core-font-size)
+ */
+
+
+@function s-core-px-to-rem($value, $root-font-size: $s-core-font-size) {
+
+  @if ($value == 0) {
+    @return 0;
+  }
+
+  @each $_given-values in
+    $value
+    $root-font-size {
+
+    @if (type-of($_given-values) != number) {
+      @error "s-core-px-to-rem: `#{$_given-values}` needs to be a number.";
+    }
+
+    @if (unit($_given-values) != "px") {
+      @error "s-core-px-to-rem: `#{$_given-values}` needs to be a pixel value.";
+    }
+
+  }
+
+  @return s-core-strip-units($value) / s-core-strip-units($root-font-size) * 1rem;
+
+}

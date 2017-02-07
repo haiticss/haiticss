@@ -1,0 +1,75 @@
+
+/* -------------------------------------------------------------------------
+ * SPACES
+ *
+ * Spacing values are determined based on core line height.
+ * Modifying these variables can break the vertical rhythm.
+ * Should be modified with caution.
+ * Values should be expressed in PX and will be converted into REM/EM.
+ *
+ * Usage recommendation:
+ * - Using rem spaces for vertical spacing, will preserve the vertical rhythm
+ * - Think twice on horizontal spaces if you need fixed or relative
+ */
+
+
+/* Fixed SPACES (PX output)
+ */
+
+$s-space:                     round($s-core-space) !default;
+$s-space-tiny:                round($s-space * 0.25) !default;
+$s-space-small:               round($s-space * 0.5) !default;
+$s-space-large:               round($s-space * 2) !default;
+$s-space-huge:                round($s-space * 4) !default;
+
+
+/* Relative SPACES (REM output)
+ */
+
+$s-space-rem:                 s-core-px-to-rem($s-space) !default;
+$s-space-rem-tiny:            s-core-px-to-rem($s-space-tiny) !default;
+$s-space-rem-small:           s-core-px-to-rem($s-space-small) !default;
+$s-space-rem-large:           s-core-px-to-rem($s-space-large) !default;
+$s-space-rem-huge:            s-core-px-to-rem($s-space-huge) !default;
+
+
+/* Spaces variants MAP
+ */
+
+$s-spaces: (
+  "none":                     0,
+  "tiny":                     $s-space-tiny,
+  "small":                    $s-space-small,
+  "medium":                   $s-space,
+  "large":                    $s-space-large,
+  "huge":                     $s-space-huge,
+) !default;
+
+
+////////////////////////////////////////////////////////////////////////////////
+//                               W A R N I N G                                //
+//                  DO NOT MODIFY ANYTHING BEYOND THIS POINT                  //
+////////////////////////////////////////////////////////////////////////////////
+
+/* SAFE CHECKING
+ * Check that the chosen values are pixel numbers.
+ */
+
+@each $_space in
+  $s-space
+  $s-space-tiny
+  $s-space-small
+  $s-space-large
+  $s-space-huge {
+
+  @if (type-of($_space) == number) {
+
+    @if (unit($_space) != "px") {
+      @error "$s-spaces: `#{$_space}` needs to be a pixel value.";
+    }
+
+  } @else {
+    @error "$s-spaces: `#{$_space}` needs to be a number.";
+  }
+
+}
