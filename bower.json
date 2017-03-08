@@ -1,0 +1,23 @@
+{
+  "name": "haiticss",
+  "version": "1.0.0",
+  "ignore": [
+    "**/.*",
+    "bower_components",
+    "node_modules",
+    "Gemfile",
+    "Gemfile.lock",
+    "test",
+    "Gruntfile.js",
+    "tasks",
+    "demo",
+    "docs",
+    "package.json"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "sass-mq": "^3.3.2",
+    "normalize-css": "^4.2.0",
+    "quantity-queries": "^0.4.0"
+  }
+}

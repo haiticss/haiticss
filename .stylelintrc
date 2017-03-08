@@ -2,13 +2,17 @@
   "plugins": [
     "stylelint-scss"
   ],
+  "ignoreFiles": [
+    "02_tools/_tools--quantity-queries.scss",
+    "02_tools/_tools--sass-mq.scss"
+  ],
   "rules": {
     "at-rule-name-case": "lower",
     "at-rule-name-space-after": "always",
     "at-rule-semicolon-newline-after": "always",
     "at-rule-empty-line-before": [
       "always", {
-        "ignoreAtRules": [ "else", "error", "return" ]
+        "ignoreAtRules": [ "else", "error", "return", "import" ]
       }
     ],
     "block-opening-brace-space-before": "always",
