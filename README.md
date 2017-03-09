@@ -1,4 +1,4 @@
-# haiticss
+# :pineapple: haiticss
 
 Just another baseline perspective to wear any project with the [ITCSS](http://itcss.io/) architecture. Mainly based on the excellent project [inuitcss](https://github.com/inuitcss/inuitcss) by [Harry Roberts](https://csswizardry.com/), from where I found my best suitable starting point.
 
