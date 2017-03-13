@@ -4,7 +4,8 @@
   ],
   "ignoreFiles": [
     "02_tools/_tools--quantity-queries.scss",
-    "02_tools/_tools--sass-mq.scss"
+    "02_tools/_tools--sass-mq.scss",
+    "03_generic/_generic--normalize.scss"
   ],
   "rules": {
     "at-rule-name-case": "lower",

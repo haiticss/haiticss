@@ -1,0 +1,91 @@
+
+/* -------------------------------------------------------------------------
+ * RESET
+ *
+ * A very simple reset that sits on top of Normalize.css.
+ * Extracted from inuitcss
+ */
+
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+blockquote,
+p,
+pre,
+dl,
+dd,
+ol,
+ul,
+figure,
+hr,
+fieldset,
+legend {
+  margin: 0;
+  padding: 0;
+}
+
+
+/**
+ * Remove trailing margins from nested lists.
+ */
+
+li > {
+  ol,
+  ul {
+    margin-bottom: 0;
+  }
+}
+
+
+/**
+ * Remove default table spacing.
+ */
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+
+/* -------------------------------------------------------------------------
+ * SHARED
+ *
+ * Shared declarations for certain elements.
+ * Extracted from inuitcss
+ */
+
+address,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+blockquote,
+p,
+pre,
+dl,
+ol,
+ul,
+figure,
+hr,
+table,
+fieldset {
+  margin-bottom: $s-space-rem;
+}
+
+
+/**
+ * Consistent indentation for lists.
+ */
+
+dd,
+ol,
+ul {
+  margin-left: $s-space;
+}
