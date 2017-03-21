@@ -50,6 +50,8 @@
  * colors ................ brand, neutral, vendor, state and other colors
  * durations ............. to be used on animations and transitions
  * font-families ......... to import and define the families
+ * font-sizes ............ fixed sizes catalog
+ * line-heights .......... unit less line heights
  * radiuses .............. to be used as a border radius
  * spaces ................ to determine common spacing and gutters
  */
@@ -59,5 +61,7 @@
 @import "foundations/colors";
 @import "foundations/durations";
 @import "foundations/font-families";
+@import "foundations/font-sizes";
+@import "foundations/line-heights";
 @import "foundations/radiuses";
 @import "foundations/spaces";

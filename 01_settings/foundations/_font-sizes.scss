@@ -1,0 +1,60 @@
+
+/* -------------------------------------------------------------------------
+ * FONT SIZES
+ *
+ * Values should be expressed in PX.
+ * If you need a relative unit based on that values, use the core functions
+ * on used context.
+ */
+
+
+// Main font sizes
+
+$s-font-size--xxs:                10px !default;
+$s-font-size--xs:                 12px !default;
+$s-font-size--s:                  14px !default;
+$s-font-size--m:                  $s-core-font-size !default;
+$s-font-size--l:                  18px !default;
+$s-font-size--xl:                 24px !default;
+$s-font-size--xxl:                32px !default;
+$s-font-size--xxxl:               48px !default;
+
+// FONT SIZES MAP
+
+$s-font-sizes: (
+  "xxs":        $s-font-size--xxs,
+  "xs":         $s-font-size--xs,
+  "s":          $s-font-size--s,
+  "m":          $s-font-size--m,
+  "l":          $s-font-size--l,
+  "xl":         $s-font-size--xl,
+  "xxl":        $s-font-size--xxl,
+  "xxxl":       $s-font-size--xxxl,
+) !default;
+
+
+////////////////////////////////////////////////////////////////////////////////
+//                               W A R N I N G                                //
+//                  DO NOT MODIFY ANYTHING BEYOND THIS POINT                  //
+////////////////////////////////////////////////////////////////////////////////
+
+/* SAFE CHECKING
+ * Check that the chosen values are pixel numbers.
+ */
+
+@each $_font-size__name, $_font-size__value in $s-font-sizes {
+
+  @if (type-of($_font-size__value) == number) {
+
+    @if ($_font-size__name != "none") {
+
+      @if (unit($_font-size__value) != "px") {
+        @error "$s-font-sizes: `#{$_font-size__name}` needs to be a pixel value.";
+      }
+    }
+
+  } @else {
+    @error "$s-font-sizes: `#{$_font-size__name}` needs to be a number.";
+  }
+
+}

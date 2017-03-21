@@ -9,8 +9,6 @@
  */
 
 $s-core-font-size:          16px !default;
-$s-core-line-height:        $s-core-font-size * 1.618 !default;
-$s-core-space:              24px !default;
 
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -22,18 +20,12 @@ $s-core-space:              24px !default;
  * Check that the chosen core values are pixel numbers.
  */
 
-@each $_core-values in
-  $s-core-font-size
-  $s-core-line-height {
+@if (type-of($s-core-font-size) == number) {
 
-  @if (type-of($_core-values) == number) {
-
-    @if (unit($_core-values) != "px") {
-      @error "$core: `#{$_core-values}` needs to be a pixel value.";
-    }
-
-  } @else {
-    @error "$core: `#{$_core-values}` needs to be a number.";
+  @if (unit($s-core-font-size) != "px") {
+    @error "$s-core-font-size: needs to be a pixel value.";
   }
 
+} @else {
+  @error "$s-core-font-size: needs to be a number.";
 }
