@@ -6,6 +6,19 @@
  */
 
 
+// Main aspect ratios
+
+$s-aspect-ratio--1\:1:      1 / 1 !default;
+$s-aspect-ratio--4\:3:      4 / 3 !default;
+$s-aspect-ratio--3\:2:      3 / 2 !default;
+$s-aspect-ratio--16\:9:     16 / 9 !default;
+$s-aspect-ratio--2\:1:      2 / 1 !default;
+
+$s-aspect-ratio--golden:    1.618 !default;
+
+
+// Aspect ratios map
+
 $s-aspect-ratios: (
   1:1,
   4:3,
@@ -13,8 +26,6 @@ $s-aspect-ratios: (
   16:9,
   2:1,
 ) !default;
-
-$s-golden-ratio: 1.618;
 
 
 ////////////////////////////////////////////////////////////////////////////////
