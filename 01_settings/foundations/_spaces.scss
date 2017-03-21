@@ -1,0 +1,64 @@
+
+/* -------------------------------------------------------------------------
+ * SPACES
+ *
+ * Modifying these variables can break the vertical rhythm.
+ * Should be modified with caution.
+ * Values should be expressed in PX.
+ * If you need a relative unit based on that values, use the core functions
+ * on used context.
+ *
+ */
+
+
+// Main space
+
+$s-space:                     24px !default;
+
+// Space variants
+
+$s-space--none:               0 !default;
+$s-space--tiny:               round($s-space * .25) !default;
+$s-space--small:              round($s-space * .5) !default;
+$s-space--medium:             round($s-space * 1) !default;
+$s-space--large:              round($s-space * 2) !default;
+$s-space--huge:               round($s-space * 4) !default;
+
+
+// SPACES MAP
+
+$s-spaces: (
+  "none":                     $s-space--none,
+  "tiny":                     $s-space--tiny,
+  "small":                    $s-space--small,
+  "medium":                   $s-space--medium,
+  "large":                    $s-space--large,
+  "huge":                     $s-space--huge,
+) !default;
+
+
+////////////////////////////////////////////////////////////////////////////////
+//                               W A R N I N G                                //
+//                  DO NOT MODIFY ANYTHING BEYOND THIS POINT                  //
+////////////////////////////////////////////////////////////////////////////////
+
+/* SAFE CHECKING
+ * Check that the chosen values are pixel numbers.
+ */
+
+@each $_space__name, $_space__value in $s-spaces {
+
+  @if (type-of($_space__value) == number) {
+
+    @if ($_space__name != "none") {
+
+      @if (unit($_space__value) != "px") {
+        @error "$s-spaces: `#{$_space__name}` needs to be a pixel value.";
+      }
+    }
+
+  } @else {
+    @error "$s-spaces: `#{$_space__name}` needs to be a number.";
+  }
+
+}
