@@ -1,0 +1,34 @@
+
+/* -------------------------------------------------------------------------
+ * FONTS
+ *
+ * Font families & fallback
+ *
+ */
+
+
+// Import fonts
+
+@import "_font-family__open-sans";
+@import "_font-family__raleway";
+@import "_font-family__passion-one";
+
+
+// Fallback families
+
+$s-font-family__sans-fallback:    Arial, Geneva, sans-serif !default;
+
+// Main font families
+
+$s-font-family__primary:          #{$s-font-family__open-sans}, #{$s-font-family__sans-fallback} !default;
+$s-font-family__secondary:        #{$s-font-family__raleway}, #{$s-font-family__sans-fallback} !default;
+$s-font-family__accent:           #{$s-font-family__passion-one}, #{$s-font-family__sans-fallback} !default;
+
+
+// FONT FAMILIES MAP
+
+$s-font-families: (
+  "primary":    $s-font-family__primary,
+  "secondary":  $s-font-family__secondary,
+  "accent":     $s-font-family__accent,
+) !default;
