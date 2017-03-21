@@ -7,12 +7,16 @@
  */
 
 
-// Import fonts
+// Imported font families
+// CSS @import usage is for demo proposes, consider hosting your fonts instead
 
-@import "font-family__open-sans";
-@import "font-family__raleway";
-@import "font-family__passion-one";
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i');
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,400i,700,700i');
+@import url('https://fonts.googleapis.com/css?family=Passion+One');
 
+$s-font-family__open-sans:        'Open Sans' !default;
+$s-font-family__raleway:          'Raleway' !default;
+$s-font-family__passion-one:      'Passion One' !default;
 
 // Fallback families
 
