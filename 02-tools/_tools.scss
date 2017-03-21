@@ -18,6 +18,6 @@
  */
 $mq-base-font-size:       $s-core-font-size;
 $mq-breakpoints:          $s-breakpoints;
-$mq-show-breakpoints:     if($s-config-env == "dev" or $s-config-env == "cms", (map-keys($s-breakpoints)), ()) !default;
+$mq-show-breakpoints:     if($s-config__env == "dev" or $s-config__env == "cms", (map-keys($s-breakpoints)), ()) !default;
 
 @import 'vendor/sass-mq';
