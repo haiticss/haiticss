@@ -1,0 +1,29 @@
+
+/* -------------------------------------------------------------------------
+ * CONFIG
+ *
+ * Global configuration
+ */
+
+
+/* ENVIRONMENT
+ * dev .................. Development
+ * prod ................. Production
+ */
+
+$s-config__env:             "dev" !default;
+
+
+/* DEBUG
+ * for debugging proposes
+ */
+
+$s-config__debug:           if($s-config__env == "dev", true, false) !default;
+
+
+/* PATHS
+ * Define assets paths here
+ */
+
+$s-config__path--img:       "../img" !default;
+$s-config__path--fonts:     "../fonts" !default;

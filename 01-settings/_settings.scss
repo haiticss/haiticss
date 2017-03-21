@@ -3,29 +3,19 @@
  * SETTINGS
  * Project configuration, functions and variables
  *
- * config ................. Configuration and feature switches
  * core ................... Core and setup settings
+ * config ................. Global configuration: env, paths
  * core functions ......... SASS core functions (core- prefixed)
  * foundations ............ Design foundations vars
    ========================================================================== */
 
 
-/* CONFIG
- * Configuration
- *
- * global ................ environment and feature switches
- * path .................. assets paths
- */
-
-@import "config/global";
-@import "config/path";
+// Core
+@import "settings__core";
 
 
-/* CORE
- * Core and setup settings
- */
-
-@import "settings--core";
+// Config
+@import "settings__config";
 
 
 /* CORE FUNCTIONS
