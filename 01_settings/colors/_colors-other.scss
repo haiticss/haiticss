@@ -1,0 +1,17 @@
+
+/* -------------------------------------------------------------------------
+ * COLORS OTHER
+ *
+ * Define all other colors
+ */
+
+
+// Main other colors
+
+$s-color-other__digital-blue:             #0070d2 !default;
+
+// OTHER COLOR MAP
+
+$s-colors-other: (
+  "digital-blue":                         $s-color-other__digital-blue,
+) !default;

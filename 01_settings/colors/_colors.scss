@@ -1,0 +1,23 @@
+
+/* -------------------------------------------------------------------------
+ * COLORS
+ *
+ * Import all color groups and build the main color map
+ */
+
+@import "_colors-brand";
+@import "_colors-neutral";
+@import "_colors-state";
+@import "_colors-vendor";
+@import "_colors-other";
+
+
+/* COLORS MAIN MAP */
+
+$s-colors: (
+  "brand":        $s-colors-brand,
+  "neutral":      $s-colors-neutral,
+  "state":        $s-colors-state,
+  "vendor":       $s-colors-vendor,
+  "other":        $s-colors-other,
+) !default;

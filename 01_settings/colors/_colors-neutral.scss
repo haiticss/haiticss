@@ -1,0 +1,44 @@
+
+/* -------------------------------------------------------------------------
+ * COLORS NEUTRAL
+ *
+ * Neutral colors are the ones without saturation
+ */
+
+
+// Black & White
+
+$s-color-neutral__white:                #fff !default;
+$s-color-neutral__black:                #000 !default;
+
+// Grey shades (Mid tones are missing intentionally)
+
+$s-color-neutral__grey--ultra-light:    darken(#fff, 5%) !default;
+$s-color-neutral__grey--light:          darken(#fff, 10%) !default;
+$s-color-neutral__grey--semi-light:     darken(#fff, 20%) !default;
+$s-color-neutral__grey:                 darken(#fff, 30%) !default;
+$s-color-neutral__grey--semi-dark:      darken(#fff, 70%) !default;
+$s-color-neutral__grey--dark:           darken(#fff, 80%) !default;
+$s-color-neutral__grey--ultra-dark:     darken(#fff, 90%) !default;
+
+// Transparent colors
+
+$s-color-neutral__white--transparent:   rgba($s-color-neutral__white, 0) !default;
+$s-color-neutral__black--transparent:   rgba($s-color-neutral__black, 0) !default;
+
+
+// NEUTRAL COLOR MAP
+
+$s-colors-neutral: (
+  "white":                              $s-color-neutral__white,
+  "black":                              $s-color-neutral__black,
+  "grey--ultra-light":                  $s-color-neutral__grey--ultra-light,
+  "grey--light":                        $s-color-neutral__grey--light,
+  "grey--semi-light":                   $s-color-neutral__grey--semi-light,
+  "grey":                               $s-color-neutral__grey,
+  "grey--semi-dark":                    $s-color-neutral__grey--semi-dark,
+  "grey--dark":                         $s-color-neutral__grey--dark,
+  "grey--ultra-dark":                   $s-color-neutral__grey--ultra-dark,
+  "white--transparent":                 $s-color-neutral__white--transparent,
+  "black--transparent":                 $s-color-neutral__black--transparent,
+) !default;
