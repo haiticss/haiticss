@@ -5,30 +5,30 @@
  *
  * config ................. Configuration and feature switches
  * core ................... Core and setup settings
- * functions .............. SASS core functions (core- prefixed)
- * vars ................... Variables and master settings
+ * core functions ......... SASS core functions (core- prefixed)
+ * foundations ............ Design foundations vars
    ========================================================================== */
 
 
 /* CONFIG
- * Configuration and feature switches
+ * Configuration
  *
  * global ................ environment and feature switches
  * path .................. assets paths
  */
 
-@import "config/_global";
-@import "config/_path";
+@import "config/global";
+@import "config/path";
 
 
 /* CORE
  * Core and setup settings
  */
 
-@import "_settings--core";
+@import "settings--core";
 
 
-/* FUNCTIONS
+/* CORE FUNCTIONS
  * SASS core functions (core- prefixed)
  *
  * strip-units ........... returns the unitless number of a given value
@@ -37,25 +37,27 @@
  * px-to-em .............. returns EM equivalent value using a given PX value and a REM reference
  */
 
-@import "core-functions/_strip-units";
-@import "core-functions/_rem-to-px";
-@import "core-functions/_px-to-rem";
-@import "core-functions/_px-to-em";
+@import "core-functions/strip-units";
+@import "core-functions/rem-to-px";
+@import "core-functions/px-to-rem";
+@import "core-functions/px-to-em";
 
 
-/* VARS
- * Variables and master settings
+/* DESIGN FOUNDATIONS
  *
  * aspect-ratios ......... to support some objects, material and components
  * breakpoints ........... to determine screen sizes and media queries
- * colors ................ brand, neutral, state and other colors
+ * colors ................ brand, neutral, vendor, state and other colors
+ * durations ............. to be used on animations and transitions
+ * font-families ......... to import and define the families
+ * radiuses .............. to be used as a border radius
  * spaces ................ to determine common spacing and gutters
  */
 
-@import "foundations/_aspect-ratios";
-@import "foundations/_breakpoints";
-@import "foundations/_colors";
-@import "foundations/_font-families";
-@import "foundations/_spaces";
-@import "foundations/_radiuses";
-@import "foundations/_durations";
+@import "foundations/aspect-ratios";
+@import "foundations/breakpoints";
+@import "foundations/colors";
+@import "foundations/durations";
+@import "foundations/font-families";
+@import "foundations/radiuses";
+@import "foundations/spaces";
