@@ -7,6 +7,14 @@
  */
 
 
+// Reset variables
+
+$g-reset__spacing--vertical:        $s-space !default;
+$g-reset__spacing--horizontal:      $s-space !default;
+
+
+// Reset content
+
 body,
 h1,
 h2,
@@ -76,7 +84,7 @@ figure,
 hr,
 table,
 fieldset {
-  margin-bottom: $s-space;
+  margin-bottom: $g-reset__spacing--vertical;
 }
 
 
@@ -87,5 +95,5 @@ fieldset {
 dd,
 ol,
 ul {
-  margin-left: $s-space;
+  margin-left: $g-reset__spacing--horizontal;
 }

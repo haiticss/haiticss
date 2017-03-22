@@ -1,0 +1,40 @@
+
+/* -------------------------------------------------------------------------
+ * BOX-SIZING
+ *
+ * More sensible default box-sizing:
+ * css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice
+ */
+
+
+$g-box-sizing:          border-box !default;
+
+
+// Apply box sizing according SETTINGS > CONFIG > SCOPED
+
+@if ($s-config__scoped) {
+  // If the output is scoped into a selector, apply box sizing on all elements
+  * {
+    box-sizing: $g-box-sizing;
+
+    &:before,
+    &:after {
+      box-sizing: inherit;
+    }
+
+  }
+
+} @else {
+  // Otherwise, apply box sizing from root html tag
+  html {
+    box-sizing: $g-box-sizing;
+  }
+
+  * {
+    &,
+    &::before,
+    &::after {
+      box-sizing: inherit;
+    }
+  }
+}

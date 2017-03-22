@@ -6,6 +6,13 @@
  */
 
 
+/* SCOPED
+ * enable if you are scoping the output in a selector
+ */
+
+$s-config__scoped:          false !default;
+
+
 /* ENVIRONMENT
  * dev .................. Development
  * prod ................. Production
