@@ -1,0 +1,47 @@
+
+/* -------------------------------------------------------------------------
+ * DOCUMENT
+ *
+ * Extracted from inuitcss
+ * Simple page-level setup
+ *
+ * 1. Set the default `font-size` and `line-height` for the entire project,
+ *    sourced from our default variables. The `font-size` is calculated to exist
+ *    in ems, the `line-height` is calculated to exist unitlessly.
+ * 2. Force scrollbars to always be visible to prevent awkward ‘jumps’ when
+ *    navigating between pages that do/do not have enough content to produce
+ *    scrollbars naturally.
+ * 3. Ensure the page always fills at least the entire height of the viewport.
+ */
+
+
+// Document variables
+
+$e-document__body--font-family:         $s-font-family__primary !default;
+$e-document__body--font-size:           $s-core-font-size !default;
+$e-document__body--line-height:         $s-line-height--medium !default;
+$e-document__body--color:               $s-color-neutral__grey--ultra-dark !default;
+
+
+// Apply document defaults according SETTINGS > CONFIG > SCOPED
+
+@if ($s-config__scoped) {
+  // If the output is scoped into a selector, apply box sizing on all elements
+  :root & {
+    font-family: $e-document__body--font-family;
+    color: $e-document__body--color;
+    font-size: $e-document__body--font-size;
+    line-height: $e-document__body--line-height;
+  }
+
+} @else {
+  // Otherwise, apply box sizing from root html tag
+  html {
+    font-family: $e-document__body--font-family;
+    color: $e-document__body--color;
+    font-size: s-core-strip-units(s-core-px-to-rem($e-document__body--font-size, 16px)) * 1em; /* [1] */
+    line-height: $e-document__body--line-height;
+    overflow-y: scroll; /* [2] */
+    min-height: 100%; /* [3] */
+  }
+}

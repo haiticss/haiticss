@@ -3,12 +3,12 @@
  * ELEMENTS
  * Basic HTML elements styles
  *
- * page ................... document defaults
+ * document ............... document defaults (html, body)
  * headings ............... minimal heading styles
    ========================================================================== */
 
 
-@import '_elements--page';
-@import '_elements--headings';
-@import '_elements--images';
-@import '_elements--tables';
+@import '_elements__document';
+//@import '_elements--headings';
+//@import '_elements--images';
+//@import '_elements--tables';
