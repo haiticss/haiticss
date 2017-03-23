@@ -29,6 +29,11 @@
     }
 
   }
+  // Avoid relative units if the project is scoped
+
+  @if ($s-config__scoped) {
+    @return $value;
+  }
 
   @return s-core-strip-units($value) / s-core-strip-units($root-font-size) * 1rem;
 

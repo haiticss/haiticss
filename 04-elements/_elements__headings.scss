@@ -1,0 +1,63 @@
+
+/* -------------------------------------------------------------------------
+ * HEADINGS
+ *
+ * Define some minimal heading styles
+ *
+ */
+
+// Headings variables
+
+$e-headings__font-family:         $s-font-family__secondary !default;
+$e-headings__font-weight:         400 !default;
+
+$e-headings__font-size--h1:       s-core-px-to-rem($s-font-size--xxxl) !default;
+$e-headings__font-size--h2:       s-core-px-to-rem($s-font-size--xxl) !default;
+$e-headings__font-size--h3:       s-core-px-to-rem($s-font-size--xl) !default;
+$e-headings__font-size--h4:       s-core-px-to-rem($s-font-size--l) !default;
+$e-headings__font-size--h5:       s-core-px-to-rem($s-font-size--m) !default;
+$e-headings__font-size--h6:       s-core-px-to-rem($s-font-size--s) !default;
+
+$e-headings__line-height:         $s-line-height--tiny !default;
+
+$e-headings__margin-bottom:       $g-reset__spacing--vertical !default;
+
+
+// Headings output
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: $e-headings__line-height;
+  font-family: $e-headings__font-family;
+  margin-bottom: $e-headings__margin-bottom;
+  font-weight: $e-headings__font-weight;
+}
+
+
+h1 {
+  font-size: $e-headings__font-size--h1;
+}
+
+h2 {
+  font-size: $e-headings__font-size--h2;
+}
+
+h3 {
+  font-size: $e-headings__font-size--h3;
+}
+
+h4 {
+  font-size: $e-headings__font-size--h4;
+}
+
+h5 {
+  font-size: $e-headings__font-size--h5;
+}
+
+h6 {
+  font-size: $e-headings__font-size--h6;
+}
