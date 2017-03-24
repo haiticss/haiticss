@@ -10,9 +10,18 @@
  *
  */
 
+// Images variables
+
+$e-images__fluid:                 true !default;
+
+
+// Images output
 
 img {
-  width: 100%; /* [1] */
   font-style: italic; /* [2] */
   vertical-align: middle; /* [3] */
+
+  @if ($e-images__fluid) {
+    width: 100%; /* [1] */
+  }
 }
