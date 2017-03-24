@@ -41,6 +41,12 @@
     @error "s-core-px-to-em: `#{$root-font-size}` needs to be a pixel value.";
   }
 
+  // Avoid relative units if the project is scoped
+
+  @if ($s-config__scoped) {
+    @return $value;
+  }
+
   $reference-value-px: s-core-rem-to-px($reference-value-rem, false, $root-font-size);
   @return s-core-strip-units($value / s-core-strip-units($reference-value-px)) * 1em;
 }
