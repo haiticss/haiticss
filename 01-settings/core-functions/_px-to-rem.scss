@@ -3,14 +3,14 @@
  * PX TO REM
  *
  * Returns REM equivalent value using a given PX value.
- * By default, uses $s-core-font-size on the conversion.
+ * By default, uses $s-core__font-size on the conversion.
  *
  * s-core-px-to-rem(16px) == 1.143rem
- * (based on 14px $s-core-font-size)
+ * (based on 14px $s-core__font-size)
  */
 
 
-@function s-core-px-to-rem($value, $root-font-size: $s-core-font-size) {
+@function s-core-px-to-rem($value, $root-font-size: $s-core__font-size) {
 
   @if ($value == 0) {
     @return 0;

@@ -3,16 +3,16 @@
  * PX TO EM
  *
  * Returns EM equivalent value using a given PX value and a REM reference
- * By default, uses $s-core-font-size on the conversion.
+ * By default, uses $s-core__font-size on the conversion.
  *
  * s-core-px-to-em(24px, 1.143rem) == 1.5em
- * (based on 14px $s-core-font-size)
+ * (based on 14px $s-core__font-size)
  */
 
 
 // Convert px to em relative to the second argument value
 
-@function s-core-px-to-em($value, $reference-value-rem, $root-font-size: $s-core-font-size) {
+@function s-core-px-to-em($value, $reference-value-rem, $root-font-size: $s-core__font-size) {
 
   @if ($value == 0) {
     @return 0;

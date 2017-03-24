@@ -8,7 +8,7 @@
  * Values should be expressed in PX and will be converted into REM/EM.
  */
 
-$s-core-font-size:          16px !default;
+$s-core__font-size:          16px !default;
 
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -20,12 +20,12 @@ $s-core-font-size:          16px !default;
  * Check that the chosen core values are pixel numbers.
  */
 
-@if (type-of($s-core-font-size) == number) {
+@if (type-of($s-core__font-size) == number) {
 
-  @if (unit($s-core-font-size) != "px") {
-    @error "$s-core-font-size: needs to be a pixel value.";
+  @if (unit($s-core__font-size) != "px") {
+    @error "$s-core__font-size: needs to be a pixel value.";
   }
 
 } @else {
-  @error "$s-core-font-size: needs to be a number.";
+  @error "$s-core__font-size: needs to be a number.";
 }

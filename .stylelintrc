@@ -3,9 +3,10 @@
     "stylelint-scss"
   ],
   "ignoreFiles": [
-    "02_tools/_tools--quantity-queries.scss",
-    "02_tools/_tools--sass-mq.scss",
-    "03_generic/_generic--normalize.scss"
+    "haiticss.css",
+    "02-tools/vendor/_quantity-queries.scss",
+    "02-tools/vendor/_sass-mq.scss",
+    "03-generic/_generic__normalize.scss"
   ],
   "rules": {
     "at-rule-name-case": "lower",
@@ -13,7 +14,7 @@
     "at-rule-semicolon-newline-after": "always",
     "at-rule-empty-line-before": [
       "always", {
-        "ignoreAtRules": [ "else", "error", "return", "import" ]
+        "ignoreAtRules": [ "else", "error", "return", "import", "include", "each" ]
       }
     ],
     "block-opening-brace-space-before": "always",

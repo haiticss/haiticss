@@ -14,6 +14,9 @@ bower_components/
 # CSS maps
 *.css.map
 
+# CSS compiled
+*.css
+
 # JetBrains IDEs projects
 .idea/
 

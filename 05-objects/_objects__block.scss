@@ -1,0 +1,101 @@
+
+/* -------------------------------------------------------------------------
+ * BLOCK
+ *
+ * Stacked image-with-text object. A simple abstraction to cover a very commonly
+ * occurring design pattern.
+ *
+ * Params:
+ * SPACE .............................. Vertical separation between image and body
+ * ALIGNMENT .......................... Horizontal text alignment
+ *
+ */
+
+// Object variables
+// --------------------------------------------------
+
+// Object toggling
+
+$o-block--enabled:                      true !default;
+
+// Object Params
+
+$o-block__space:                        $g-reset__spacing--vertical !default;
+$o-block__alignment:                    center !default;
+
+// Modifiers Spaces
+
+$o-block__mod-spaces--enabled:          true !default;
+$o-block__mod-spaces:                   $s-spaces !default;
+
+// Modifiers Alignments
+
+$o-block__mod-alignments--enabled:      true !default;
+$o-block__mod-alignments:               (left, center, right) !default;
+
+
+// Object as a mixin
+// --------------------------------------------------
+
+@mixin o-block($_alignment-direction: $o-block__alignment) {
+  display: block;
+  text-align: $_alignment-direction;
+}
+
+@mixin o-block__img($_space-value: $o-block__space) {
+  margin-bottom: $_space-value;
+}
+
+@mixin o-block__body() {
+  display: block;
+}
+
+
+// Object selector output
+// --------------------------------------------------
+
+@if ($o-block--enabled) {
+  .o-block {
+    @include o-block();
+  }
+
+  .o-block__img {
+    @include o-block__img();
+  }
+
+  .o-block__body {
+    @include o-block__body();
+  }
+}
+
+
+// Space modifiers output
+// --------------------------------------------------
+
+@mixin o-block__mod-space($_space-name: "none", $_space-value: 0) {
+  .o-block--space-#{$_space-name} > .o-block__img {
+    margin-bottom: s-core-px-to-rem($_space-value);
+  }
+}
+
+@if ($o-block--enabled and $o-block__mod-spaces--enabled) {
+  @each $_space-name, $_space-value in $o-block__mod-spaces {
+    @include o-block__mod-space($_space-name, $_space-value);
+  }
+}
+
+
+// Alignment modifiers
+// --------------------------------------------------
+
+@mixin o-block__mod-alignment($_alignment-direction: left) {
+  .o-block--#{$_alignment-direction} {
+    text-align: $_alignment-direction;
+  }
+}
+
+@if ($o-block--enabled and $o-block__mod-alignments--enabled) {
+  @each $_alignment-direction in $o-block__mod-alignments {
+    @include o-block__mod-alignment($_alignment-direction);
+  }
+}

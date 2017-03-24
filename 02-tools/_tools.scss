@@ -13,11 +13,15 @@
 @import 'tools__clearfix';
 @import 'vendor/quantity-queries.scss';
 
-/* SASS-MQ
- * Some $mq- variables needs to be set before proceed
- */
-$mq-base-font-size:       $s-core-font-size;
-$mq-breakpoints:          $s-breakpoints;
-$mq-show-breakpoints:     if($s-config__env == "dev" or $s-config__env == "cms", (map-keys($s-breakpoints)), ()) !default;
-
+// ---------------------------------------------------------
+// CAUTION: VENDOR OVERRIDE by HaitiCSS
+// ---------------------------------------------------------
+// SASS-MQ Variables should match the HaitiCSS configuration
+$mq-base-font-size:       $s-core__font-size;
+$mq-breakpoints:          $s-breakpoints !default;
+$mq-show-breakpoints:     if($s-config__env == "dev" or $s-config__env == "cms", (map-keys($mq-breakpoints)), ()) !default;
+// ---------------------------------------------------------
+// mq-px2em function is overridden to allow scoped config
+// the override is made into the imported file
 @import 'vendor/sass-mq';
+// ---------------------------------------------------------

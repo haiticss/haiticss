@@ -9,8 +9,8 @@
 
 // Reset variables
 
-$g-reset__spacing--vertical:        $s-space !default;
-$g-reset__spacing--horizontal:      $s-space !default;
+$g-reset__spacing--vertical:        s-core-px-to-rem($s-space) !default;
+$g-reset__spacing--horizontal:      s-core-px-to-rem($s-space) !default;
 
 
 // Reset content
