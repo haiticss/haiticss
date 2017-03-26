@@ -43,7 +43,7 @@ $o-block__mod-alignments:               (left, center, right) !default;
 }
 
 @mixin o-block__img($_space-value: $o-block__space) {
-  margin-bottom: $_space-value;
+  margin-bottom: s-core-px-to-rem($_space-value);
 }
 
 @mixin o-block__body() {

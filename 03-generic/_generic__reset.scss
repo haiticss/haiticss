@@ -9,8 +9,8 @@
 
 // Reset variables
 
-$g-reset__spacing--vertical:        s-core-px-to-rem($s-space) !default;
-$g-reset__spacing--horizontal:      s-core-px-to-rem($s-space) !default;
+$g-reset__spacing--vertical:        $s-space !default;
+$g-reset__spacing--horizontal:      $s-space !default;
 
 
 // Reset content
@@ -84,7 +84,7 @@ figure,
 hr,
 table,
 fieldset {
-  margin-bottom: $g-reset__spacing--vertical;
+  margin-bottom: s-core-px-to-rem($g-reset__spacing--vertical);
 }
 
 
@@ -95,5 +95,5 @@ fieldset {
 dd,
 ol,
 ul {
-  margin-left: $g-reset__spacing--horizontal;
+  margin-left: s-core-px-to-rem($g-reset__spacing--horizontal);
 }

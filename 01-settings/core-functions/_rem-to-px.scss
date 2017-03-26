@@ -10,15 +10,15 @@
  */
 
 
-@function s-core-rem-to-px($value, $rounded: true, $root-font-size: $s-core__font-size) {
+@function s-core-rem-to-px($_value, $_rounded: true, $_root-font-size: $s-core__font-size) {
 
-  @if ($value == 0) {
+  @if ($_value == 0) {
     @return 0;
   }
 
   @each $_given-values in
-    $value
-    $root-font-size {
+    $_value
+    $_root-font-size {
 
     @if (type-of($_given-values) != number) {
       @error "s-core-rem-to-px: `#{$_given-values}` needs to be a number.";
@@ -26,20 +26,20 @@
 
   }
 
-  @if (unit($value) != "rem") {
-    @error "s-core-rem-to-px: `#{$value}` needs to be a rem value.";
+  @if (unit($_value) != "rem") {
+    @error "s-core-rem-to-px: `#{$_value}` needs to be a rem value.";
   }
 
-  @if (unit($root-font-size) != "px") {
-    @error "s-core-rem-to-px: `#{$root-font-size}` needs to be a pixel value.";
+  @if (unit($_root-font-size) != "px") {
+    @error "s-core-rem-to-px: `#{$_root-font-size}` needs to be a pixel value.";
   }
 
-  $value-px: ($root-font-size * s-core-strip-units($value)) * 1px;
+  $_value-px: ($_root-font-size * s-core-strip-units($_value)) * 1px;
 
-  @if ($rounded != true) {
-    @return $value-px;
+  @if ($_rounded != true) {
+    @return $_value-px;
   }
 
-  @return round($value-px);
+  @return round($_value-px);
 
 }

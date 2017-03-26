@@ -12,16 +12,16 @@
 
 // Convert px to em relative to the second argument value
 
-@function s-core-px-to-em($value, $reference-value-rem, $root-font-size: $s-core__font-size) {
+@function s-core-px-to-em($_value, $_reference-value-rem, $_root-font-size: $s-core__font-size) {
 
-  @if ($value == 0) {
+  @if ($_value == 0) {
     @return 0;
   }
 
   @each $_given-values in
-    $value
-    $reference-value-rem
-    $root-font-size {
+    $_value
+    $_reference-value-rem
+    $_root-font-size {
 
     @if (type-of($_given-values) != number) {
       @error "s-core-px-to-em: `#{$_given-values}` needs to be a number.";
@@ -29,24 +29,24 @@
 
   }
 
-  @if (unit($value) != "px") {
-    @error "s-core-px-to-em: `#{$value}` needs to be a pixel value.";
+  @if (unit($_value) != "px") {
+    @error "s-core-px-to-em: `#{$_value}` needs to be a pixel value.";
   }
 
-  @if (unit($reference-value-rem) != "rem") {
-    @error "s-core-px-to-em: `#{$reference-value-rem}` needs to be a rem value.";
+  @if (unit($_reference-value-rem) != "rem") {
+    @error "s-core-px-to-em: `#{$_reference-value-rem}` needs to be a rem value.";
   }
 
-  @if (unit($root-font-size) != "px") {
-    @error "s-core-px-to-em: `#{$root-font-size}` needs to be a pixel value.";
+  @if (unit($_root-font-size) != "px") {
+    @error "s-core-px-to-em: `#{$_root-font-size}` needs to be a pixel value.";
   }
 
   // Avoid relative units if the project is scoped
 
   @if ($s-config__scoped) {
-    @return $value;
+    @return $_value;
   }
 
-  $reference-value-px: s-core-rem-to-px($reference-value-rem, false, $root-font-size);
-  @return s-core-strip-units($value / s-core-strip-units($reference-value-px)) * 1em;
+  $reference-value-px: s-core-rem-to-px($_reference-value-rem, false, $_root-font-size);
+  @return s-core-strip-units($_value / s-core-strip-units($reference-value-px)) * 1em;
 }

@@ -10,31 +10,42 @@
  */
 
 
-@function s-core-px-to-rem($value, $root-font-size: $s-core__font-size) {
+@function s-core-px-to-rem($_value, $_root-font-size: $s-core__font-size) {
 
-  @if ($value == 0) {
+  @if ($_value == 0) {
     @return 0;
   }
 
-  @each $_given-values in
-    $value
-    $root-font-size {
+  // Check value content
 
-    @if (type-of($_given-values) != number) {
-      @error "s-core-px-to-rem: `#{$_given-values}` needs to be a number.";
-    }
-
-    @if (unit($_given-values) != "px") {
-      @error "s-core-px-to-rem: `#{$_given-values}` needs to be a pixel value.";
-    }
-
+  @if (type-of($_value) != number) {
+    @error "s-core-px-to-rem: `#{$_value}` needs to be a number.";
   }
+
+  @if (unit($_value) == "rem") {
+    @return $_value;
+  }
+
+  @if (unit($_value) != "px") {
+    @error "s-core-px-to-rem: `#{$_value}` needs to be a pixel value.";
+  }
+
+  // Check root-font-size content
+
+  @if (type-of($_root-font-size) != number) {
+    @error "s-core-px-to-rem: `#{$_root-font-size}` needs to be a number.";
+  }
+
+  @if (unit($_root-font-size) != "px") {
+    @error "s-core-px-to-rem: `#{$_root-font-size}` needs to be a pixel value.";
+  }
+
   // Avoid relative units if the project is scoped
 
   @if ($s-config__scoped) {
-    @return $value;
+    @return $_value;
   }
 
-  @return s-core-strip-units($value) / s-core-strip-units($root-font-size) * 1rem;
+  @return s-core-strip-units($_value) / s-core-strip-units($_root-font-size) * 1rem;
 
 }
