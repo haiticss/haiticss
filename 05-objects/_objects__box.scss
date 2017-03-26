@@ -1,0 +1,70 @@
+
+/* -------------------------------------------------------------------------
+ * BOX
+ *
+ * The box object simply boxes off content. Extend with cosmetic styles in the
+ * Components layer.
+ *
+ * Params:
+ * SPACE .............................. Global object padding
+ *
+ */
+
+
+// Object variables
+// --------------------------------------------------
+
+// Object toggling
+
+$o-box--enabled:                        true !default;
+
+// Object Params
+
+$o-box__space:                          $g-reset__spacing--vertical !default;
+
+// Modifiers Spaces
+
+$o-box__mod-spaces--enabled:            true !default;
+$o-box__mod-spaces:                     $s-spaces !default;
+
+
+// Object as a mixin
+// --------------------------------------------------
+
+/* [1]. So we can apply the `.o-box` class to naturally-inline elements. */
+
+@mixin o-box($_space-value: $o-box__space) {
+  display: block; /* [1] */
+  padding: s-core-px-to-rem($_space-value);
+  @include t-clearfix();
+
+  > :last-child {
+    margin-bottom: 0;
+  }
+}
+
+
+// Object selector output
+// --------------------------------------------------
+
+@if ($o-box--enabled) {
+  .o-box {
+    @include o-box();
+  }
+}
+
+
+// Space modifiers output
+// --------------------------------------------------
+
+@mixin o-box__mod-space($_space-name: "none", $_space-value: 0) {
+  .o-box--space-#{$_space-name} {
+    padding: s-core-px-to-rem($_space-value);
+  }
+}
+
+@if ($o-box--enabled and $o-box__mod-spaces--enabled) {
+  @each $_space-name, $_space-value in $o-box__mod-spaces {
+    @include o-box__mod-space($_space-name, $_space-value);
+  }
+}
