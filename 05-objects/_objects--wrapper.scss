@@ -1,0 +1,114 @@
+
+/* -------------------------------------------------------------------------
+ * WRAPPER
+ *
+ * Page-level constraining and wrapping elements.
+ *
+ */
+
+$o-wrapper-enabled:                     true !default;
+
+$o-wrapper-spaces:                      map_remove($s-spaces, large, huge) !default;
+$o-wrapper-default-space:               medium !default;
+$o-wrapper-include-modifiers-space:     true !default;
+
+$o-wrapper-bp-size-diff:                $s-space-large !default;
+$o-wrapper-include-modifiers-bp-from:   true !default;
+$o-wrapper-include-modifiers-bp-to:     true !default;
+$o-wrapper-bp-sizes: (
+  xs:                       map-get($s-breakpoints, xs) - $o-wrapper-bp-size-diff,
+  sm:                       map-get($s-breakpoints, sm) - $o-wrapper-bp-size-diff,
+  sml:                      map-get($s-breakpoints, sml) - $o-wrapper-bp-size-diff,
+  md:                       map-get($s-breakpoints, md) - $o-wrapper-bp-size-diff,
+  lg:                       map-get($s-breakpoints, lg) - $o-wrapper-bp-size-diff,
+  xl:                       map-get($s-breakpoints, xl) - $o-wrapper-bp-size-diff,
+  xxl:                      map-get($s-breakpoints, xxl) - $o-wrapper-bp-size-diff,
+  xxxl:                     map-get($s-breakpoints, xxxl) - $o-wrapper-bp-size-diff,
+) !default;
+
+
+@if ($o-wrapper-enabled) {
+
+  .o-wrapper {
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: map-get($o-wrapper-spaces, $o-wrapper-default-space);
+    padding-left:  map-get($o-wrapper-spaces, $o-wrapper-default-space);
+    @include t-clearfix;
+
+    @each $bp-name, $bp-size in $o-wrapper-bp-sizes {
+      @include mq($from: $bp-name) {
+        max-width: map-get($o-wrapper-bp-sizes, $bp-name);
+        @if ($bp-name == xs) {
+          padding-right: 0;
+          padding-left:  0;
+        }
+      }
+    }
+
+  }
+
+}
+
+
+
+// Space modifiers
+// --------------------------------------------------
+
+@mixin o-wrapper--space($space-name: none, $space-value: 0) {
+  .o-wrapper--space-#{$space-name} {
+    padding-right: $space-value;
+    padding-left:  $space-value;
+  }
+}
+
+@if ($o-wrapper-enabled and $o-wrapper-include-modifiers-space) {
+  @each $space-name, $space-value in $o-wrapper-spaces {
+    @if ($space-name != $o-wrapper-default-space) {
+      @include o-wrapper--space($space-name, $space-value);
+    }
+  }
+}
+
+
+// Size modifiers (from)
+// --------------------------------------------------
+
+@mixin o-wrapper--from($bp-name: xs, $bp-size: map-get($o-wrapper-bp-sizes, xs)) {
+  @each $s-bp-name, $s-bp-size in $s-breakpoints {
+    @if (map-get($s-breakpoints, $bp-name) <= $s-bp-size) {
+      @include mq($from: $s-bp-name) {
+        .o-wrapper--from\@#{$bp-name} {
+          max-width: map-get($o-wrapper-bp-sizes, $s-bp-name);
+        }
+      }
+    }
+  }
+}
+
+@if ($o-wrapper-enabled and $o-wrapper-include-modifiers-bp-from) {
+  @each $bp-name, $bp-size in map_remove($o-wrapper-bp-sizes, xxxl) {
+    @include o-wrapper--from($bp-name, $bp-size);
+  }
+}
+
+// Size modifiers (to)
+// --------------------------------------------------
+
+@mixin o-wrapper--to($bp-name: xs, $bp-size: map-get($o-wrapper-bp-sizes, xs)) {
+  @each $s-bp-name, $s-bp-size in $s-breakpoints {
+    @if (map-get($s-breakpoints, $bp-name) < $s-bp-size) {
+      @include mq($from: $s-bp-name) {
+        .o-wrapper--to\@#{$bp-name} {
+          max-width: $bp-size;
+        }
+      }
+    }
+  }
+}
+
+@if ($o-wrapper-enabled and $o-wrapper-include-modifiers-bp-to) {
+  @each $bp-name, $bp-size in map_remove($o-wrapper-bp-sizes, xs) {
+    @include o-wrapper--to($bp-name, $bp-size);
+  }
+}
