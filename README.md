@@ -14,8 +14,6 @@ Main differences from [inuitcss](https://github.com/inuitcss/inuitcss) are:
 * Feature toggling variables to include/exclude any object or utility.
 * Extended objects and utilities configuration variables to toggle and configure some modifiers groups and unused CSS output.
 
-
-
 ### References
 
 * [BEM Naming](http://getbem.com/naming/)
