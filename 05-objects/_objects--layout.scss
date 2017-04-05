@@ -65,11 +65,11 @@ $o-layout-include-modifiers-reverse:      true !default;
 $o-layout-include-modifiers-alignment-v:  true !default;
 $o-layout-include-modifiers-alignment-h:  true !default;
 
-@mixin $o-layout-conf($options: ()){
+@mixin o-layout-conf($options: ()) {
   $defaults: (
-          "enable": true,
-          "spaces": map_remove($s-spaces, large, huge),
-          "spaces-include": true
+    "enable": true,
+    "spaces": map_remove($s-spaces, large, huge),
+    "spaces-include": true
   );
   $options: map_merge($defaults, $options);
 
@@ -131,9 +131,11 @@ $o-layout-include-modifiers-alignment-h:  true !default;
 
 // Space modifiers
 // --------------------------------------------------
+
 @mixin o-layout--space($space-name: none, $space-value: 0) {
   .o-layout--space-#{$space-name} {
     margin-left: -$space-value;
+
     > .o-layout__item {
       padding-left: $space-value;
     }
@@ -142,6 +144,7 @@ $o-layout-include-modifiers-alignment-h:  true !default;
 
 @if ($o-layout-enabled and $o-layout-include-modifiers-space) {
   @each $space-name, $space-value in $o-layout-spaces {
+
     @if ($space-name != $o-layout-default-space) {
       @include o-layout--space($space-name, $space-value);
     }
@@ -151,11 +154,13 @@ $o-layout-include-modifiers-alignment-h:  true !default;
 
 // Reverse modifier
 // --------------------------------------------------
+
 @if ($o-layout-enabled and $o-layout-include-modifiers-reverse) {
 
   // Reverse the rendered order of the grid system.
   .o-layout--reverse {
     direction: rtl;
+
     > .o-layout__item {
       direction: ltr;
       text-align: left;
@@ -167,6 +172,7 @@ $o-layout-include-modifiers-alignment-h:  true !default;
 
 // Vertical alignments
 // --------------------------------------------------
+
 @if ($o-layout-enabled and $o-layout-include-modifiers-alignment-v) {
 
   // Align all grid items to the middles of each other.
@@ -188,11 +194,13 @@ $o-layout-include-modifiers-alignment-h:  true !default;
 
 // Horizontal alignments
 // --------------------------------------------------
+
 @if ($o-layout-enabled and $o-layout-include-modifiers-alignment-h) {
 
   // Fill up the layout system from the centre.
   .o-layout--center {
     text-align: center;
+
     > .o-layout__item {
       text-align: left;
     }
@@ -201,6 +209,7 @@ $o-layout-include-modifiers-alignment-h:  true !default;
   // Fill up the layout system from the right-hand side.
   .o-layout--right {
     text-align: right;
+
     > .o-layout__item {
       text-align: left;
     }

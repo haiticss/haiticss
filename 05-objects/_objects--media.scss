@@ -16,9 +16,9 @@ $o-media-include-modifiers-reverse:     true !default;
 
 
 @if ($o-media-enabled) {
-
   .o-media {
     @include t-clearfix;
+
     display: block;
   }
 
@@ -46,7 +46,6 @@ $o-media-include-modifiers-reverse:     true !default;
 }
 
 
-
 // Space modifiers
 // --------------------------------------------------
 
@@ -55,11 +54,12 @@ $o-media-include-modifiers-reverse:     true !default;
     > .o-media__img {
       margin-right: $space-value;
     }
+
     @if ($o-media-include-modifiers-reverse) {
       &.o-media--reverse {
         > .o-media__img {
           margin-right: 0;
-          margin-left:  $space-value;
+          margin-left: $space-value;
         }
       }
     }
@@ -68,6 +68,7 @@ $o-media-include-modifiers-reverse:     true !default;
 
 @if ($o-media-enabled and $o-media-include-modifiers-space) {
   @each $space-name, $space-value in $o-media-spaces {
+
     @if ($space-name != $o-media-default-space) {
       @include o-media--space($space-name, $space-value);
     }
@@ -77,8 +78,8 @@ $o-media-include-modifiers-reverse:     true !default;
 
 // Reverse modifier
 // --------------------------------------------------
-@if ($o-media-enabled and $o-media-include-modifiers-reverse) {
 
+@if ($o-media-enabled and $o-media-include-modifiers-reverse) {
   .o-media--reverse {
     > .o-media__img {
       float: right;

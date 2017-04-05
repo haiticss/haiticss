@@ -13,6 +13,7 @@ $o-ratio-include-modifiers-bp:          true !default;
 
 // Mixin to create all ratios variants
 // -------------------------------------------
+
 @mixin o-ratios($breakpoint: null, $unset: false) {
 
   // Creates the main object ratio using 1 by 1
@@ -31,12 +32,13 @@ $o-ratio-include-modifiers-bp:          true !default;
   .o-ratio--golden-h#{$breakpoint} {
     @include t-aspect-ratio-override($s-golden-ratio, 1);
   }
+
   .o-ratio--golden-v#{$breakpoint} {
     @include t-aspect-ratio-override(1, $s-golden-ratio);
   }
 
-  // Generate the ratio unset
   @if ($unset == true) {
+    // Generate the ratio unset
     .o-ratio--unset#{$breakpoint} {
       @include t-aspect-ratio-unset();
     }
@@ -45,6 +47,7 @@ $o-ratio-include-modifiers-bp:          true !default;
 
 // Generate the main ratio selectors
 // -------------------------------------------
+
 @if ($o-ratio-enabled) {
 
   @include o-ratios();
@@ -54,6 +57,7 @@ $o-ratio-include-modifiers-bp:          true !default;
 
 // Generate the ratios variants for each breakpoint
 // -------------------------------------------
+
 @if ($o-ratio-enabled and $o-ratio-include-modifiers-bp) {
 
   @each $bp-name, $bp-value in map_remove($s-breakpoints, xxs) {
