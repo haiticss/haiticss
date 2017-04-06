@@ -1,4 +1,3 @@
-
 /* -------------------------------------------------------------------------
  * BLOCK
  *
@@ -16,40 +15,55 @@
 
 // Object toggling
 
-$o-block--enabled:                      true !default;
+$o-block--enabled:                        true !default;
 
 // Object Params
 
-$o-block__space:                        $g-reset__spacing--vertical !default;
-$o-block__alignment:                    center !default;
+$o-block__space:                          $g-reset__spacing--vertical !default;
+$o-block__alignment:                      center !default;
 
 // Modifiers Spaces
 
-$o-block__mod-spaces--enabled:          true !default;
-$o-block__mod-spaces:                   $s-spaces !default;
+$o-block__mod-spaces--enabled:            true !default;
+$o-block__mod-spaces:                     $s-spaces !default;
 
 // Modifiers Alignments
 
-$o-block__mod-alignments--enabled:      true !default;
-$o-block__mod-alignments:               (left, center, right) !default;
+$o-block__mod-alignments--enabled:        true !default;
+$o-block__mod-alignments:                 (left, center, right) !default;
+
+// Modifiers Stretch
+
+$o-block__mod-stretch--enabled:           true !default;
 
 
 // Object as a mixin
 // --------------------------------------------------
 
-@mixin o-block($_alignment-direction: $o-block__alignment) {
+@mixin o-block($_alignment-direction: $o-block__alignment, $_space-value: $o-block__space) {
   display: block;
   text-align: $_alignment-direction;
+
+  > * {
+    margin-bottom: s-core-px-to-rem($_space-value);
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
 }
 
-@mixin o-block__img($_space-value: $o-block__space) {
-  margin-bottom: s-core-px-to-rem($_space-value);
+@mixin o-block__header() {
+  display: block;
 }
 
 @mixin o-block__body() {
   display: block;
 }
 
+@mixin o-block__footer() {
+  display: block;
+}
 
 // Object selector output
 // --------------------------------------------------
@@ -59,21 +73,24 @@ $o-block__mod-alignments:               (left, center, right) !default;
     @include o-block();
   }
 
-  .o-block__img {
-    @include o-block__img();
+  .o-block__header {
+    @include o-block__header();
   }
 
   .o-block__body {
     @include o-block__body();
   }
-}
 
+  .o-block__footer {
+    @include o-block__footer();
+  }
+}
 
 // Space modifiers output
 // --------------------------------------------------
 
 @mixin o-block__mod-space($_space-name: "none", $_space-value: 0) {
-  .o-block--space-#{$_space-name} > .o-block__img {
+  .o-block--space-#{$_space-name} > *:not(:last-child) {
     margin-bottom: s-core-px-to-rem($_space-value);
   }
 }
@@ -83,7 +100,6 @@ $o-block__mod-alignments:               (left, center, right) !default;
     @include o-block__mod-space($_space-name, $_space-value);
   }
 }
-
 
 // Alignment modifiers
 // --------------------------------------------------
@@ -98,4 +114,33 @@ $o-block__mod-alignments:               (left, center, right) !default;
   @each $_alignment-direction in $o-block__mod-alignments {
     @include o-block__mod-alignment($_alignment-direction);
   }
+}
+
+// Stretch modifier output
+// --------------------------------------------------
+
+@mixin o-block--stretch() {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin o-block__body--stretch() {
+  flex-grow: 1;
+  flex-shrink: 0;
+  flex-basis: auto;
+}
+
+@mixin o-block__mod-stretch() {
+  .o-block--stretch {
+    @include o-block--stretch();
+
+    > .o-block__body {
+      @include o-block__body--stretch();
+    }
+  }
+}
+
+@if ($o-block--enabled and $o-block__mod-stretch--enabled) {
+  @include o-block__mod-stretch();
 }
