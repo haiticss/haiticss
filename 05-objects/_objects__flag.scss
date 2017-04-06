@@ -16,26 +16,27 @@
 
 // Object toggling
 
-$o-flag--enabled: true !default;
+$o-flag--enabled:                     true !default;
 
 // Object Params
 
-$o-flag__space: $g-reset__spacing--horizontal !default;
-$o-flag__alignment: middle !default;
+$o-flag__space:                       $g-reset__spacing--horizontal !default;
+$o-flag__alignment:                   middle !default;
 
 // Modifiers Spaces
 
-$o-flag__mod-spaces--enabled: true !default;
-$o-flag__mod-spaces: map_remove($s-spaces, large, huge) !default;
+$o-flag__mod-spaces--enabled:         true !default;
+$o-flag__mod-spaces:                  map_remove($s-spaces, large, huge) !default;
 
 // Modifiers Alignments
 
-$o-flag__mod-alignments--enabled: true !default;
-$o-flag__mod-alignments: (top, middle, bottom) !default;
+$o-flag__mod-alignments--enabled:     true !default;
+$o-flag__mod-alignments:              (top, middle, bottom) !default;
 
 // Modifier Reverse
 
-$o-flag__mod-reverse--enabled: true !default;
+$o-flag__mod-reverse--enabled:        true !default;
+
 
 // Object as a mixin
 // --------------------------------------------------
@@ -126,18 +127,30 @@ $o-flag__mod-reverse--enabled: true !default;
 // Reverse modifier
 // --------------------------------------------------
 
+@mixin o-flag--reverse() {
+  direction: rtl;
+}
+
+@mixin o-flag__body--reverse() {
+  direction: ltr;
+}
+
+@mixin o-flag__img--reverse($_space-value: $o-flag__space) {
+  direction: ltr;
+  padding-right: 0;
+  padding-left: s-core-px-to-rem($_space-value);
+}
+
 @mixin o-flag__mod-reverse() {
   .o-flag--reverse {
-    direction: rtl;
+    @include o-flag--reverse();
 
-    > .o-flag__img,
     > .o-flag__body {
-      direction: ltr;
+      @include o-flag__body--reverse;
     }
 
     > .o-flag__img {
-      padding-right: 0;
-      padding-left: s-core-px-to-rem($o-flag__space);
+      @include o-flag__img--reverse;
     }
   }
 }
