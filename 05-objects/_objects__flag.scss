@@ -109,7 +109,7 @@ $o-flag__mod-reverse--enabled:        true !default;
 // Alignment modifiers
 // --------------------------------------------------
 
-@mixin o-block__mod-alignment($_vertical-alignment: middle) {
+@mixin o-flag__mod-alignment($_vertical-alignment: middle) {
   .o-flag--#{$_vertical-alignment} {
     > .o-flag__img,
     > .o-flag__body {
@@ -120,7 +120,7 @@ $o-flag__mod-reverse--enabled:        true !default;
 
 @if ($o-flag--enabled and $o-flag__mod-alignments--enabled) {
   @each $_vertical-alignment in $o-flag__mod-alignments {
-    @include o-block__mod-alignment($_vertical-alignment);
+    @include o-flag__mod-alignment($_vertical-alignment);
   }
 }
 
