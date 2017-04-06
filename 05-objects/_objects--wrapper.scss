@@ -28,20 +28,20 @@ $o-wrapper-bp-sizes: (
 
 
 @if ($o-wrapper-enabled) {
-
   .o-wrapper {
     margin-right: auto;
     margin-left: auto;
     padding-right: map-get($o-wrapper-spaces, $o-wrapper-default-space);
-    padding-left:  map-get($o-wrapper-spaces, $o-wrapper-default-space);
+    padding-left: map-get($o-wrapper-spaces, $o-wrapper-default-space);
     @include t-clearfix;
 
     @each $bp-name, $bp-size in $o-wrapper-bp-sizes {
       @include mq($from: $bp-name) {
         max-width: map-get($o-wrapper-bp-sizes, $bp-name);
+
         @if ($bp-name == xs) {
           padding-right: 0;
-          padding-left:  0;
+          padding-left: 0;
         }
       }
     }
@@ -51,19 +51,19 @@ $o-wrapper-bp-sizes: (
 }
 
 
-
 // Space modifiers
 // --------------------------------------------------
 
 @mixin o-wrapper--space($space-name: none, $space-value: 0) {
   .o-wrapper--space-#{$space-name} {
     padding-right: $space-value;
-    padding-left:  $space-value;
+    padding-left: $space-value;
   }
 }
 
 @if ($o-wrapper-enabled and $o-wrapper-include-modifiers-space) {
   @each $space-name, $space-value in $o-wrapper-spaces {
+
     @if ($space-name != $o-wrapper-default-space) {
       @include o-wrapper--space($space-name, $space-value);
     }
@@ -76,6 +76,7 @@ $o-wrapper-bp-sizes: (
 
 @mixin o-wrapper--from($bp-name: xs, $bp-size: map-get($o-wrapper-bp-sizes, xs)) {
   @each $s-bp-name, $s-bp-size in $s-breakpoints {
+
     @if (map-get($s-breakpoints, $bp-name) <= $s-bp-size) {
       @include mq($from: $s-bp-name) {
         .o-wrapper--from\@#{$bp-name} {
@@ -97,6 +98,7 @@ $o-wrapper-bp-sizes: (
 
 @mixin o-wrapper--to($bp-name: xs, $bp-size: map-get($o-wrapper-bp-sizes, xs)) {
   @each $s-bp-name, $s-bp-size in $s-breakpoints {
+
     @if (map-get($s-breakpoints, $bp-name) < $s-bp-size) {
       @include mq($from: $s-bp-name) {
         .o-wrapper--to\@#{$bp-name} {

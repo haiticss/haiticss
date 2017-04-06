@@ -17,8 +17,8 @@ $g-box-sizing:          border-box !default;
   * {
     box-sizing: $g-box-sizing;
 
-    &:before,
-    &:after {
+    &::before,
+    &::after {
       box-sizing: inherit;
     }
 

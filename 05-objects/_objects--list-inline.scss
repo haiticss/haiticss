@@ -9,12 +9,10 @@
 $o-list-inline-enabled:                   true !default;
 
 @if ($o-list-inline-enabled) {
-
   .o-list-inline {
     margin-left: 0;
     list-style: none;
   }
-
 
   .o-list-inline__item {
     display: inline-block;

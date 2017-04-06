@@ -14,10 +14,10 @@ $o-table-include-modifiers-space:       true !default;
 $o-table-include-modifiers-fixed:       true !default;
 
 
-@if($o-table-enabled) {
-
+@if ($o-table-enabled) {
   .o-table {
     width: 100%;
+
     th,
     td {
       padding: map-get($o-table-spaces, $o-table-default-space);
@@ -25,7 +25,6 @@ $o-table-include-modifiers-fixed:       true !default;
   }
 
 }
-
 
 
 // Space modifiers
@@ -42,6 +41,7 @@ $o-table-include-modifiers-fixed:       true !default;
 
 @if ($o-table-enabled and $o-table-include-modifiers-space) {
   @each $space-name, $space-value in $o-table-spaces {
+
     @if ($space-name != $o-table-default-space) {
       @include o-table--space($space-name, $space-value);
     }
@@ -51,15 +51,16 @@ $o-table-include-modifiers-fixed:       true !default;
 
 // Fixed modifier
 // --------------------------------------------------
-/**
- * `table-layout: fixed` forces all cells within a table to occupy the same
- * width as each other. This also has performance benefits: because the browser
- * does not need to (re)calculate cell dimensions based on content it discovers,
- * the table can be rendered very quickly. Further reading:
- * https://developer.mozilla.org/en-US/docs/Web/CSS/table-layout#Values
- */
 
 @if ($o-table-enabled and $o-table-include-modifiers-fixed) {
+  /**
+   * `table-layout: fixed` forces all cells within a table to occupy the same
+   * width as each other. This also has performance benefits: because the browser
+   * does not need to (re)calculate cell dimensions based on content it discovers,
+   * the table can be rendered very quickly. Further reading:
+   * https://developer.mozilla.org/en-US/docs/Web/CSS/table-layout#Values
+   */
+
   .o-table--fixed {
     table-layout: fixed;
   }
