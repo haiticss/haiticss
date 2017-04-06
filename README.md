@@ -1,5 +1,7 @@
 # :pineapple: haiticss
 
+[![Build Status](https://travis-ci.org/haiticss/haiticss.svg?branch=master)](https://travis-ci.org/haiticss/haiticss)
+
 Just another baseline perspective to wear any project with the [ITCSS](http://itcss.io/) architecture. Mainly based on the excellent project [inuitcss](https://github.com/inuitcss/inuitcss) by [Harry Roberts](https://csswizardry.com/), from where I found my best suitable starting point.
 
 The idea to create this project, comes from the necessity to adding some modifications and missing features on INUIT that probably will not fit into the original project roadmap.
