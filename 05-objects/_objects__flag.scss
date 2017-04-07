@@ -71,7 +71,7 @@ $o-flag__mod-reverse--enabled:        true !default;
 // Object selector output
 // --------------------------------------------------
 
-@if ($o-flag-enabled) {
+@if ($o-flag--enabled) {
   .o-flag {
     @include o-flag();
   }
@@ -89,13 +89,15 @@ $o-flag__mod-reverse--enabled:        true !default;
 // --------------------------------------------------
 
 @mixin o-flag__mod-space($_space-name: "none", $_space-value: 0) {
-  .o-flag--space-#{$_space-name} > .o-flag__img {
-    padding-right: s-core-px-to-rem($_space-value);
-  }
+  .o-flag--space-#{$_space-name} {
+    > .o-flag__img {
+      padding-right: s-core-px-to-rem($_space-value);
+    }
 
-  @if ($o-flag__mod-reverse--enabled) {
-    &.o-flag--reverse > .o-flag__img {
-      padding-left: s-core-px-to-rem($_space-value);
+    @if ($o-flag__mod-reverse--enabled) {
+      &.o-flag--reverse > .o-flag__img {
+        padding-left: s-core-px-to-rem($_space-value);
+      }
     }
   }
 }

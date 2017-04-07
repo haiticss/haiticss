@@ -78,13 +78,15 @@ $o-media__mod-reverse--enabled:         true !default;
 // --------------------------------------------------
 
 @mixin o-media--space($_space-name: "none", $_space-value: 0) {
-  .o-media--space-#{$_space-name} > .o-media__img {
-    margin-right: s-core-px-to-rem($_space-value);
-  }
+  .o-media--space-#{$_space-name} {
+    > .o-media__img {
+      margin-right: s-core-px-to-rem($_space-value);
+    }
 
-  @if ($o-media__mod-reverse--enabled) {
-    &.o-media--reverse > .o-media__img {
-      margin-left: s-core-px-to-rem($_space-value);
+    @if ($o-media__mod-reverse--enabled) {
+      &.o-media--reverse > .o-media__img {
+        margin-left: s-core-px-to-rem($_space-value);
+      }
     }
   }
 }
