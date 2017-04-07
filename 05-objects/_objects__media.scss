@@ -1,0 +1,117 @@
+/* -------------------------------------------------------------------------
+ * MEDIA
+ *
+ * Place any image- and text-like content side-by-side, as per:
+ * http://www.stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code
+ *
+ * Params:
+ * SPACE .............................. Horizontal separation between image and body
+ *
+ */
+
+// Object variables
+// --------------------------------------------------
+
+// Object toggling
+
+$o-media--enabled:                      true !default;
+
+// Object Params
+
+$o-media__space:                        $g-reset__spacing--horizontal !default;
+
+// Modifiers Spaces
+
+$o-media__mod-spaces--enabled:          true !default;
+$o-media__mod-spaces:                   map_remove($s-spaces, large, huge) !default;
+
+// Modifier Reverse
+
+$o-media__mod-reverse--enabled:         true !default;
+
+
+// Object as a mixin
+// --------------------------------------------------
+
+@mixin o-media() {
+  display: block;
+  @include t-clearfix;
+}
+
+@mixin o-media__img($_space-value: $o-media__space) {
+  float: left;
+  margin-right: s-core-px-to-rem($_space-value);
+
+  > img {
+    display: block;
+  }
+}
+
+@mixin o-media__body() {
+  overflow: hidden;
+  display: block;
+
+  &,
+  > :last-child {
+    margin-bottom: 0;
+  }
+}
+
+// Object selector output
+// --------------------------------------------------
+
+@if ($o-media--enabled) {
+  .o-media {
+    @include o-media();
+  }
+
+  .o-media__img {
+    @include o-media__img();
+  }
+
+  .o-media__body {
+    @include o-media__body();
+  }
+}
+
+// Space modifiers
+// --------------------------------------------------
+
+@mixin o-media--space($_space-name: "none", $_space-value: 0) {
+  .o-media--space-#{$_space-name} > .o-media__img {
+    margin-right: s-core-px-to-rem($_space-value);
+  }
+
+  @if ($o-media__mod-reverse--enabled) {
+    &.o-media--reverse > .o-media__img {
+      margin-left: s-core-px-to-rem($_space-value);
+    }
+  }
+}
+
+@if ($o-media--enabled and $o-media__mod-spaces--enabled) {
+  @each $_space-name, $_space-value in $o-media__mod-spaces {
+    @include o-media--space($_space-name, $_space-value);
+  }
+}
+
+// Reverse modifier
+// --------------------------------------------------
+
+@mixin o-media__img--reverse($_space-value: $o-media__space) {
+  float: right;
+  margin-right: 0;
+  margin-left: s-core-px-to-rem($_space-value);
+}
+
+@mixin o-media__mod-reverse() {
+  .o-media--reverse {
+    > .o-media__img {
+      @include o-media__img--reverse;
+    }
+  }
+}
+
+@if ($o-media--enabled and $o-media__mod-reverse--enabled) {
+  @include o-media__mod-reverse();
+}
