@@ -38,11 +38,6 @@ $o-wrapper-bp-sizes: (
     @each $bp-name, $bp-size in $o-wrapper-bp-sizes {
       @include mq($from: $bp-name) {
         max-width: map-get($o-wrapper-bp-sizes, $bp-name);
-
-        @if ($bp-name == xs) {
-          padding-right: 0;
-          padding-left: 0;
-        }
       }
     }
 

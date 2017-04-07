@@ -1,0 +1,86 @@
+/* -------------------------------------------------------------------------
+ * TABLE
+ *
+ * A simple object for manipulating the structure of HTML `table`s.
+ *
+ * Params:
+ * SPACE .............................. Horizontal separation between cells
+ *
+ */
+
+// Object variables
+// --------------------------------------------------
+
+// Object toggling
+
+$o-table--enabled:                      true !default;
+
+// Object Params
+
+$o-table__space:                        none !default;
+
+// Modifiers Spaces
+
+$o-table_mod-spaces--enabled:           true !default;
+$o-table__mod-spaces:                   map_remove($s-spaces, large, huge) !default;
+
+// Modifiers Fixed
+
+$o-table__mod-fixed--enabled:           true !default;
+
+// Object as a mixin
+// --------------------------------------------------
+
+@mixin o-table() {
+  width: 100%;
+}
+
+@mixin o-table__cell($_space-value: $o-table__space) {
+  padding: s-core-px-to-rem($_space-value);
+}
+
+// Object selector output
+// --------------------------------------------------
+
+@if ($o-table--enabled) {
+  .o-table {
+    @include o-table();
+
+    th,
+    td {
+      @include o-table__cell();
+    }
+  }
+
+}
+
+// Space modifiers
+// --------------------------------------------------
+
+@mixin o-table__mod-space($_space-name: "none", $_space-value: 0) {
+  .o-table--space-#{$_space-name} {
+    th,
+    td {
+      padding: $_space-value;
+    }
+  }
+}
+
+@if ($o-table--enabled and $o-table_mod-spaces--enabled) {
+  @each $_space-name, $_space-value in $o-table__mod-spaces {
+    @include o-table__mod-space($_space-name, $_space-value);
+  }
+}
+
+// Fixed modifier
+// --------------------------------------------------
+
+@mixin o-table--fixed() {
+  table-layout: fixed;
+}
+
+@if ($o-table--enabled and $o-table__mod-fixed--enabled) {
+  .o-table--fixed {
+    @include o-table--fixed;
+  }
+}
