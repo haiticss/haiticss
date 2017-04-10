@@ -8,10 +8,10 @@
 
 // Main other colors
 
-$s-color-other__digital-blue:             #0070d2 !default;
+$s-color__digital-blue:             #0070d2 !default;
 
 // OTHER COLOR MAP
 
 $s-colors-other: (
-  "digital-blue":                         $s-color-other__digital-blue,
+  "digital-blue":                   $s-color__digital-blue,
 ) !default;

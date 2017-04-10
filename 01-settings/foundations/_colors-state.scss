@@ -8,73 +8,73 @@
 
 // Main state colors
 
-$s-color-state__success:                  #36ba33 !default;
-$s-color-state__info:                     #20a0de !default;
-$s-color-state__warning:                  #f99500 !default;
-$s-color-state__danger:                   #c1101f !default;
+$color__state-success:                  #36ba33 !default;
+$color__state-info:                     #20a0de !default;
+$color__state-warning:                  #f99500 !default;
+$color__state-danger:                   #c1101f !default;
 
 // Success shades
 
-$s-color-state__success--ultra-light:     mix(#fff, $s-color-state__success, 93%) !default;
-$s-color-state__success--light:           lighten($s-color-state__success, 10%) !default;
-$s-color-state__success--semi-light:      lighten($s-color-state__success, 5%) !default;
+$color__state-success--ultra-light:     mix(#fff, $color__state-success, 93%) !default;
+$color__state-success--light:           lighten($color__state-success, 10%) !default;
+$color__state-success--semi-light:      lighten($color__state-success, 5%) !default;
 
-$s-color-state__success--semi-dark:       darken($s-color-state__success, 5%) !default;
-$s-color-state__success--dark:            darken($s-color-state__success, 15%) !default;
+$color__state-success--semi-dark:       darken($color__state-success, 5%) !default;
+$color__state-success--dark:            darken($color__state-success, 15%) !default;
 
 // Info shades
 
-$s-color-state__info--ultra-light:        mix(#fff, $s-color-state__info, 93%) !default;
-$s-color-state__info--light:              lighten($s-color-state__info, 10%) !default;
-$s-color-state__info--semi-light:         lighten($s-color-state__info, 5%) !default;
+$color__state-info--ultra-light:        mix(#fff, $color__state-info, 93%) !default;
+$color__state-info--light:              lighten($color__state-info, 10%) !default;
+$color__state-info--semi-light:         lighten($color__state-info, 5%) !default;
 
-$s-color-state__info--semi-dark:          darken($s-color-state__info, 5%) !default;
-$s-color-state__info--dark:               darken($s-color-state__info, 15%) !default;
+$color__state-info--semi-dark:          darken($color__state-info, 5%) !default;
+$color__state-info--dark:               darken($color__state-info, 15%) !default;
 
 // Warning shades
 
-$s-color-state__warning--ultra-light:     mix(#fff, $s-color-state__warning, 93%) !default;
-$s-color-state__warning--light:           lighten($s-color-state__warning, 10%) !default;
-$s-color-state__warning--semi-light:      lighten($s-color-state__warning, 5%) !default;
+$color__state-warning--ultra-light:     mix(#fff, $color__state-warning, 93%) !default;
+$color__state-warning--light:           lighten($color__state-warning, 10%) !default;
+$color__state-warning--semi-light:      lighten($color__state-warning, 5%) !default;
 
-$s-color-state__warning--semi-dark:       darken($s-color-state__warning, 5%) !default;
-$s-color-state__warning--dark:            darken($s-color-state__warning, 15%) !default;
+$color__state-warning--semi-dark:       darken($color__state-warning, 5%) !default;
+$color__state-warning--dark:            darken($color__state-warning, 15%) !default;
 
 // Danger shades
 
-$s-color-state__danger--ultra-light:      mix(#fff, $s-color-state__danger, 93%) !default;
-$s-color-state__danger--light:            lighten($s-color-state__danger, 10%) !default;
-$s-color-state__danger--semi-light:       lighten($s-color-state__danger, 5%) !default;
+$color__state-danger--ultra-light:      mix(#fff, $color__state-danger, 93%) !default;
+$color__state-danger--light:            lighten($color__state-danger, 10%) !default;
+$color__state-danger--semi-light:       lighten($color__state-danger, 5%) !default;
 
-$s-color-state__danger--semi-dark:        darken($s-color-state__danger, 5%) !default;
-$s-color-state__danger--dark:             darken($s-color-state__danger, 15%) !default;
+$color__state-danger--semi-dark:        darken($color__state-danger, 5%) !default;
+$color__state-danger--dark:             darken($color__state-danger, 15%) !default;
 
 
 // STATE COLOR MAP
 
 $s-colors-state: (
-  "success":                              $s-color-state__success,
-  "info":                                 $s-color-state__info,
-  "warning":                              $s-color-state__warning,
-  "danger":                               $s-color-state__danger,
-  "success--ultra-light":                 $s-color-state__success--ultra-light,
-  "success--light":                       $s-color-state__success--light,
-  "success--semi-light":                  $s-color-state__success--semi-light,
-  "success--semi-dark":                   $s-color-state__success--semi-dark,
-  "success--dark":                        $s-color-state__success--dark,
-  "info--ultra-light":                    $s-color-state__info--ultra-light,
-  "info--light":                          $s-color-state__info--light,
-  "info--semi-light":                     $s-color-state__info--semi-light,
-  "info--semi-dark":                      $s-color-state__info--semi-dark,
-  "info--dark":                           $s-color-state__info--dark,
-  "warning--ultra-light":                 $s-color-state__warning--ultra-light,
-  "warning--light":                       $s-color-state__warning--light,
-  "warning--semi-light":                  $s-color-state__warning--semi-light,
-  "warning--semi-dark":                   $s-color-state__warning--semi-dark,
-  "warning--dark":                        $s-color-state__warning--dark,
-  "danger--ultra-light":                  $s-color-state__danger--ultra-light,
-  "danger--light":                        $s-color-state__danger--light,
-  "danger--semi-light":                   $s-color-state__danger--semi-light,
-  "danger--semi-dark":                    $s-color-state__danger--semi-dark,
-  "danger--dark":                         $s-color-state__danger--dark,
+  "success":                            $color__state-success,
+  "info":                               $color__state-info,
+  "warning":                            $color__state-warning,
+  "danger":                             $color__state-danger,
+  "success--ultra-light":               $color__state-success--ultra-light,
+  "success--light":                     $color__state-success--light,
+  "success--semi-light":                $color__state-success--semi-light,
+  "success--semi-dark":                 $color__state-success--semi-dark,
+  "success--dark":                      $color__state-success--dark,
+  "info--ultra-light":                  $color__state-info--ultra-light,
+  "info--light":                        $color__state-info--light,
+  "info--semi-light":                   $color__state-info--semi-light,
+  "info--semi-dark":                    $color__state-info--semi-dark,
+  "info--dark":                         $color__state-info--dark,
+  "warning--ultra-light":               $color__state-warning--ultra-light,
+  "warning--light":                     $color__state-warning--light,
+  "warning--semi-light":                $color__state-warning--semi-light,
+  "warning--semi-dark":                 $color__state-warning--semi-dark,
+  "warning--dark":                      $color__state-warning--dark,
+  "danger--ultra-light":                $color__state-danger--ultra-light,
+  "danger--light":                      $color__state-danger--light,
+  "danger--semi-light":                 $color__state-danger--semi-light,
+  "danger--semi-dark":                  $color__state-danger--semi-dark,
+  "danger--dark":                       $color__state-danger--dark,
 ) !default;

@@ -8,33 +8,33 @@
 
 // Main vendor colors
 
-$s-color-vendor__facebook:                #3b5998 !default;
-$s-color-vendor__twitter:                 #00aced !default;
+$s-color__vendor-facebook:                #3b5998 !default;
+$s-color__vendor-twitter:                 #00aced !default;
 
 // Facebook shades
 
-$s-color-vendor__facebook--ultra-light:   #f7f7f7 !default;
-$s-color-vendor__facebook--light:         #dfe3ee !default;
-$s-color-vendor__facebook--semi-light:    #8b9dc3 !default;
+$s-color__vendor-facebook--ultra-light:   #f7f7f7 !default;
+$s-color__vendor-facebook--light:         #dfe3ee !default;
+$s-color__vendor-facebook--semi-light:    #8b9dc3 !default;
 
 // Twitter shades
 
-$s-color-vendor__twitter--ultra-light:    #fff !default;
-$s-color-vendor__twitter--light:          #c0deed !default;
-$s-color-vendor__twitter--semi-light:     #1dcaff !default;
-$s-color-vendor__twitter--dark:           #0084b4 !default;
+$s-color__vendor-twitter--ultra-light:    #fff !default;
+$s-color__vendor-twitter--light:          #c0deed !default;
+$s-color__vendor-twitter--semi-light:     #1dcaff !default;
+$s-color__vendor-twitter--dark:           #0084b4 !default;
 
 
 // VENDOR COLOR MAP
 
 $s-colors-vendor: (
-  "facebook":                             $s-color-vendor__facebook,
-  "twitter":                              $s-color-vendor__twitter,
-  "facebook--ultra-light":                $s-color-vendor__facebook--ultra-light,
-  "facebook--light":                      $s-color-vendor__facebook--light,
-  "facebook--semi-light":                 $s-color-vendor__facebook--semi-light,
-  "twitter--ultra-light":                 $s-color-vendor__twitter--ultra-light,
-  "twitter--light":                       $s-color-vendor__twitter--light,
-  "twitter--semi-light":                  $s-color-vendor__twitter--semi-light,
-  "twitter--dark":                        $s-color-vendor__twitter--dark,
+  "facebook":                             $s-color__vendor-facebook,
+  "twitter":                              $s-color__vendor-twitter,
+  "facebook--ultra-light":                $s-color__vendor-facebook--ultra-light,
+  "facebook--light":                      $s-color__vendor-facebook--light,
+  "facebook--semi-light":                 $s-color__vendor-facebook--semi-light,
+  "twitter--ultra-light":                 $s-color__vendor-twitter--ultra-light,
+  "twitter--light":                       $s-color__vendor-twitter--light,
+  "twitter--semi-light":                  $s-color__vendor-twitter--semi-light,
+  "twitter--dark":                        $s-color__vendor-twitter--dark,
 ) !default;
