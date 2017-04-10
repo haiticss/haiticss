@@ -27,6 +27,7 @@
  * px-to-em .............. returns EM equivalent value using a given PX value and a REM reference
  */
 
+@import "core-functions/breakpoint-suffix";
 @import "core-functions/strip-units";
 @import "core-functions/rem-to-px";
 @import "core-functions/px-to-rem";

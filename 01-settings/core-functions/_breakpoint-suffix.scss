@@ -1,0 +1,13 @@
+
+/* -------------------------------------------------------------------------
+ * STRIP UNITS
+ *
+ * Returns a breakpoint string with its escaped separator
+ * Useful for utilities that uses breakpoints modifiers
+ *
+ * s-breakpoint-suffix(md) == \@md
+ */
+
+@function s-breakpoint-suffix($_bp-name) {
+  @return unquote("#{$s-config__breakpoint--separator}#{$_bp-name}");
+}
