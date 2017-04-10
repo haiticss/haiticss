@@ -1,0 +1,124 @@
+/* -------------------------------------------------------------------------
+ * WRAPPER
+ *
+ * Page-level constraining and wrapping elements.
+ *
+ * Params:
+ * SPACE .............................. Side padding
+ *
+ */
+
+// Object variables
+// --------------------------------------------------
+
+// Object toggling
+
+$o-wrapper--enabled:                true !default;
+
+// Object Params
+
+$o-wrapper__space:                  $g-reset__spacing--horizontal !default;
+$o-wrapper__size-diff:              $s-space--large !default;
+$o-wrapper__sizes: (
+  "xs": map-get($s-breakpoints, "xs") - $o-wrapper__size-diff,
+  "sm": map-get($s-breakpoints, "sm") - $o-wrapper__size-diff,
+  "sml": map-get($s-breakpoints, "sml") - $o-wrapper__size-diff,
+  "md": map-get($s-breakpoints, "md") - $o-wrapper__size-diff,
+  "lg": map-get($s-breakpoints, "lg") - $o-wrapper__size-diff,
+  "xl": map-get($s-breakpoints, "xl") - $o-wrapper__size-diff,
+  "xxl": map-get($s-breakpoints, "xxl") - $o-wrapper__size-diff,
+  "xxxl": map-get($s-breakpoints, "xxxl") - $o-wrapper__size-diff,
+) !default;
+
+// Modifiers Spaces
+
+$o-wrapper__mod-spaces--enabled:      true !default;
+$o-wrapper__mod-spaces:               map_remove($s-spaces, large, huge) !default;
+
+// Modifiers Breakpoints
+
+$o-wrapper__mod-bp-from--enabled:     true !default;
+$o-wrapper__mod-bp-to--enabled:       true !default;
+
+// Object selector output
+// --------------------------------------------------
+
+@if ($o-wrapper--enabled) {
+  .o-wrapper {
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: s-core-px-to-rem($o-wrapper__space);
+    padding-left: s-core-px-to-rem($o-wrapper__space);
+    @include t-clearfix;
+
+    @each $bp-name, $bp-size in $o-wrapper__sizes {
+      @include mq($from: $bp-name) {
+        max-width: map-get($o-wrapper__sizes, $bp-name);
+      }
+    }
+
+  }
+}
+
+// Space modifiers
+// --------------------------------------------------
+
+@mixin o-wrapper--space($_space-name: none, $_space-value: 0) {
+  .o-wrapper--space-#{$_space-name} {
+    padding-right: $_space-value;
+    padding-left: $_space-value;
+  }
+}
+
+@if ($o-wrapper--enabled and $o-wrapper__mod-spaces--enabled) {
+  @each $_space-name, $_space-value in $o-wrapper__mod-spaces {
+    @include o-wrapper--space($_space-name, $_space-value);
+  }
+}
+
+// Size modifiers (from)
+// --------------------------------------------------
+
+@mixin o-wrapper--from($_bp-name: "xs", $_bp-size: map-get($o-wrapper__sizes, "xs")) {
+  @each $_s-bp-name, $_s-bp-size in $s-breakpoints {
+
+    @include mq($from: $_s-bp-name) {
+      .o-wrapper--from#{s-breakpoint-suffix($_bp-name)} {
+
+        @if (map-get($s-breakpoints, $_bp-name) <= $_s-bp-size) {
+          max-width: map-get($o-wrapper__sizes, $_s-bp-name);
+        } @else {
+          max-width: 100%;
+        }
+      }
+    }
+  }
+}
+
+@if ($o-wrapper--enabled and $o-wrapper__mod-bp-from--enabled) {
+  @each $_bp-name, $_bp-size in map_remove($o-wrapper__sizes, "xxxl") {
+    @include o-wrapper--from($_bp-name, $_bp-size);
+  }
+}
+
+// Size modifiers (to)
+// --------------------------------------------------
+
+@mixin o-wrapper--to($_bp-name: "xs", $_bp-size: map-get($o-wrapper__sizes, "xs")) {
+  @each $_s-bp-name, $_s-bp-size in $s-breakpoints {
+
+    @if (map-get($s-breakpoints, $_bp-name) < $_s-bp-size) {
+      @include mq($from: $_s-bp-name) {
+        .o-wrapper--to#{s-breakpoint-suffix($_bp-name)} {
+          max-width: $_bp-size;
+        }
+      }
+    }
+  }
+}
+
+@if ($o-wrapper--enabled and $o-wrapper__mod-bp-to--enabled) {
+  @each $_bp-name, $_bp-size in map_remove($o-wrapper__sizes, "xs") {
+    @include o-wrapper--to($_bp-name, $_bp-size);
+  }
+}
