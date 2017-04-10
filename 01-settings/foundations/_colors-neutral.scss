@@ -8,37 +8,37 @@
 
 // Black & White
 
-$s-color-neutral__white:                #fff !default;
-$s-color-neutral__black:                #000 !default;
+$s-color__neutral-white:                #fff !default;
+$s-color__neutral-black:                #000 !default;
 
 // Grey shades (Mid tones are missing intentionally)
 
-$s-color-neutral__grey--ultra-light:    darken(#fff, 5%) !default;
-$s-color-neutral__grey--light:          darken(#fff, 10%) !default;
-$s-color-neutral__grey--semi-light:     darken(#fff, 20%) !default;
-$s-color-neutral__grey:                 darken(#fff, 30%) !default;
-$s-color-neutral__grey--semi-dark:      darken(#fff, 70%) !default;
-$s-color-neutral__grey--dark:           darken(#fff, 80%) !default;
-$s-color-neutral__grey--ultra-dark:     darken(#fff, 90%) !default;
+$s-color__neutral-grey--ultra-light:    darken(#fff, 5%) !default;
+$s-color__neutral-grey--light:          darken(#fff, 10%) !default;
+$s-color__neutral-grey--semi-light:     darken(#fff, 20%) !default;
+$s-color__neutral-grey:                 darken(#fff, 30%) !default;
+$s-color__neutral-grey--semi-dark:      darken(#fff, 70%) !default;
+$s-color__neutral-grey--dark:           darken(#fff, 80%) !default;
+$s-color__neutral-grey--ultra-dark:     darken(#fff, 90%) !default;
 
 // Transparent colors
 
-$s-color-neutral__white--transparent:   rgba($s-color-neutral__white, 0) !default;
-$s-color-neutral__black--transparent:   rgba($s-color-neutral__black, 0) !default;
+$s-color__neutral-white--transparent:   rgba($s-color__neutral-white, 0) !default;
+$s-color__neutral-black--transparent:   rgba($s-color__neutral-black, 0) !default;
 
 
 // NEUTRAL COLOR MAP
 
 $s-colors-neutral: (
-  "white":                              $s-color-neutral__white,
-  "black":                              $s-color-neutral__black,
-  "grey--ultra-light":                  $s-color-neutral__grey--ultra-light,
-  "grey--light":                        $s-color-neutral__grey--light,
-  "grey--semi-light":                   $s-color-neutral__grey--semi-light,
-  "grey":                               $s-color-neutral__grey,
-  "grey--semi-dark":                    $s-color-neutral__grey--semi-dark,
-  "grey--dark":                         $s-color-neutral__grey--dark,
-  "grey--ultra-dark":                   $s-color-neutral__grey--ultra-dark,
-  "white--transparent":                 $s-color-neutral__white--transparent,
-  "black--transparent":                 $s-color-neutral__black--transparent,
+  "white":                              $s-color__neutral-white,
+  "black":                              $s-color__neutral-black,
+  "grey--ultra-light":                  $s-color__neutral-grey--ultra-light,
+  "grey--light":                        $s-color__neutral-grey--light,
+  "grey--semi-light":                   $s-color__neutral-grey--semi-light,
+  "grey":                               $s-color__neutral-grey,
+  "grey--semi-dark":                    $s-color__neutral-grey--semi-dark,
+  "grey--dark":                         $s-color__neutral-grey--dark,
+  "grey--ultra-dark":                   $s-color__neutral-grey--ultra-dark,
+  "white--transparent":                 $s-color__neutral-white--transparent,
+  "black--transparent":                 $s-color__neutral-black--transparent,
 ) !default;
