@@ -6,27 +6,15 @@
  *
  */
 
-
-// Imported font families
-// CSS @import usage is for demo proposes, consider hosting your fonts instead
-
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i');
-@import url('https://fonts.googleapis.com/css?family=Raleway:400,400i,700,700i');
-@import url('https://fonts.googleapis.com/css?family=Passion+One');
-
-$s-font-family__open-sans:        'Open Sans' !default;
-$s-font-family__raleway:          'Raleway' !default;
-$s-font-family__passion-one:      'Passion One' !default;
-
 // Fallback families
 
 $s-font-family__sans-fallback:    Arial, Geneva, sans-serif !default;
 
 // Main font families
 
-$s-font-family__primary:          #{$s-font-family__open-sans}, #{$s-font-family__sans-fallback} !default;
-$s-font-family__secondary:        #{$s-font-family__raleway}, #{$s-font-family__sans-fallback} !default;
-$s-font-family__accent:           #{$s-font-family__passion-one}, #{$s-font-family__sans-fallback} !default;
+$s-font-family__primary:          Tahoma, #{$s-font-family__sans-fallback} !default;
+$s-font-family__secondary:        Verdana, #{$s-font-family__sans-fallback} !default;
+$s-font-family__accent:           Georgia, #{$s-font-family__sans-fallback} !default;
 
 
 // FONT FAMILIES MAP
