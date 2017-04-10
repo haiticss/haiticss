@@ -1,0 +1,58 @@
+
+/* -------------------------------------------------------------------------
+ * ALIGNMENTS
+ *
+ * Force text alignment
+ *
+ * Params:
+ * ALIGNMENTS .......................... Horizontal alignments
+ *
+ */
+
+// Utility variables
+// --------------------------------------------------
+
+// Utility toggling
+
+$u-align--enabled:                      true !default;
+
+// Alignments
+
+$u-align__alignments:                   (left, center, right) !default;
+
+// Modifiers Breakpoints
+
+$u-align__mod-bp--enabled:              true !default;
+$u-align__mod-bp:                       map_remove($s-breakpoints, "xxs") !default;
+
+
+// Utility as a mixin
+// --------------------------------------------------
+
+@mixin u-alignment($_direction: left, $_bp: null) {
+  .u-align-#{$_direction}#{s-breakpoint-suffix($_bp)} {
+    text-align: $_direction !important;
+  }
+}
+
+// Utility selector output
+// --------------------------------------------------
+
+@if ($u-align--enabled) {
+  @each $_alignment in $u-align__alignments {
+    @include u-alignment($_alignment);
+  }
+}
+
+// Breakpoints modifiers
+// --------------------------------------------------
+
+@if ($u-align--enabled and $u-align__mod-bp--enabled) {
+  @each $_bp-name, $_bp-value in $u-align__mod-bp {
+    @include mq($from: $_bp-name) {
+      @each $_alignment in $u-align__alignments {
+        @include u-alignment($_alignment, $_bp-name);
+      }
+    }
+  }
+}

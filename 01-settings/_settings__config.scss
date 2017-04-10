@@ -10,7 +10,7 @@
  * enable if you are scoping the output in a selector
  */
 
-$s-config__scoped:          false !default;
+$s-config__scoped:                    false !default;
 
 
 /* ENVIRONMENT
@@ -18,19 +18,24 @@ $s-config__scoped:          false !default;
  * prod ................. Production
  */
 
-$s-config__env:             "dev" !default;
+$s-config__env:                       "dev" !default;
 
 
 /* DEBUG
  * for debugging proposes
  */
 
-$s-config__debug:           if($s-config__env == "dev", true, false) !default;
+$s-config__debug:                     if($s-config__env == "dev", true, false) !default;
 
 
 /* PATHS
  * Define assets paths here
  */
 
-$s-config__path--img:       "../img" !default;
-$s-config__path--fonts:     "../fonts" !default;
+$s-config__path--img:                 "../img" !default;
+$s-config__path--fonts:               "../fonts" !default;
+
+/* SPECIAL CHARS
+ * Define special chars
+ */
+$s-config__breakpoint--separator:     \@ !default;
