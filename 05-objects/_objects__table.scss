@@ -84,3 +84,15 @@ $o-table__mod-fixed--enabled:           true !default;
     @include o-table--fixed;
   }
 }
+
+
+// Unset as mixin
+// --------------------------------------------------
+
+@mixin o-table--unset() {
+  width: inherit;
+}
+
+@mixin o-table__cell--unset() {
+  padding: inherit;
+}

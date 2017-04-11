@@ -135,3 +135,20 @@ $o-pack__mod-auto--enabled:                 true !default;
     @include o-pack--auto();
   }
 }
+
+
+// Unset as a mixin
+// --------------------------------------------------
+
+@mixin o-pack--unset() {
+  width: inherit;
+  margin-left: inherit;
+  display: inherit;
+  table-layout: inherit;
+  border-spacing: inherit;
+}
+
+@mixin o-pack__item--unset() {
+  display: inherit;
+  vertical-align: inherit;
+}

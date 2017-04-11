@@ -92,9 +92,9 @@ $o-layout__mod-reverse--enabled:              true !default;
 @mixin o-layout($_space-value: $o-layout__space) {
   display: block;
   margin: 0;
+  margin-left: -1 * s-core-px-to-rem($_space-value);
   padding: 0;
   list-style: none;
-  margin-left: -1 * s-core-px-to-rem($_space-value);
   font-size: 0;
 }
 
@@ -197,4 +197,25 @@ $o-layout__mod-reverse--enabled:              true !default;
     }
   }
 
+}
+
+
+// Unset as mixin
+// --------------------------------------------------
+
+@mixin o-layout--unset() {
+  display: inherit;
+  margin: inherit;
+  padding: inherit;
+  list-style: inherit;
+  font-size: inherit;
+}
+
+@mixin o-layout__item--unset() {
+  box-sizing: inherit;
+  display: inherit;
+  vertical-align: inherit;
+  width: inherit;
+  padding-left: inherit;
+  font-size: inherit;
 }

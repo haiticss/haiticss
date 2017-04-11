@@ -117,3 +117,31 @@ $o-media__mod-reverse--enabled:         true !default;
 @if ($o-media--enabled and $o-media__mod-reverse--enabled) {
   @include o-media__mod-reverse();
 }
+
+
+// Unset as mixin
+// --------------------------------------------------
+
+@mixin o-media--unset() {
+  display: inherit;
+  @include t-clearfix--unset;
+}
+
+@mixin o-media__img--unset() {
+  float: inherit;
+  margin-right: inherit;
+
+  > img {
+    display: inherit;
+  }
+}
+
+@mixin o-media__body--unset() {
+  overflow: inherit;
+  display: inherit;
+
+  &,
+  > :last-child {
+    margin-bottom: inherit;
+  }
+}

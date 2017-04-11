@@ -144,3 +144,32 @@ $o-block__mod-stretch--enabled:           true !default;
 @if ($o-block--enabled and $o-block__mod-stretch--enabled) {
   @include o-block__mod-stretch();
 }
+
+
+// Unset as mixin
+// --------------------------------------------------
+
+@mixin o-block--unset() {
+  display: inherit;
+  text-align: inherit;
+
+  > * {
+    margin-bottom: inherit;
+
+    &:last-child {
+      margin-bottom: inherit;
+    }
+  }
+}
+
+@mixin o-block__header--unset() {
+  display: inherit;
+}
+
+@mixin o-block__body--unset() {
+  display: inherit;
+}
+
+@mixin o-block__footer--unset() {
+  display: inherit;
+}
