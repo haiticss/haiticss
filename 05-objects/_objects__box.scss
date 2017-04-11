@@ -31,10 +31,8 @@ $o-box__mod-spaces:                     $s-spaces !default;
 // Object as a mixin
 // --------------------------------------------------
 
-/* [1]. So we can apply the `.o-box` class to naturally-inline elements. */
-
 @mixin o-box($_space-value: $o-box__space) {
-  display: block; /* [1] */
+  display: block;
   padding: s-core-px-to-rem($_space-value);
   @include t-clearfix();
 
@@ -66,5 +64,19 @@ $o-box__mod-spaces:                     $s-spaces !default;
 @if ($o-box--enabled and $o-box__mod-spaces--enabled) {
   @each $_space-name, $_space-value in $o-box__mod-spaces {
     @include o-box__mod-space($_space-name, $_space-value);
+  }
+}
+
+
+// Unset as mixin
+// --------------------------------------------------
+
+@mixin o-box--unset() {
+  display: inherit;
+  padding: inherit;
+  @include t-clearfix--unset();
+
+  > :last-child {
+    margin-bottom: inherit;
   }
 }

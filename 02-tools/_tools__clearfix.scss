@@ -9,6 +9,33 @@
 
 @mixin t-clearfix() {
   &::after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+}
+
+@mixin t-clearfix--unset() {
+  &::after {
+    content: inherit;
+    display: block;
+    clear: both;
+  }
+}
+
+// Important mixins
+// --------------------------------------------------
+
+@mixin t-clearfix-important() {
+  &::after {
+    content: "" !important;
+    display: block !important;
+    clear: both !important;
+  }
+}
+
+@mixin t-clearfix-important() {
+  &::after {
     content: "" !important;
     display: block !important;
     clear: both !important;

@@ -160,3 +160,34 @@ $o-flag__mod-reverse--enabled:        true !default;
 @if ($o-flag--enabled and $o-flag__mod-reverse--enabled) {
   @include o-flag__mod-reverse();
 }
+
+
+// Unset as mixin
+// --------------------------------------------------
+
+@mixin o-flag--unset() {
+  display: inherit;
+  width: inherit;
+}
+
+@mixin o-flag__img--unset() {
+  display: inherit;
+  vertical-align: inherit;
+  padding-right: inherit;
+  width: inherit;
+
+  > img {
+    max-width: inherit;
+  }
+}
+
+@mixin o-flag__body--unset() {
+  display: inherit;
+  vertical-align: inherit;
+  width: inherit;
+
+  &,
+  > :last-child {
+    margin-bottom: inherit;
+  }
+}
