@@ -1,6 +1,3 @@
-@charset "UTF-8"; // Fixes an issue where Ruby locale is not set properly
-// See https://github.com/sass-mq/sass-mq/pull/10
-
 /// Base font size on the `<body>` element
 /// @type Number (unit)
 $mq-base-font-size: 16px !default;
