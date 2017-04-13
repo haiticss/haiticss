@@ -1,0 +1,66 @@
+/* -------------------------------------------------------------------------
+ * LIST IN-LINE
+ *
+ * The list-inline object simply displays a list of items in one line.
+ *
+ */
+
+// Object variables
+// --------------------------------------------------
+
+// Object toggling
+
+$o-list-inline--enabled:                      true !default;
+
+// Modifiers Spaces
+
+$o-list-inline__mod-spaces--enabled:          true !default;
+$o-list-inline__mod-spaces:                   map_remove($s-spaces, "large", "huge") !default;
+
+// Object as a mixin
+// --------------------------------------------------
+
+@mixin o-list-inline() {
+  font-size: 0;
+
+  > * {
+    font-size: s-core-px-to-rem($s-core__font-size);
+    display: inline-block;
+  }
+}
+
+// Object selector output
+// --------------------------------------------------
+
+@if ($o-list-inline--enabled) {
+  .o-list-inline {
+    @include o-list-inline();
+  }
+}
+
+// Space modifiers output
+// --------------------------------------------------
+
+@mixin o-list-inline__mod-space($_space-name: "none", $_space-value: 0) {
+  .o-list-inline--space-#{$_space-name} > *:not(:last-child) {
+    margin-right: s-core-px-to-rem($_space-value);
+  }
+}
+
+@if ($o-list-inline--enabled and $o-list-inline__mod-spaces--enabled) {
+  @each $_space-name, $_space-value in $o-list-inline__mod-spaces {
+    @include o-list-inline__mod-space($_space-name, $_space-value);
+  }
+}
+
+// Unset as mixin
+// --------------------------------------------------
+
+@mixin o-list-inline--unset() {
+  font-size: inherit;
+
+  > * {
+    font-size: inherit;
+    display: inherit;
+  }
+}

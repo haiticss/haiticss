@@ -26,7 +26,7 @@ $o-flag__alignment:                   middle !default;
 // Modifiers Spaces
 
 $o-flag__mod-spaces--enabled:         true !default;
-$o-flag__mod-spaces:                  map_remove($s-spaces, large, huge) !default;
+$o-flag__mod-spaces:                  map_remove($s-spaces, "large", "huge") !default;
 
 // Modifiers Alignments
 
@@ -174,7 +174,7 @@ $o-flag__mod-reverse--enabled:        true !default;
   display: inherit;
   vertical-align: inherit;
   padding-right: inherit;
-  width: inherit;
+  width: auto;
 
   > img {
     max-width: inherit;

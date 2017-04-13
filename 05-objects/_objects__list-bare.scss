@@ -1,0 +1,41 @@
+/* -------------------------------------------------------------------------
+ * LIST BARE
+ *
+ * Strip list-like appearance from lists by removing their bullets, and any
+ * indentation.
+ *
+ */
+
+// Object variables
+// --------------------------------------------------
+
+// Object toggling
+
+$o-list-bare--enabled:          true !default;
+
+
+// Object as a mixin
+// --------------------------------------------------
+
+@mixin o-list-bare() {
+  list-style: none;
+  margin-left: 0;
+}
+
+// Object selector output
+// --------------------------------------------------
+
+@if ($o-list-bare--enabled) {
+  .o-list-bare {
+    @include o-list-bare();
+  }
+}
+
+
+// Unset as mixin
+// --------------------------------------------------
+
+@mixin o-list-bare--unset() {
+  list-style: inherit;
+  margin-left: inherit;
+}

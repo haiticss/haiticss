@@ -72,7 +72,7 @@ $o-layout__space:                             $g-reset__spacing--horizontal !def
 // Modifiers spaces
 
 $o-layout__mod-spaces--enabled:               true !default;
-$o-layout__mod-spaces:                        map_remove($s-spaces, large, huge) !default;
+$o-layout__mod-spaces:                        map_remove($s-spaces, "large", "huge") !default;
 
 // Modifiers Alignments
 
@@ -82,9 +82,10 @@ $o-layout__mod-alignments-v:                  (top, middle, bottom) !default;
 $o-layout__mod-alignments-h--enabled:         true !default;
 $o-layout__mod-alignments-h:                  (left, center, right) !default;
 
-
 // Modifiers Reverse
+
 $o-layout__mod-reverse--enabled:              true !default;
+
 
 // Object as a mixin
 // --------------------------------------------------
@@ -215,7 +216,7 @@ $o-layout__mod-reverse--enabled:              true !default;
   box-sizing: inherit;
   display: inherit;
   vertical-align: inherit;
-  width: inherit;
+  width: auto;
   padding-left: inherit;
   font-size: inherit;
 }

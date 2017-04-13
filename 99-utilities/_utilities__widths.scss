@@ -1,0 +1,122 @@
+/* -------------------------------------------------------------------------
+ * WIDTHS
+ *
+ * Generates a series of utility classes that give a fluid width to
+ * whichever element they’re applied, combining the fractions numbers, e.g.:
+ *
+ *   <img src="" alt="" class="u-1/2" />
+ *
+ * These classes are most commonly used in conjunction with objects, e.g.:
+ *
+ *   <div class="o-layout__item  u-1/2">
+ *
+ * By default, will also generate responsive variants of each of these
+ * classes by using your Sass MQ configuration, e.g.:
+ *
+ *   <div class="o-layout__item  u-1/1  u-1/2@sm  u-1/3@lg">
+ *
+ * Optionally, offset classes can br generated which can push and pull
+ * elements left and right by a specified amount, e.g.:
+ *
+ *   <div class="o-layout__item  u-2/3  u-pull-1/3">
+ *
+ * This is useful for making very granular changes to the rendered order of
+ * items in a layout.
+ *
+ * N.B. This option is turned off by default.
+ */
+
+// Utility variables
+// --------------------------------------------------
+
+// Utility toggling
+
+$u-widths--enabled:                   true !default;
+
+// Fractions
+
+$u-widths__fractions:                 1 2 3 4 5 !default;
+
+// Option Breakpoints
+
+$u-widths__bp--enabled:               true !default;
+$u-widths__bp:                        map_remove($s-breakpoints, "xxs") !default;
+
+// Pull and push options
+
+$u-widths__offset-push--enabled:      false !default;
+$u-widths__offset-pull--enabled:      false !default;
+
+// Utility mixin
+// --------------------------------------------------
+
+@mixin u-widths($_columns, $_bp-suffix: null) {
+
+  @each $_denominator in $_columns {
+
+    @for $_numerator from 1 through $_denominator {
+
+      @if ($_numerator != $_denominator or $_denominator == 1) {
+        .u-#{$_numerator}\/#{$_denominator}#{$_bp-suffix} {
+          width: ($_numerator / $_denominator) * 100% !important;
+        }
+
+        @if ($u-widths__offset-push--enabled) and ($_denominator > 1) {
+          .u-push-#{$_numerator}\/#{$_denominator}#{$_bp-suffix} {
+            left: ($_numerator / $_denominator) * 100% !important;
+          }
+        }
+
+        @if ($u-widths__offset-pull--enabled) and ($_denominator > 1) {
+          .u-pull-#{$_numerator}\/#{$_denominator}#{$_bp-suffix} {
+            right: ($_numerator / $_denominator) * 100% !important;
+          }
+        }
+      }
+    }
+  }
+
+  @if ($u-widths__offset-push--enabled) {
+    [class^="u-push"],
+    [class*=" u-push"] {
+      position: relative;
+      right: auto !important;
+    }
+
+    .u-push-0#{$_bp-suffix} {
+      left: auto !important;
+    }
+  }
+
+  @if ($u-widths__offset-pull--enabled) {
+    [class^="u-pull"],
+    [class*=" u-pull"] {
+      position: relative;
+      left: auto !important;
+    }
+
+    .u-pull-0#{$_bp-suffix} {
+      right: auto !important;
+    }
+  }
+}
+
+// Build classes
+// --------------------------------------------------
+
+@if ($u-widths--enabled) {
+  @include u-widths($u-widths__fractions);
+}
+
+// Build classes with breakpoint suffixes
+// --------------------------------------------------
+
+@if ($u-widths--enabled and $u-widths__bp--enabled) {
+
+  @each $_bp-name, $_bp-value in $u-widths__bp {
+
+    @include mq($from: $_bp-name) {
+      @include u-widths($u-widths__fractions, s-breakpoint-suffix($_bp-name));
+    }
+  }
+}

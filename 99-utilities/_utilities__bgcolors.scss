@@ -1,0 +1,41 @@
+/* -------------------------------------------------------------------------
+ * COLORS
+ *
+ * Forces font color using the color maps
+ *
+ */
+
+// Utility variables
+// --------------------------------------------------
+
+// Utility toggling
+
+$u-bgcolors--enabled:         true !default;
+
+// Colors maps
+
+$u-bgcolors__maps:            $s-colors !default;
+
+
+// Utilities output
+// --------------------------------------------------
+
+@if ($u-bgcolors--enabled) {
+
+  @each $_bgcolor-group__name, $_bgcolor-group__map in $u-bgcolors__maps {
+
+    @each $_bgcolor-name, $_bgcolor-value in $_bgcolor-group__map {
+
+      @if ($_bgcolor-group__name != "others") {
+        $_color-name: quote(#{$_bgcolor-group__name}-#{$_bgcolor-name});
+      }
+
+      .u-color__#{$_bgcolor-name} {
+        color: $_bgcolor-value !important;
+      }
+
+    }
+
+  }
+
+}
