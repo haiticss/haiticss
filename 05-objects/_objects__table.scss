@@ -22,7 +22,7 @@ $o-table__space:                        $s-space--none !default;
 // Modifiers Spaces
 
 $o-table_mod-spaces--enabled:           true !default;
-$o-table__mod-spaces:                   map_remove($s-spaces, large, huge) !default;
+$o-table__mod-spaces:                   map_remove($s-spaces, "large", "huge") !default;
 
 // Modifiers Fixed
 
@@ -90,7 +90,7 @@ $o-table__mod-fixed--enabled:           true !default;
 // --------------------------------------------------
 
 @mixin o-table--unset() {
-  width: inherit;
+  width: auto;
 }
 
 @mixin o-table__cell--unset() {

@@ -3,9 +3,15 @@
  * UTILITIES
  * Helper classes with important statements
  *
- * aligments .............. force text alignment
+ * alignments .............. force text alignment
+ * colors ................. force font color and background color
+ * hidden ................. force hide elements on certain breakpoints range
  * widths ................. set fraction widths
    ========================================================================== */
 
 
-@import '_utilities__aligments';
+@import '_utilities__alignments';
+@import '_utilities__bgcolors';
+@import '_utilities__colors';
+@import '_utilities__hidden';
+@import '_utilities__widths';

@@ -20,7 +20,7 @@ $u-align--enabled:                      true !default;
 
 $u-align__alignments:                   (left, center, right) !default;
 
-// Modifiers Breakpoints
+// Options Breakpoints
 
 $u-align__mod-bp--enabled:              true !default;
 $u-align__mod-bp:                       map_remove($s-breakpoints, "xxs") !default;

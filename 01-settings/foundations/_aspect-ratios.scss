@@ -9,22 +9,23 @@
 // Main aspect ratios
 
 $s-aspect-ratio--1-1:       1 / 1 !default;
-$s-aspect-ratio--4-3:       4 / 3 !default;
-$s-aspect-ratio--3-2:       3 / 2 !default;
-$s-aspect-ratio--16-9:      16 / 9 !default;
-$s-aspect-ratio--2-1:       2 / 1 !default;
-
+$s-aspect-ratio--4-3:       3 / 4 !default;
+$s-aspect-ratio--3-2:       2 / 3 !default;
+$s-aspect-ratio--16-9:      9 / 16 !default;
+$s-aspect-ratio--2-1:       1 / 2 !default;
 $s-aspect-ratio--golden:    1.618 !default;
 
 
 // Aspect ratios map
 
 $s-aspect-ratios: (
-  1:1,
-  4:3,
-  3:2,
-  16:9,
-  2:1,
+  "1#{$s-config__aspect-ratio--separator}1":  $s-aspect-ratio--1-1,
+  "4#{$s-config__aspect-ratio--separator}3":  $s-aspect-ratio--4-3,
+  "3#{$s-config__aspect-ratio--separator}2":  $s-aspect-ratio--3-2,
+  "16#{$s-config__aspect-ratio--separator}9": $s-aspect-ratio--16-9,
+  "2#{$s-config__aspect-ratio--separator}1":  $s-aspect-ratio--2-1,
+  "golden-h" : 1 / $s-aspect-ratio--golden,
+  "golden-v" : $s-aspect-ratio--golden
 ) !default;
 
 
@@ -37,13 +38,9 @@ $s-aspect-ratios: (
  * Check that the chosen ratios are numbers.
  */
 
-@each $width, $height in $s-aspect-ratios {
+@each $_name, $_ratio in $s-aspect-ratios {
 
-  @if (type-of($width) != number) {
-    @error "`$s-aspect-ratios: #{$width}` needs to be a number.";
-  }
-
-  @if (type-of($height) != number) {
-    @error "`$s-aspect-ratios: #{$height}` needs to be a number.";
+  @if (type-of($_ratio) != number) {
+    @error "`$s-aspect-ratios: #{$_ratio}` needs to be a number.";
   }
 }

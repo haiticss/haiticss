@@ -1,0 +1,98 @@
+/* -------------------------------------------------------------------------
+ * RATIO
+ *
+ * Create ratio-bound content blocks
+ *
+ */
+
+// Object variables
+// --------------------------------------------------
+
+// Object toggling
+
+$o-ratio--enabled:                      true !default;
+
+// Modifiers Ratios
+
+$o-ratio__mod-ratios--enabled:          true !default;
+$o-ratio__mod-ratios:                   $s-aspect-ratios !default;
+
+
+// Object as a mixin
+// -------------------------------------------
+
+@mixin o-ratio($_ratio: 1) {
+  position: relative;
+
+  &::before {
+    display: block;
+    width: 100%;
+    padding-top: $_ratio * 100%;
+    content: '';
+  }
+}
+
+@mixin o-ratio__content() {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+// Object selector output
+// -------------------------------------------
+
+@if ($o-ratio--enabled) {
+  .o-ratio {
+    @include o-ratio();
+  }
+
+  .o-ratio__content {
+    @include o-ratio__content();
+  }
+}
+
+// Ratio modifiers output
+// -------------------------------------------
+
+@mixin o-ratio--override($ratio) {
+  &::before {
+    padding-top: $ratio * 100%;
+  }
+}
+
+@if ($o-ratio--enabled and $o-ratio__mod-ratios--enabled) {
+  @each $_name, $_ratio in $o-ratio__mod-ratios {
+    .o-ratio--#{$_name} {
+      @include o-ratio--override($_ratio);
+    }
+  }
+}
+
+
+// Unset as mixin
+// --------------------------------------------------
+
+@mixin o-ratio--unset() {
+  position: inherit;
+
+  &::before {
+    display: inherit;
+    width: auto;
+    padding-top: inherit;
+    content: inherit;
+  }
+}
+
+@mixin o-ratio__content--unset() {
+  position: inherit;
+  top: auto;
+  right: auto;
+  bottom: auto;
+  left: auto;
+  height: auto;
+  width: auto;
+}

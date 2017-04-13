@@ -24,7 +24,7 @@ $o-pack__space:                             $g-reset__spacing--horizontal !defau
 // Modifiers Spaces
 
 $o-pack__mod-spaces--enabled:               true !default;
-$o-pack-spaces:                             map_remove($s-spaces, large, huge) !default;
+$o-pack-spaces:                             map_remove($s-spaces, "large", "huge") !default;
 
 // Modifiers Alignments
 
@@ -141,7 +141,7 @@ $o-pack__mod-auto--enabled:                 true !default;
 // --------------------------------------------------
 
 @mixin o-pack--unset() {
-  width: inherit;
+  width: auto;
   margin-left: inherit;
   display: inherit;
   table-layout: inherit;

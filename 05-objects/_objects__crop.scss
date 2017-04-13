@@ -1,0 +1,108 @@
+/* -------------------------------------------------------------------------
+ * CROP
+ *
+ * A list of cropping ratios that get generated as modifier classes
+ *
+ * Params:
+ * ALIGNMENT .......................... Horizontal text alignment
+ *
+ */
+
+// Object variables
+// --------------------------------------------------
+
+// Object toggling
+
+$o-crop--enabled:                     true !default;
+
+// Ratios
+
+$o-crop__ratios:                      $s-aspect-ratios !default;
+$o-crop__ratios--enabled:             true !default;
+
+// Modifiers Alignments
+
+$o-crop__mod-alignments--enabled:      true !default;
+
+// Object as a mixin
+// --------------------------------------------------
+
+@mixin o-crop() {
+  position: relative;
+  display: block;
+  overflow: hidden;
+}
+
+@mixin o-crop__content() {
+  position: absolute;
+  top: 0;
+  left: 0;
+  max-width: none;
+}
+
+// Object selector output
+// --------------------------------------------------
+
+@if ($o-crop--enabled) {
+  .o-crop {
+    @include o-crop();
+  }
+
+  .o-crop__content {
+    @include o-crop__content();
+  }
+}
+
+// Alignment modifiers
+// --------------------------------------------------
+
+.o-crop__content--left {
+  top: 0;
+  left: 0;
+}
+
+.o-crop__content--right {
+  right: 0;
+  left: auto;
+}
+
+.o-crop__content--bottom {
+  top: auto;
+  bottom: 0;
+}
+
+.o-crop__content--center {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+// Crop ratios
+// -------------------------------------------
+
+@if ($o-crop--enabled and $o-crop__ratios--enabled) {
+  @each $_name, $_ratio in $o-crop__ratios {
+    .o-crop--#{$_name} {
+      padding-bottom: ($_ratio) * 100%;
+    }
+  }
+}
+
+
+// Unset as mixin
+// --------------------------------------------------
+
+@mixin o-crop--unset() {
+  position: inherit;
+  display: inherit;
+  overflow: inherit;
+}
+
+@mixin o-crop__content--unset() {
+  position: inherit;
+  top: auto;
+  left: auto;
+  right: auto;
+  max-width: inherit;
+  transform: none;
+}

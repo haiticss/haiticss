@@ -1,0 +1,68 @@
+/* -------------------------------------------------------------------------
+ * HIDDEN
+ *
+ * Force hide elements on certain breakpoints range
+ *
+ */
+
+// Utility variables
+// --------------------------------------------------
+
+// Utility toggling
+
+$u-hidden--enabled:                 true !default;
+
+// Options Breakpoints
+
+$u-hidden__bp-from--enabled:        true !default;
+$u-hidden__bp-from:                 map_remove($s-breakpoints, "xxs") !default;
+
+$u-hidden__bp-until--enabled:       true !default;
+$u-hidden__bp-until:                map_remove($s-breakpoints, "xxs") !default;
+
+// Utility Selector output
+// --------------------------------------------------
+
+@if ($u-hidden--enabled) {
+  .u-hidden {
+    display: none !important;
+  }
+}
+
+// Utility breakpoints mixin
+// --------------------------------------------------
+
+@mixin u-hidden--bp($_direction: "from", $_breakpoint: null) {
+  .u-hidden-#{$_direction}#{s-breakpoint-suffix($_breakpoint)} {
+
+    @if ($_direction == "from") and ($_breakpoint != null) {
+      @include mq($from: $_breakpoint) {
+        display: none !important;
+      }
+    }
+
+    @if ($_direction == "until") and ($_breakpoint != null) {
+      @include mq($until: $_breakpoint) {
+        display: none !important;
+      }
+    }
+  }
+}
+
+// Utility breakpoints FROM output
+// --------------------------------------------------
+
+@if ($u-hidden--enabled and $u-hidden__bp-from--enabled) {
+  @each $_bp-name, $_bp-value in $u-hidden__bp-from {
+    @include u-hidden--bp("from", $_bp-name);
+  }
+}
+
+// Utility breakpoints UNTIL output
+// --------------------------------------------------
+
+@if ($u-hidden--enabled and $u-hidden__bp-until--enabled) {
+  @each $_bp-name, $_bp-value in $u-hidden__bp-until {
+    @include u-hidden--bp("until", $_bp-name);
+  }
+}

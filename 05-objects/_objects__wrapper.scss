@@ -33,7 +33,7 @@ $o-wrapper__sizes: (
 // Modifiers Spaces
 
 $o-wrapper__mod-spaces--enabled:      true !default;
-$o-wrapper__mod-spaces:               map_remove($s-spaces, large, huge) !default;
+$o-wrapper__mod-spaces:               map_remove($s-spaces, "large", "huge") !default;
 
 // Modifiers Breakpoints
 
