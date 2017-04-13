@@ -31,7 +31,7 @@ $u-bgcolors__maps:            $s-colors !default;
       }
 
       .u-color__#{$_bgcolor-name} {
-        color: $_bgcolor-value !important;
+        background-color: $_bgcolor-value !important;
       }
 
     }
