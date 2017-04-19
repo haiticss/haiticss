@@ -115,7 +115,7 @@ $u-widths__offset-pull--enabled:      false !default;
 
   @each $_bp-name, $_bp-value in $u-widths__bp {
 
-    @include t-sass-mq($from: $_bp-name) {
+    @include t-mq($from: $_bp-name) {
       @include u-widths($u-widths__fractions, s-core-breakpoint-suffix($_bp-name));
     }
   }

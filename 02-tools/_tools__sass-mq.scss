@@ -36,7 +36,7 @@ $t-sass-mq__debug--border-color:    $s-color__neutral-grey--light !default;
 // SASS-MQ main mixin
 // --------------------------------------------------
 
-@mixin t-sass-mq(
+@mixin t-mq(
   $from:          false,
   $until:         false,
   $and:           false,
@@ -117,7 +117,7 @@ $t-sass-mq__debug--border-color:    $s-color__neutral-grey--light !default;
 
     // Loop through the breakpoints that should be shown
     @each $_bp-name, $_bp-value in $_breakpoints {
-      @include t-sass-mq($from: $_bp-name) {
+      @include t-mq($from: $_bp-name) {
         content: "#{$_bp-name} ≥ #{$_bp-value} (#{s-core-px-to-em($_bp-value)})";
       }
     }
