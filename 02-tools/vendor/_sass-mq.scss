@@ -191,7 +191,7 @@ $mq-media-type: all !default;
     @if type-of($until) == number {
       $max-width: mq-px2em($until);
     } @else {
-      $max-width: mq-px2em(mq-get-breakpoint-width($until, $breakpoints)) - .01em;
+      $max-width: mq-px2em(mq-get-breakpoint-width($until, $breakpoints) - 1px);
     }
   }
 

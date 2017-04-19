@@ -1,0 +1,20 @@
+
+/* CORE FUNCTIONS
+ * SASS core functions (core- prefixed)
+ *
+ * breakpoint-suffix ..... returns a string with breakpoint separator concatenated to a given breakpoint
+ * map-diff .............. returns the differences between two maps, skipping equal values
+ * strip-units ........... returns the unitless number of a given value
+ * ratio-suffix .......... returns a ratio string with its escaped separator of a given width and height
+ * rem-to-px ............. returns PX equivalent value using a given REM value
+ * px-to-rem ............. returns REM equivalent value using a given PX value
+ * px-to-em .............. returns EM equivalent value using a given PX value and a REM reference
+ */
+
+@import "core-functions/breakpoint-suffix";
+@import "core-functions/map-diff";
+@import "core-functions/strip-units";
+@import "core-functions/ratio-suffix";
+@import "core-functions/rem-to-px";
+@import "core-functions/px-to-rem";
+@import "core-functions/px-to-em";

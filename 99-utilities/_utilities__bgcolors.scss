@@ -10,28 +10,28 @@
 
 // Utility toggling
 
-$u-bgcolors--enabled:         true !default;
+$u-bg-colors--enabled:         true !default;
 
 // Colors maps
 
-$u-bgcolors__maps:            $s-colors !default;
+$u-bg-colors__maps:            $s-colors !default;
 
 
 // Utilities output
 // --------------------------------------------------
 
-@if ($u-bgcolors--enabled) {
+@if ($u-bg-colors--enabled) {
 
-  @each $_bgcolor-group__name, $_bgcolor-group__map in $u-bgcolors__maps {
+  @each $_bg-color-group__name, $_bg-color-group__map in $u-bg-colors__maps {
 
-    @each $_bgcolor-name, $_bgcolor-value in $_bgcolor-group__map {
+    @each $_bg-color-name, $_bg-color-value in $_bg-color-group__map {
 
-      @if ($_bgcolor-group__name != "others") {
-        $_color-name: quote(#{$_bgcolor-group__name}-#{$_bgcolor-name});
+      @if ($_bg-color-group__name != "others") {
+        $_color-name: unquote("#{$_bg-color-group__name}-#{$_bg-color-name}");
       }
 
-      .u-color__#{$_bgcolor-name} {
-        background-color: $_bgcolor-value !important;
+      .u-bg-color__#{$_bg-color-name} {
+        background-color: $_bg-color-value !important;
       }
 
     }

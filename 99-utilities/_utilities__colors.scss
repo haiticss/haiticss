@@ -27,7 +27,7 @@ $u-colors__maps:            $s-colors !default;;
     @each $_color-name, $_color-value in $_color-group__map {
 
       @if ($_color-group__name != "others") {
-        $_color-name: quote(#{$_color-group__name}-#{$_color-name});
+        $_color-name: unquote("#{$_color-group__name}-#{$_color-name}");
       }
 
       .u-color__#{$_color-name} {
