@@ -83,7 +83,7 @@ $o-wrapper__mod-bp-to--enabled:       true !default;
   @each $_s-bp-name, $_s-bp-size in $s-breakpoints {
 
     @include mq($from: $_s-bp-name) {
-      .o-wrapper--from#{s-breakpoint-suffix($_bp-name)} {
+      .o-wrapper--from#{s-core-breakpoint-suffix($_bp-name)} {
 
         @if (map-get($s-breakpoints, $_bp-name) <= $_s-bp-size) {
           max-width: map-get($o-wrapper__sizes, $_s-bp-name);
@@ -109,7 +109,7 @@ $o-wrapper__mod-bp-to--enabled:       true !default;
 
     @if (map-get($s-breakpoints, $_bp-name) < $_s-bp-size) {
       @include mq($from: $_s-bp-name) {
-        .o-wrapper--to#{s-breakpoint-suffix($_bp-name)} {
+        .o-wrapper--to#{s-core-breakpoint-suffix($_bp-name)} {
           max-width: $_bp-size;
         }
       }

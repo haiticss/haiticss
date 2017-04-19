@@ -1,5 +1,23 @@
 
-@import "01-settings/settings";
+/* ==========================================================================
+ * SETTINGS
+ * Project configuration, functions and variables
+ *
+ * core ................... Core and setup settings
+ * config ................. Global configuration: env, paths
+ * core functions ......... SASS core functions (core- prefixed)
+ * foundations ............ Design foundations vars
+   ========================================================================== */
+
+@import "01-settings/settings__01-core";
+@import "01-settings/settings__02-config";
+@import "01-settings/settings__03-core-functions";
+@import "01-settings/settings__04-foundations";
+
+/* ==========================================================================
+ * CONTENT
+   ========================================================================== */
+
 @import "02-tools/tools";
 @import "03-generic/generic";
 @import "04-elements/elements";

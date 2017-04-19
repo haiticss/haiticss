@@ -1,0 +1,36 @@
+
+/* -------------------------------------------------------------------------
+ * MAP DIFF
+ *
+ * Compares the differences between two maps, skipping equal values.
+ * Compares both keys and values.
+ *
+ * Params:
+ * MAP-A .............................. Main map to compare with
+ * MAP-B .............................. Secondary map
+ *
+ * Returns a map with the differences
+ *
+ */
+
+@function s-core-map-diff($_map-a: (), $_map-b: ()) {
+
+  @if (type-of($_map-a) != "map") {
+    @error "s-map-diff: `#{$_map-a}` needs to be a map.";
+  }
+
+  @if (type-of($_map-b) != "map") {
+    @error "s-map-diff: `#{$_map-b}` needs to be a map.";
+  }
+
+  $_output: ();
+
+  @each $_property, $_value in $_map-b {
+
+    @if (not map_has_key($_map-a, $_property)) or ($_value != map_get($_map-a, $_property)) {
+      $_output: map_merge($_output, ($_property: $_value));
+    }
+  }
+
+  @return $_output;
+}

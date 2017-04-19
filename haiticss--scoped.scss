@@ -1,9 +1,40 @@
+/* ==========================================================================
+ * WARNING
+ * The scoped version of CSS output may not work on lib-sass 3.4
+ * Both ruby and node based compilers do not fail to compile but wrong output
+ * Use any compiler based on versions <=3.3 or >=3.5
+ * https://github.com/sass/libsass/issues/2295
+ * https://github.com/sass/libsass/pull/2296
+   ========================================================================== */
+
+
+/* ==========================================================================
+ * SETTINGS
+ * Project configuration, functions and variables
+ *
+ * core ................... Core and setup settings
+ * config ................. Global configuration: env, paths
+ * core functions ......... SASS core functions (core- prefixed)
+ * foundations ............ Design foundations vars
+   ========================================================================== */
+
+@import "01-settings/settings__01-core";
+
+// Override default config
 $s-config__scoped: true;
 
+@import "01-settings/settings__02-config";
+@import "01-settings/settings__03-core-functions";
+@import "01-settings/settings__04-foundations";
+
+/* ==========================================================================
+ * SCOPED CONTENT
+   ========================================================================== */
+
 .s-haiticss {
-  @import "01-settings/settings";
   @import "02-tools/tools";
   @import "03-generic/generic";
   @import "04-elements/elements";
   @import "05-objects/objects";
+  @import "99-utilities/utilities";
 }
