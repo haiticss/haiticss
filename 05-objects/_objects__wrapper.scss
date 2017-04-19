@@ -52,7 +52,7 @@ $o-wrapper__mod-bp-to--enabled:       true !default;
     @include t-clearfix;
 
     @each $bp-name, $bp-size in $o-wrapper__sizes {
-      @include mq($from: $bp-name) {
+      @include t-sass-mq($from: $bp-name) {
         max-width: map-get($o-wrapper__sizes, $bp-name);
       }
     }
@@ -82,7 +82,7 @@ $o-wrapper__mod-bp-to--enabled:       true !default;
 @mixin o-wrapper--from($_bp-name: "xs", $_bp-size: map-get($o-wrapper__sizes, "xs")) {
   @each $_s-bp-name, $_s-bp-size in $s-breakpoints {
 
-    @include mq($from: $_s-bp-name) {
+    @include t-sass-mq($from: $_s-bp-name) {
       .o-wrapper--from#{s-core-breakpoint-suffix($_bp-name)} {
 
         @if (map-get($s-breakpoints, $_bp-name) <= $_s-bp-size) {
@@ -108,7 +108,7 @@ $o-wrapper__mod-bp-to--enabled:       true !default;
   @each $_s-bp-name, $_s-bp-size in $s-breakpoints {
 
     @if (map-get($s-breakpoints, $_bp-name) < $_s-bp-size) {
-      @include mq($from: $_s-bp-name) {
+      @include t-sass-mq($from: $_s-bp-name) {
         .o-wrapper--to#{s-core-breakpoint-suffix($_bp-name)} {
           max-width: $_bp-size;
         }

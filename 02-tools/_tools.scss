@@ -3,24 +3,11 @@
  * TOOLS
  * SCSS mixins where project is built on
  *
- * aspect-ratio ........... Mixin to ratio-bound content blocks
  * clearfix ............... Micro clearfix
+ * sass-mq ................ Media query manager based on sass-mq
  * quantity-queries ....... Third party quantity queries
- * sass-mq ................ Third party media query manager
    ========================================================================== */
 
 @import 'tools__clearfix';
+@import 'tools__sass-mq';
 @import 'vendor/quantity-queries.scss';
-
-// ---------------------------------------------------------
-// CAUTION: VENDOR OVERRIDE by HaitiCSS
-// ---------------------------------------------------------
-// SASS-MQ Variables should match the HaitiCSS configuration
-$mq-base-font-size:       $s-core__font-size;
-$mq-breakpoints:          $s-breakpoints !default;
-$mq-show-breakpoints:     if($s-config__env == "dev" or $s-config__env == "cms", (map-keys($mq-breakpoints)), ()) !default;
-// ---------------------------------------------------------
-// mq-px2em function is overridden to allow scoped config
-// the override is made into the imported file
-@import 'vendor/sass-mq';
-// ---------------------------------------------------------

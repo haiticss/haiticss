@@ -1,0 +1,132 @@
+
+/* -------------------------------------------------------------------------
+ * SASS-MQ
+ *
+ * Based on https://github.com/sass-mq/sass-mq
+ * Adapted to Haiticss settings and workflow
+ */
+
+// SASS-MQ variables
+// --------------------------------------------------
+
+$t-sass-mq__base-font-size:         $s-core__font-size !default;
+$t-sass-mq__breakpoints:            $s-breakpoints !default;
+$t-sass-mq__media-type:             all !default;
+
+$t-sass-mq__debug:                  if($s-config__env == "dev" or $s-config__env == "cms", true, false) !default;
+$t-sass-mq__debug--color:           $s-color__neutral-grey--dark !default;
+$t-sass-mq__debug--bg-color:        $s-color__neutral-grey--ultra-light !default;
+$t-sass-mq__debug--border-color:    $s-color__neutral-grey--light !default;
+
+
+// SASS-MQ functions
+// --------------------------------------------------
+
+@function t-sass-mq__get-breakpoint-width($_bp-name, $_breakpoints: $t-sass-mq__breakpoints) {
+
+  @if map-has-key($_breakpoints, $_bp-name) {
+    @return map-get($_breakpoints, $_bp-name);
+  } @else {
+
+    @warn "Breakpoint #{$_bp-name} wasn't found in $_breakpoints.";
+  }
+}
+
+
+// SASS-MQ main mixin
+// --------------------------------------------------
+
+@mixin t-sass-mq(
+  $from:          false,
+  $until:         false,
+  $and:           false,
+  $media-type:    $t-sass-mq__media-type,
+  $breakpoints:   $t-sass-mq__breakpoints
+) {
+  $min-width: 0;
+  $max-width: 0;
+  $media-query: '';
+
+  // From: this breakpoint (inclusive)
+
+  @if $from {
+
+    @if type-of($from) == number {
+      $min-width: s-core-px-to-em($from);
+    } @else {
+      $min-width: s-core-px-to-em(t-sass-mq__get-breakpoint-width($from, $breakpoints));
+    }
+  }
+
+  // Until: that breakpoint (exclusive)
+
+  @if $until {
+
+    @if type-of($until) == number {
+      $max-width: s-core-px-to-em($until);
+    } @else {
+      $max-width: s-core-px-to-em(t-sass-mq__get-breakpoint-width($until, $breakpoints) - 1px);
+    }
+  }
+
+  // Query building
+
+  @if $min-width != 0 {
+    $media-query: '#{$media-query} and (min-width: #{$min-width})';
+  }
+
+  @if $max-width != 0 {
+    $media-query: '#{$media-query} and (max-width: #{$max-width})';
+  }
+
+  @if $and {
+    $media-query: '#{$media-query} and #{$and}';
+  }
+
+  // Remove unnecessary media query prefix 'all and '
+
+  @if ($media-type == 'all' and $media-query != '') {
+    $media-type: '';
+    $media-query: str-slice(unquote($media-query), 6);
+  }
+
+  @media #{$media-type + $media-query} {
+
+    @content;
+  }
+
+}
+
+
+// SASS-MQ debug mixin
+// --------------------------------------------------
+
+@mixin t-sass-mq__debug($_breakpoints: $t-sass-mq__breakpoints) {
+  body::before {
+    background-color: $t-sass-mq__debug--bg-color;
+    border-bottom: 1px solid $t-sass-mq__debug--border-color;
+    border-left: 1px solid $t-sass-mq__debug--border-color;
+    color: $t-sass-mq__debug--border-color;
+    font: small-caption;
+    padding: 3px 6px;
+    pointer-events: none;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 100;
+
+    // Loop through the breakpoints that should be shown
+    @each $_bp-name, $_bp-value in $_breakpoints {
+      @include t-sass-mq($from: $_bp-name) {
+        content: "#{$_bp-name} ≥ #{$_bp-value} (#{s-core-px-to-em($_bp-value)})";
+      }
+    }
+  }
+}
+
+// SASS-MQ debug output
+// --------------------------------------------------
+
+@if ($t-sass-mq__debug) {
+  @include t-sass-mq__debug();
+}

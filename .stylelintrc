@@ -5,7 +5,6 @@
   "ignoreFiles": [
     "haiticss.css",
     "02-tools/vendor/_quantity-queries.scss",
-    "02-tools/vendor/_sass-mq.scss",
     "03-generic/_generic__normalize.scss"
   ],
   "rules": {
