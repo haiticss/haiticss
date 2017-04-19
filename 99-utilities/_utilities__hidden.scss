@@ -36,13 +36,13 @@ $u-hidden__bp-until:                map_remove($s-breakpoints, "xxs") !default;
   .u-hidden-#{$_direction}#{s-core-breakpoint-suffix($_breakpoint)} {
 
     @if ($_direction == "from") and ($_breakpoint != null) {
-      @include mq($from: $_breakpoint) {
+      @include t-sass-mq($from: $_breakpoint) {
         display: none !important;
       }
     }
 
     @if ($_direction == "until") and ($_breakpoint != null) {
-      @include mq($until: $_breakpoint) {
+      @include t-sass-mq($until: $_breakpoint) {
         display: none !important;
       }
     }

@@ -12,7 +12,7 @@
 
 // Convert px to em relative to the second argument value
 
-@function s-core-px-to-em($_value, $_reference-value-rem, $_root-font-size: $s-core__font-size) {
+@function s-core-px-to-em($_value, $_reference-value-rem: 1rem, $_root-font-size: $s-core__font-size) {
 
   @if ($_value == 0) {
     @return 0;
