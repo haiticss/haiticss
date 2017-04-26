@@ -33,10 +33,6 @@
     @error "s-core-px-to-em: `#{$_value}` needs to be a pixel value.";
   }
 
-  @if (unit($_reference-value-rem) != "rem") {
-    @error "s-core-px-to-em: `#{$_reference-value-rem}` needs to be a rem value.";
-  }
-
   @if (unit($_root-font-size) != "px") {
     @error "s-core-px-to-em: `#{$_root-font-size}` needs to be a pixel value.";
   }
@@ -45,6 +41,10 @@
 
   @if ($s-config__scoped) {
     @return $_value;
+  }
+
+  @if (unit($_reference-value-rem) != "rem") {
+    @error "s-core-px-to-em: `#{$_reference-value-rem}` needs to be a rem value.";
   }
 
   $reference-value-px: s-core-rem-to-px($_reference-value-rem, false, $_root-font-size);
