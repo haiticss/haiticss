@@ -26,6 +26,10 @@
 
   }
 
+  @if (unit($_value) == "px") {
+    @return $_value;
+  }
+
   @if (unit($_value) != "rem") {
     @error "s-core-rem-to-px: `#{$_value}` needs to be a rem value.";
   }
