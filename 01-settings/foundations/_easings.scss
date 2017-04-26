@@ -1,0 +1,34 @@
+
+/* -------------------------------------------------------------------------
+ * EASINGS
+ *
+ * Define easings foundation
+ * Based on Polaris:
+ * https://github.com/Shopify/polaris/blob/master/src/styles/foundation/easing.scss
+ *
+ */
+
+// Main easing
+
+$s-easing:                    cubic-bezier(.64, 0, .35, 1) !default;
+
+// Easing variants
+
+$s-easing--base:              $s-easing !default;
+$s-easing--in:                cubic-bezier(.36, 0, 1, 1) !default;
+$s-easing--out:               cubic-bezier(0, 0, .42, 1) !default;
+$s-easing--excite:            cubic-bezier(.18, .67, .6, 1.22) !default;
+$s-easing--overshoot:         cubic-bezier(.07, .28, .32, 1.22) !default;
+$s-easing--anticipate:        cubic-bezier(.38, -.4, .88, .65) !default;
+
+
+// EASINGS MAP
+
+$s-easings: (
+  "base":                     $s-easing--base,
+  "in":                       $s-easing--in,
+  "out":                      $s-easing--out,
+  "excite":                   $s-easing--excite,
+  "overshoot":                $s-easing--overshoot,
+  "anticipate":               $s-easing--anticipate,
+) !default;
