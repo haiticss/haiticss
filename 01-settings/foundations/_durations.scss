@@ -8,14 +8,14 @@
 
 // Main duration
 
-$s-duration:                  .5s !default;
+$s-duration:                  .3s !default;
 
 // Duration variants
 
 $s-duration--none:            0 !default;
-$s-duration--fast:            .3s !default;
-$s-duration--medium:          $s-duration !default;
-$s-duration--slow:            .8s !default;
+$s-duration--fast:            .15s !default;
+$s-duration--normal:          $s-duration !default;
+$s-duration--slow:            .6s !default;
 
 
 // DURATIONS MAP
@@ -23,6 +23,6 @@ $s-duration--slow:            .8s !default;
 $s-durations: (
   "none":                     $s-duration--none,
   "fast":                     $s-duration--fast,
-  "medium":                   $s-duration--medium,
+  "normal":                   $s-duration--normal,
   "slow":                     $s-duration--slow,
 ) !default;

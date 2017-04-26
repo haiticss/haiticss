@@ -1,0 +1,130 @@
+/* -------------------------------------------------------------------------
+ * REVEAL SLIDE
+ *
+ * Reveal from translated to untranslated position
+ *
+ * Params:
+ * DURATION ........................... Animation duration
+ * DIRECTION .......................... In-Movement direction (top, bottom, left, right)
+ *
+ */
+
+// Animation variables
+// --------------------------------------------------
+
+// Animation toggling
+
+$a-reveal-slide--enabled:                     true !default;
+
+// Animation Params
+
+$a-reveal-slide__duration:                    $s-duration !default;
+$a-reveal-slide__direction:                   "right" !default;
+$a-reveal-slide__easing-in:                   $s-easing--in !default;
+$a-reveal-slide__easing-out:                  $s-easing--out !default;
+
+
+// Modifiers durations
+
+$a-reveal-slide__mod-durations--enabled:      true !default;
+$a-reveal-slide__mod-durations:               $s-durations !default;
+
+// Modifiers directions
+
+$a-reveal-slide__mod-directions--enabled:     true !default;
+$a-reveal-slide__mod-directions:              (
+  "left",
+  "right",
+  "top",
+  "bottom"
+) !default;
+
+
+// Helper functions
+// --------------------------------------------------
+
+@function a-reveal-slide__direction-to-transform($_direction: "left") {
+  $_directions-transforms: (
+    "left":     translate(100%, 0),
+    "right":    translate(-100%, 0),
+    "top":      translate(0, -100%),
+    "bottom":   translate(0, 100%),
+  );
+
+  @if not map_has_key($_directions-transforms, $_direction) {
+    @error "a-reveal-slide__direction-to-transform: `#{$_direction}` is not one of the allowed directions.";
+  }
+
+  @return map_get($_directions-transforms, $_direction);
+
+}
+
+
+// Animation as a mixin
+// --------------------------------------------------
+
+@mixin a-reveal-slide($_duration: $a-reveal-slide__duration, $_direction: $a-reveal-slide__direction) {
+  transform: a-reveal-slide__direction-to-transform($_direction);
+  transition-property: transform;
+  transition-duration: $_duration;
+  transition-timing-function: $a-reveal-slide__easing-out;
+}
+
+@mixin a-reveal-slide--in() {
+  transform: translate(0, 0);
+  transition-timing-function: $a-reveal-slide__easing-in;
+}
+
+
+// Animation selector output
+// --------------------------------------------------
+
+@if ($a-reveal-slide--enabled) {
+  .a-reveal-slide {
+    @include a-reveal-slide();
+
+    &.in {
+      @include a-reveal-slide--in();
+    }
+  }
+}
+
+// Duration modifiers output
+// --------------------------------------------------
+
+@mixin a-reveal-slide__mod-duration($_duration-name: "normal", $_duration-value: $s-duration--normal) {
+  .a-reveal-slide--duration-#{$_duration-name} {
+    transition-duration: $_duration-value;
+  }
+}
+
+@if ($a-reveal-slide--enabled and $a-reveal-slide__mod-durations--enabled) {
+  @each $_duration-name, $_duration-value in $a-reveal-slide__mod-durations {
+    @include a-reveal-slide__mod-duration($_duration-name, $_duration-value);
+  }
+}
+
+// Direction modifiers output
+// --------------------------------------------------
+
+@mixin a-reveal-slide__mod-direction($_direction-name: "right") {
+  .a-reveal-slide--direction-#{$_direction-name} {
+    transform: a-reveal-slide__direction-to-transform($_direction-name);
+  }
+}
+
+@if ($a-reveal-slide--enabled and $a-reveal-slide__mod-directions--enabled) {
+  @each $_direction-name in $a-reveal-slide__mod-directions {
+    @include a-reveal-slide__mod-direction($_direction-name);
+  }
+}
+
+// Unset as mixin
+// --------------------------------------------------
+
+@mixin a-reveal-slide--unset() {
+  transform: initial;
+  transition-property: initial;
+  transition-duration: initial;
+  transition-timing-function: initial;
+}
