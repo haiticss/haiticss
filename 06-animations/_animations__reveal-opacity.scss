@@ -1,0 +1,83 @@
+/* -------------------------------------------------------------------------
+ * REVEAL OPACITY
+ *
+ * Reveal from transparent to opaque
+ *
+ * Params:
+ * DURATION ........................... Animation duration
+ *
+ */
+
+// Animation variables
+// --------------------------------------------------
+
+// Animation toggling
+
+$a-reveal-opacity--enabled:                   true !default;
+
+// Animation Params
+
+$a-reveal-opacity__duration:                  $s-duration !default;
+$a-reveal-opacity__easing-in:                 $s-easing--in !default;
+$a-reveal-opacity__easing-out:                $s-easing--out !default;
+
+
+// Modifiers durations
+
+$a-reveal-opacity__mod-durations--enabled:    true !default;
+$a-reveal-opacity__mod-durations:             $s-durations !default;
+
+
+// Animation as a mixin
+// --------------------------------------------------
+
+@mixin a-reveal-opacity($_duration: $a-reveal-opacity__duration) {
+  opacity: 0;
+  transition-property: opacity;
+  transition-duration: $_duration;
+  transition-timing-function: $a-reveal-opacity__easing-out;
+}
+
+@mixin a-reveal-opacity--in() {
+  opacity: 1;
+  transition-timing-function: $a-reveal-opacity__easing-in;
+}
+
+
+// Animation selector output
+// --------------------------------------------------
+
+@if ($a-reveal-opacity--enabled) {
+  .a-reveal-opacity {
+    @include a-reveal-opacity();
+
+    &.in {
+      @include a-reveal-opacity--in();
+    }
+  }
+}
+
+// Space modifiers output
+// --------------------------------------------------
+
+@mixin a-reveal-opacity__mod-duration($_duration-name: "normal", $_duration-value: $s-duration--normal) {
+  .a-reveal-opacity--duration-#{$_duration-name} {
+    transition-duration: $_duration-value;
+  }
+}
+
+@if ($a-reveal-opacity--enabled and $a-reveal-opacity__mod-durations--enabled) {
+  @each $_duration-name, $_duration-value in $a-reveal-opacity__mod-durations {
+    @include a-reveal-opacity__mod-duration($_duration-name, $_duration-value);
+  }
+}
+
+// Unset as mixin
+// --------------------------------------------------
+
+@mixin a-reveal-opacity--unset() {
+  opacity: initial;
+  transition-property: initial;
+  transition-duration: initial;
+  transition-timing-function: initial;
+}
