@@ -13,9 +13,9 @@ $s-duration:                  .3s !default;
 // Duration variants
 
 $s-duration--none:            0 !default;
-$s-duration--fast:            .15s !default;
+$s-duration--fast:            $s-duration / 2 !default;
 $s-duration--normal:          $s-duration !default;
-$s-duration--slow:            .6s !default;
+$s-duration--slow:            $s-duration * 2 !default;
 
 
 // DURATIONS MAP
