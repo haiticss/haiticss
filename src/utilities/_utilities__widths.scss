@@ -40,7 +40,7 @@ $u-widths__fractions:                 1 2 3 4 5 !default;
 // Option Breakpoints
 
 $u-widths__bp--enabled:               true !default;
-$u-widths__bp:                        map_remove($s-breakpoints, "xxs") !default;
+$u-widths__bp:                        map_remove($f-breakpoints, "xxs") !default;
 
 // Pull and push options
 

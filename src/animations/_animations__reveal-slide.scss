@@ -18,16 +18,16 @@ $a-reveal-slide--enabled:                     true !default;
 
 // Animation Params
 
-$a-reveal-slide__duration:                    $s-duration !default;
+$a-reveal-slide__duration:                    $f-duration !default;
 $a-reveal-slide__direction:                   "right" !default;
-$a-reveal-slide__easing-in:                   $s-easing--in !default;
-$a-reveal-slide__easing-out:                  $s-easing--out !default;
+$a-reveal-slide__easing-in:                   $f-easing--in !default;
+$a-reveal-slide__easing-out:                  $f-easing--out !default;
 
 
 // Modifiers durations
 
 $a-reveal-slide__mod-durations--enabled:      true !default;
-$a-reveal-slide__mod-durations:               $s-durations !default;
+$a-reveal-slide__mod-durations:               $f-durations !default;
 
 // Modifiers directions
 
@@ -92,7 +92,7 @@ $a-reveal-slide__mod-directions:              (
 // Duration modifiers output
 // --------------------------------------------------
 
-@mixin a-reveal-slide__mod-duration($_duration-name: "normal", $_duration-value: $s-duration--normal) {
+@mixin a-reveal-slide__mod-duration($_duration-name: "normal", $_duration-value: $f-duration--normal) {
   .a-reveal-slide--duration-#{$_duration-name} {
     transition-duration: $_duration-value;
   }

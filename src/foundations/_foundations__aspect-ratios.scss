@@ -1,0 +1,46 @@
+
+/* -------------------------------------------------------------------------
+ * ASPECT RATIOS
+ *
+ * Used to support some objects, material and components
+ */
+
+
+// Main aspect ratios
+
+$f-aspect-ratio--1-1:       1 / 1 !default;
+$f-aspect-ratio--4-3:       3 / 4 !default;
+$f-aspect-ratio--3-2:       2 / 3 !default;
+$f-aspect-ratio--16-9:      9 / 16 !default;
+$f-aspect-ratio--2-1:       1 / 2 !default;
+$f-aspect-ratio--golden:    1.618 !default;
+
+
+// Aspect ratios map
+
+$f-aspect-ratios: (
+  quote(s-core-ratio-suffix(1, 1)):  $f-aspect-ratio--1-1,
+  quote(s-core-ratio-suffix(4, 3)):  $f-aspect-ratio--4-3,
+  quote(s-core-ratio-suffix(3, 2)):  $f-aspect-ratio--3-2,
+  quote(s-core-ratio-suffix(16, 9)): $f-aspect-ratio--16-9,
+  quote(s-core-ratio-suffix(2, 1)):  $f-aspect-ratio--2-1,
+  "golden-h" : 1 / $f-aspect-ratio--golden,
+  "golden-v" : $f-aspect-ratio--golden
+) !default;
+
+
+////////////////////////////////////////////////////////////////////////////////
+//                               W A R N I N G                                //
+//                  DO NOT MODIFY ANYTHING BEYOND THIS POINT                  //
+////////////////////////////////////////////////////////////////////////////////
+
+/* SAFE CHECKING
+ * Check that the chosen ratios are numbers.
+ */
+
+@each $_name, $_ratio in $f-aspect-ratios {
+
+  @if (type-of($_ratio) != number) {
+    @error "`$f-aspect-ratios: #{$_ratio}` needs to be a number.";
+  }
+}

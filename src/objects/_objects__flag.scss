@@ -26,7 +26,7 @@ $o-flag__alignment:                   middle !default;
 // Modifiers Spaces
 
 $o-flag__mod-spaces--enabled:         true !default;
-$o-flag__mod-spaces:                  map_remove($s-spaces, "large", "huge") !default;
+$o-flag__mod-spaces:                  map_remove($f-spaces, "large", "huge") !default;
 
 // Modifiers Alignments
 

@@ -15,10 +15,10 @@ $u-hidden--enabled:                 true !default;
 // Options Breakpoints
 
 $u-hidden__bp-from--enabled:        true !default;
-$u-hidden__bp-from:                 map_remove($s-breakpoints, "xxs") !default;
+$u-hidden__bp-from:                 map_remove($f-breakpoints, "xxs") !default;
 
 $u-hidden__bp-until--enabled:       true !default;
-$u-hidden__bp-until:                map_remove($s-breakpoints, "xxs") !default;
+$u-hidden__bp-until:                map_remove($f-breakpoints, "xxs") !default;
 
 // Utility Selector output
 // --------------------------------------------------

@@ -10,13 +10,13 @@
 // --------------------------------------------------
 
 $t-sass-mq__base-font-size:         $s-core__font-size !default;
-$t-sass-mq__breakpoints:            $s-breakpoints !default;
+$t-sass-mq__breakpoints:            $f-breakpoints !default;
 $t-sass-mq__media-type:             all !default;
 
 $t-sass-mq__debug:                  if($s-config__env == "dev" or $s-config__env == "cms", true, false) !default;
-$t-sass-mq__debug--color:           $s-color__neutral-grey--dark !default;
-$t-sass-mq__debug--bg-color:        $s-color__neutral-grey--ultra-light !default;
-$t-sass-mq__debug--border-color:    $s-color__neutral-grey--light !default;
+$t-sass-mq__debug--color:           $f-color__neutral-grey--dark !default;
+$t-sass-mq__debug--bg-color:        $f-color__neutral-grey--ultra-light !default;
+$t-sass-mq__debug--border-color:    $f-color__neutral-grey--light !default;
 
 
 // SASS-MQ functions

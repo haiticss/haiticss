@@ -17,15 +17,15 @@ $a-reveal-opacity--enabled:                   true !default;
 
 // Animation Params
 
-$a-reveal-opacity__duration:                  $s-duration !default;
-$a-reveal-opacity__easing-in:                 $s-easing--in !default;
-$a-reveal-opacity__easing-out:                $s-easing--out !default;
+$a-reveal-opacity__duration:                  $f-duration !default;
+$a-reveal-opacity__easing-in:                 $f-easing--in !default;
+$a-reveal-opacity__easing-out:                $f-easing--out !default;
 
 
 // Modifiers durations
 
 $a-reveal-opacity__mod-durations--enabled:    true !default;
-$a-reveal-opacity__mod-durations:             $s-durations !default;
+$a-reveal-opacity__mod-durations:             $f-durations !default;
 
 
 // Animation as a mixin
@@ -60,7 +60,7 @@ $a-reveal-opacity__mod-durations:             $s-durations !default;
 // Space modifiers output
 // --------------------------------------------------
 
-@mixin a-reveal-opacity__mod-duration($_duration-name: "normal", $_duration-value: $s-duration--normal) {
+@mixin a-reveal-opacity__mod-duration($_duration-name: "normal", $_duration-value: $f-duration--normal) {
   .a-reveal-opacity--duration-#{$_duration-name} {
     transition-duration: $_duration-value;
   }
