@@ -1,0 +1,36 @@
+
+/* -------------------------------------------------------------------------
+ * BREAKPOINTS
+ *
+ * Define all breakpoints
+ * Extracted from [Google Material Design]
+ * (https://www.google.com/design/spec/layout/adaptive-ui.html)
+ */
+
+
+// Main breakpoints
+
+$f-breakpoint--xxs:         1px !default;
+$f-breakpoint--xs:          480px !default;
+$f-breakpoint--sm:          600px !default;
+$f-breakpoint--sml:         840px !default;
+$f-breakpoint--md:          960px !default;
+$f-breakpoint--lg:          1280px !default;
+$f-breakpoint--xl:          1440px !default;
+$f-breakpoint--xxl:         1600px !default;
+$f-breakpoint--xxxl:        1920px !default;
+
+
+// BREAKPOINTS MAP
+
+$f-breakpoints: (
+  "xxs":                    $f-breakpoint--xxs,
+  "xs":                     $f-breakpoint--xs,
+  "sm":                     $f-breakpoint--sm,
+  "sml":                    $f-breakpoint--sml,
+  "md":                     $f-breakpoint--md,
+  "lg":                     $f-breakpoint--lg,
+  "xl":                     $f-breakpoint--xl,
+  "xxl":                    $f-breakpoint--xxl,
+  "xxxl":                   $f-breakpoint--xxxl,
+) !default;

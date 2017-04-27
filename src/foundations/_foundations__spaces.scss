@@ -13,27 +13,27 @@
 
 // Main space
 
-$s-space:                     24px !default;
+$f-space:                     24px !default;
 
 // Space variants
 
-$s-space--none:               0 !default;
-$s-space--tiny:               round($s-space * .25) !default;
-$s-space--small:              round($s-space * .5) !default;
-$s-space--medium:             round($s-space * 1) !default;
-$s-space--large:              round($s-space * 2) !default;
-$s-space--huge:               round($s-space * 4) !default;
+$f-space--none:               0 !default;
+$f-space--tiny:               round($f-space * .25) !default;
+$f-space--small:              round($f-space * .5) !default;
+$f-space--medium:             round($f-space * 1) !default;
+$f-space--large:              round($f-space * 2) !default;
+$f-space--huge:               round($f-space * 4) !default;
 
 
 // SPACES MAP
 
-$s-spaces: (
-  "none":                     $s-space--none,
-  "tiny":                     $s-space--tiny,
-  "small":                    $s-space--small,
-  "medium":                   $s-space--medium,
-  "large":                    $s-space--large,
-  "huge":                     $s-space--huge,
+$f-spaces: (
+  "none":                     $f-space--none,
+  "tiny":                     $f-space--tiny,
+  "small":                    $f-space--small,
+  "medium":                   $f-space--medium,
+  "large":                    $f-space--large,
+  "huge":                     $f-space--huge,
 ) !default;
 
 
@@ -46,19 +46,19 @@ $s-spaces: (
  * Check that the chosen values are pixel numbers.
  */
 
-@each $_space__name, $_space__value in $s-spaces {
+@each $_space__name, $_space__value in $f-spaces {
 
   @if (type-of($_space__value) == number) {
 
     @if ($_space__name != "none") {
 
       @if (unit($_space__value) != "px") {
-        @error "$s-spaces: `#{$_space__name}` needs to be a pixel value.";
+        @error "$f-spaces: `#{$_space__name}` needs to be a pixel value.";
       }
     }
 
   } @else {
-    @error "$s-spaces: `#{$_space__name}` needs to be a number.";
+    @error "$f-spaces: `#{$_space__name}` needs to be a number.";
   }
 
 }

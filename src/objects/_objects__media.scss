@@ -23,7 +23,7 @@ $o-media__space:                        $g-reset__spacing--horizontal !default;
 // Modifiers Spaces
 
 $o-media__mod-spaces--enabled:          true !default;
-$o-media__mod-spaces:                   map_remove($s-spaces, "large", "huge") !default;
+$o-media__mod-spaces:                   map_remove($f-spaces, "large", "huge") !default;
 
 // Modifier Reverse
 

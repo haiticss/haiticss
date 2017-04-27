@@ -1,0 +1,26 @@
+
+/* -------------------------------------------------------------------------
+ * FONTS
+ *
+ * Font families & fallback
+ *
+ */
+
+// Fallback families
+
+$f-font-family__sans-fallback:    Arial, Geneva, sans-serif !default;
+
+// Main font families
+
+$f-font-family__primary:          Tahoma, #{$f-font-family__sans-fallback} !default;
+$f-font-family__secondary:        Verdana, #{$f-font-family__sans-fallback} !default;
+$f-font-family__accent:           Georgia, #{$f-font-family__sans-fallback} !default;
+
+
+// FONT FAMILIES MAP
+
+$f-font-families: (
+  "primary":    $f-font-family__primary,
+  "secondary":  $f-font-family__secondary,
+  "accent":     $f-font-family__accent,
+) !default;

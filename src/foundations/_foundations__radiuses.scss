@@ -8,23 +8,23 @@
 
 // Main radius
 
-$s-radius:                    6px !default;
+$f-radius:                    6px !default;
 
 // Radius variants
 
-$s-radius--none:              0 !default;
-$s-radius--small:             round($s-radius * .5) !default;
-$s-radius--medium:            round($s-radius * 1) !default;
-$s-radius--large:             round($s-radius * 2) !default;
+$f-radius--none:              0 !default;
+$f-radius--small:             round($f-radius * .5) !default;
+$f-radius--medium:            round($f-radius * 1) !default;
+$f-radius--large:             round($f-radius * 2) !default;
 
 
 // RADIUSES MAP
 
-$s-radiuses: (
-  "none":                     $s-radius--none,
-  "small":                    $s-radius--small,
-  "medium":                   $s-radius--medium,
-  "large":                    $s-radius--large,
+$f-radiuses: (
+  "none":                     $f-radius--none,
+  "small":                    $f-radius--small,
+  "medium":                   $f-radius--medium,
+  "large":                    $f-radius--large,
 ) !default;
 
 
@@ -37,19 +37,19 @@ $s-radiuses: (
  * Check that the chosen values are pixel numbers.
  */
 
-@each $_radius__name, $_radius__value in $s-radiuses {
+@each $_radius__name, $_radius__value in $f-radiuses {
 
   @if (type-of($_radius__value) == number) {
 
     @if ($_radius__name != "none") {
 
       @if (unit($_radius__value) != "px") {
-        @error "$s-spaces: `#{$_radius__name}` needs to be a pixel value.";
+        @error "$f-radiuses: `#{$_radius__name}` needs to be a pixel value.";
       }
     }
 
   } @else {
-    @error "$s-spaces: `#{$_radius__name}` needs to be a number.";
+    @error "$f-radiuses: `#{$_radius__name}` needs to be a number.";
   }
 
 }

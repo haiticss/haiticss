@@ -72,7 +72,7 @@ $o-layout__space:                             $g-reset__spacing--horizontal !def
 // Modifiers spaces
 
 $o-layout__mod-spaces--enabled:               true !default;
-$o-layout__mod-spaces:                        map_remove($s-spaces, "large", "huge") !default;
+$o-layout__mod-spaces:                        map_remove($f-spaces, "large", "huge") !default;
 
 // Modifiers Alignments
 
@@ -129,7 +129,7 @@ $o-layout__mod-reverse--enabled:              true !default;
     margin-left: -1 * s-core-px-to-rem($_space-value);
 
     > .o-layout__item {
-      padding-left: $_space-value;
+      padding-left: s-core-px-to-rem($_space-value);
     }
   }
 }

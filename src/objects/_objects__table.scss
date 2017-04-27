@@ -17,12 +17,12 @@ $o-table--enabled:                      true !default;
 
 // Object Params
 
-$o-table__space:                        $s-space--none !default;
+$o-table__space:                        $f-space--none !default;
 
 // Modifiers Spaces
 
 $o-table_mod-spaces--enabled:           true !default;
-$o-table__mod-spaces:                   map_remove($s-spaces, "large", "huge") !default;
+$o-table__mod-spaces:                   map_remove($f-spaces, "large", "huge") !default;
 
 // Modifiers Fixed
 
@@ -61,7 +61,7 @@ $o-table__mod-fixed--enabled:           true !default;
   .o-table--space-#{$_space-name} {
     th,
     td {
-      padding: $_space-value;
+      padding: s-core-px-to-rem($_space-value);
     }
   }
 }

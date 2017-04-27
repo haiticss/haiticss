@@ -1,0 +1,64 @@
+
+/* -------------------------------------------------------------------------
+ * COLORS BRAND
+ *
+ * Define brand colors and its priorities
+ */
+
+
+// Main brand colors
+
+$f-color__brand-primary:                  #f25f5c !default;
+$f-color__brand-secondary:                #69b7a4 !default;
+$f-color__brand-accent:                   #ffe066 !default;
+
+// Primary shades
+
+$f-color__brand-primary--ultra-light:     mix(#fff, $f-color__brand-primary, 93%) !default;
+$f-color__brand-primary--light:           lighten($f-color__brand-primary, 10%) !default;
+$f-color__brand-primary--semi-light:      lighten($f-color__brand-primary, 5%) !default;
+
+$f-color__brand-primary--semi-dark:       darken($f-color__brand-primary, 5%) !default;
+$f-color__brand-primary--dark:            darken($f-color__brand-primary, 15%) !default;
+
+// Secondary shades
+
+$f-color__brand-secondary--ultra-light:   mix(#fff, $f-color__brand-secondary, 93%) !default;
+$f-color__brand-secondary--light:         lighten($f-color__brand-secondary, 10%) !default;
+$f-color__brand-secondary--semi-light:    lighten($f-color__brand-secondary, 5%) !default;
+
+$f-color__brand-secondary--semi-dark:     darken($f-color__brand-secondary, 5%) !default;
+$f-color__brand-secondary--dark:          darken($f-color__brand-secondary, 15%) !default;
+
+// Accent shades
+
+$f-color__brand-accent--ultra-light:      mix(#fff, $f-color__brand-accent, 93%) !default;
+$f-color__brand-accent--light:            lighten($f-color__brand-accent, 10%) !default;
+$f-color__brand-accent--semi-light:       lighten($f-color__brand-accent, 5%) !default;
+
+$f-color__brand-accent--semi-dark:        darken($f-color__brand-accent, 5%) !default;
+$f-color__brand-accent--dark:             darken($f-color__brand-accent, 15%) !default;
+
+
+// BRAND COLOR MAP
+
+$f-colors-brand: (
+  "primary":                   $f-color__brand-primary,
+  "secondary":                 $f-color__brand-secondary,
+  "accent":                    $f-color__brand-accent,
+  "primary--ultra-light":      $f-color__brand-primary--ultra-light,
+  "primary--light":            $f-color__brand-primary--light,
+  "primary--semi-light":       $f-color__brand-primary--semi-light,
+  "primary--semi-dark":        $f-color__brand-primary--semi-dark,
+  "primary--dark":             $f-color__brand-primary--dark,
+  "secondary--ultra-light":    $f-color__brand-secondary--ultra-light,
+  "secondary--light":          $f-color__brand-secondary--light,
+  "secondary--semi-light":     $f-color__brand-secondary--semi-light,
+  "secondary--semi-dark":      $f-color__brand-secondary--semi-dark,
+  "secondary--dark":           $f-color__brand-secondary--dark,
+  "accent--ultra-light":       $f-color__brand-accent--ultra-light,
+  "accent--light":             $f-color__brand-accent--light,
+  "accent--semi-light":        $f-color__brand-accent--semi-light,
+  "accent--semi-dark":         $f-color__brand-accent--semi-dark,
+  "accent--dark":              $f-color__brand-accent--dark,
+) !default;

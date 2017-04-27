@@ -1,0 +1,80 @@
+
+/* -------------------------------------------------------------------------
+ * COLORS STATE
+ *
+ * Define all state colors
+ */
+
+
+// Main state colors
+
+$f-color__state-success:                  #36ba33 !default;
+$f-color__state-info:                     #20a0de !default;
+$f-color__state-warning:                  #f99500 !default;
+$f-color__state-danger:                   #c1101f !default;
+
+// Success shades
+
+$f-color__state-success--ultra-light:     mix(#fff, $f-color__state-success, 93%) !default;
+$f-color__state-success--light:           lighten($f-color__state-success, 10%) !default;
+$f-color__state-success--semi-light:      lighten($f-color__state-success, 5%) !default;
+
+$f-color__state-success--semi-dark:       darken($f-color__state-success, 5%) !default;
+$f-color__state-success--dark:            darken($f-color__state-success, 15%) !default;
+
+// Info shades
+
+$f-color__state-info--ultra-light:        mix(#fff, $f-color__state-info, 93%) !default;
+$f-color__state-info--light:              lighten($f-color__state-info, 10%) !default;
+$f-color__state-info--semi-light:         lighten($f-color__state-info, 5%) !default;
+
+$f-color__state-info--semi-dark:          darken($f-color__state-info, 5%) !default;
+$f-color__state-info--dark:               darken($f-color__state-info, 15%) !default;
+
+// Warning shades
+
+$f-color__state-warning--ultra-light:     mix(#fff, $f-color__state-warning, 93%) !default;
+$f-color__state-warning--light:           lighten($f-color__state-warning, 10%) !default;
+$f-color__state-warning--semi-light:      lighten($f-color__state-warning, 5%) !default;
+
+$f-color__state-warning--semi-dark:       darken($f-color__state-warning, 5%) !default;
+$f-color__state-warning--dark:            darken($f-color__state-warning, 15%) !default;
+
+// Danger shades
+
+$f-color__state-danger--ultra-light:      mix(#fff, $f-color__state-danger, 93%) !default;
+$f-color__state-danger--light:            lighten($f-color__state-danger, 10%) !default;
+$f-color__state-danger--semi-light:       lighten($f-color__state-danger, 5%) !default;
+
+$f-color__state-danger--semi-dark:        darken($f-color__state-danger, 5%) !default;
+$f-color__state-danger--dark:             darken($f-color__state-danger, 15%) !default;
+
+
+// STATE COLOR MAP
+
+$f-colors-state: (
+  "success":                            $f-color__state-success,
+  "info":                               $f-color__state-info,
+  "warning":                            $f-color__state-warning,
+  "danger":                             $f-color__state-danger,
+  "success--ultra-light":               $f-color__state-success--ultra-light,
+  "success--light":                     $f-color__state-success--light,
+  "success--semi-light":                $f-color__state-success--semi-light,
+  "success--semi-dark":                 $f-color__state-success--semi-dark,
+  "success--dark":                      $f-color__state-success--dark,
+  "info--ultra-light":                  $f-color__state-info--ultra-light,
+  "info--light":                        $f-color__state-info--light,
+  "info--semi-light":                   $f-color__state-info--semi-light,
+  "info--semi-dark":                    $f-color__state-info--semi-dark,
+  "info--dark":                         $f-color__state-info--dark,
+  "warning--ultra-light":               $f-color__state-warning--ultra-light,
+  "warning--light":                     $f-color__state-warning--light,
+  "warning--semi-light":                $f-color__state-warning--semi-light,
+  "warning--semi-dark":                 $f-color__state-warning--semi-dark,
+  "warning--dark":                      $f-color__state-warning--dark,
+  "danger--ultra-light":                $f-color__state-danger--ultra-light,
+  "danger--light":                      $f-color__state-danger--light,
+  "danger--semi-light":                 $f-color__state-danger--semi-light,
+  "danger--semi-dark":                  $f-color__state-danger--semi-dark,
+  "danger--dark":                       $f-color__state-danger--dark,
+) !default;

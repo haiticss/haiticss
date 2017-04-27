@@ -24,7 +24,7 @@ $o-pack__space:                             $g-reset__spacing--horizontal !defau
 // Modifiers Spaces
 
 $o-pack__mod-spaces--enabled:               true !default;
-$o-pack-spaces:                             map_remove($s-spaces, "large", "huge") !default;
+$o-pack-spaces:                             map_remove($f-spaces, "large", "huge") !default;
 
 // Modifiers Alignments
 
@@ -74,7 +74,7 @@ $o-pack__mod-auto--enabled:                 true !default;
 
 @mixin o-pack--space($_space-name: "none", $_space-value: 0) {
   .o-pack--space-#{$_space-name} {
-    border-spacing: $_space-value;
+    border-spacing: s-core-px-to-rem($_space-value);
   }
 }
 

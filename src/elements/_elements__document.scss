@@ -17,10 +17,10 @@
 
 // Document variables
 
-$e-document__body--font-family:         $s-font-family__primary !default;
+$e-document__body--font-family:         $f-font-family__primary !default;
 $e-document__body--font-size:           $s-core__font-size !default;
-$e-document__body--line-height:         $s-line-height--medium !default;
-$e-document__body--color:               $s-color__neutral-grey--ultra-dark !default;
+$e-document__body--line-height:         $f-line-height--medium !default;
+$e-document__body--color:               $f-color__neutral-grey--ultra-dark !default;
 
 
 // Apply document defaults according SETTINGS > CONFIG > SCOPED

@@ -15,7 +15,7 @@ $o-list-inline--enabled:                      true !default;
 // Modifiers Spaces
 
 $o-list-inline__mod-spaces--enabled:          true !default;
-$o-list-inline__mod-spaces:                   map_remove($s-spaces, "large", "huge") !default;
+$o-list-inline__mod-spaces:                   map_remove($f-spaces, "large", "huge") !default;
 
 // Object as a mixin
 // --------------------------------------------------

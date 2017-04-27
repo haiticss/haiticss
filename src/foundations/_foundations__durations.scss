@@ -1,0 +1,28 @@
+
+/* -------------------------------------------------------------------------
+ * DURATIONS
+ *
+ * Define durations foundation
+ */
+
+
+// Main duration
+
+$f-duration:                  .3s !default;
+
+// Duration variants
+
+$f-duration--none:            0 !default;
+$f-duration--fast:            $f-duration / 2 !default;
+$f-duration--normal:          $f-duration !default;
+$f-duration--slow:            $f-duration * 2 !default;
+
+
+// DURATIONS MAP
+
+$f-durations: (
+  "none":                     $f-duration--none,
+  "fast":                     $f-duration--fast,
+  "normal":                   $f-duration--normal,
+  "slow":                     $f-duration--slow,
+) !default;
