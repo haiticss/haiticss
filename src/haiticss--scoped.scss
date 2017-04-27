@@ -18,24 +18,24 @@
  * foundations ............ Design foundations vars
    ========================================================================== */
 
-@import "01-settings/settings__01-core";
+@import "settings/settings__01-core";
 
 // Override default config
 $s-config__scoped: true;
 
-@import "01-settings/settings__02-config";
-@import "01-settings/settings__03-core-functions";
-@import "01-settings/settings__04-foundations";
+@import "settings/settings__02-config";
+@import "settings/settings__03-core-functions";
+@import "settings/settings__04-foundations";
 
 /* ==========================================================================
  * SCOPED CONTENT
    ========================================================================== */
 
 .s-haiticss {
-  @import "02-tools/tools";
-  @import "03-generic/generic";
-  @import "04-elements/elements";
-  @import "05-objects/objects";
-  @import "06-animations/animations";
-  @import "99-utilities/utilities";
+  @import "tools/tools";
+  @import "generic/generic";
+  @import "elements/elements";
+  @import "objects/objects";
+  @import "animations/animations";
+  @import "utilities/utilities";
 }

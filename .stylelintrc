@@ -3,9 +3,10 @@
     "stylelint-scss"
   ],
   "ignoreFiles": [
-    "haiticss.css",
-    "02-tools/vendor/_quantity-queries.scss",
-    "03-generic/_generic__normalize.scss"
+    "src/haiticss.css",
+    "src/haiticss--scoped.css",
+    "src/generic/_generic__normalize.scss",
+    "src/tools/vendor/_quantity-queries.scss"
   ],
   "rules": {
     "at-rule-name-case": "lower",
