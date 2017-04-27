@@ -2,9 +2,10 @@
 
 const stylelint = require('stylelint');
 
+
 const linter_options = {
     configFile: '.stylelintrc',
-    files: '**/*.scss',
+    files: './src/**/*.scss',
     formatter: 'verbose',
     ignoreDisables: false,
     syntax: 'scss'

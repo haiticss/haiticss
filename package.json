@@ -22,7 +22,7 @@
     "precommit": "npm run check",
     "check": "npm-run-all --parallel check:**",
     "check:stylelint": "node ./tasks/check_linter_rules.js",
-    "check:sass": "node-sass haiticss.scss"
+    "check:sass": "node-sass src/haiticss.scss"
   },
   "devDependencies": {
     "husky": "^0.13.3",
