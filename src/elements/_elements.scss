@@ -5,10 +5,16 @@
  *
  * document ............... document defaults (html, body)
  * headings ............... minimal heading styles
+ * images ................. minimal images styles
+ * links .................. minimal links styles
+ * paragraphs ............. minimal paragraphs styles
+ * tables ................. ensure tables fill up as much space as possible.
    ========================================================================== */
 
 
 @import '_elements__document';
 @import '_elements__headings';
 @import '_elements__images';
+@import '_elements__links';
+@import '_elements__paragraphs';
 @import '_elements__tables';

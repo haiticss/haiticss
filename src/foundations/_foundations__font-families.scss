@@ -12,9 +12,9 @@ $f-font-family__sans-fallback:    Arial, Geneva, sans-serif !default;
 
 // Main font families
 
-$f-font-family__primary:          Tahoma, #{$f-font-family__sans-fallback} !default;
-$f-font-family__secondary:        Verdana, #{$f-font-family__sans-fallback} !default;
-$f-font-family__accent:           Georgia, #{$f-font-family__sans-fallback} !default;
+$f-font-family__primary:          Tahoma, $f-font-family__sans-fallback !default;
+$f-font-family__secondary:        Verdana, $f-font-family__sans-fallback !default;
+$f-font-family__accent:           Georgia, $f-font-family__sans-fallback !default;
 
 
 // FONT FAMILIES MAP

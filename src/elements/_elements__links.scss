@@ -1,0 +1,34 @@
+/* -------------------------------------------------------------------------
+ * HEADINGS
+ *
+ * Define some minimal links styles
+ *
+ */
+
+// Headings variables
+
+$e-links__color:                          $f-color__digital-blue !default;
+$e-links__hover-color:                    $f-color__digital-blue !default;
+
+$e-links__decoration:                     $f-color__digital-blue !default;
+$e-links__hover-decoration:               $f-color__digital-blue !default;
+
+// Links output
+
+a {
+  color: $e-links__color;
+  text-decoration: $e-links__decoration;
+
+  @if ($e-links__hover-color != $e-links__color or $e-links__decoration != $e-links__hover-decoration) {
+    &:hover {
+
+      @if ($e-links__hover-color != $e-links__color) {
+        color: $e-links__hover-color;
+      }
+
+      @if ($e-links__decoration != $e-links__hover-decoration) {
+        text-decoration: underline;
+      }
+    }
+  }
+}
