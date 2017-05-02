@@ -1,0 +1,19 @@
+/* -------------------------------------------------------------------------
+ * Paragraphs
+ *
+ * Define multiple paragraphs space
+ *
+ */
+
+// Headings variables
+
+$e-paragraphs__spacing-vertical:            $g-reset__spacing--vertical !default;
+$e-paragraphs__space-within:                $f-space--small !default;
+
+
+// Links output
+
+p + p {
+  margin-top: ($e-paragraphs__spacing-vertical - $e-paragraphs__space-within) * -1;
+}
+

@@ -21,6 +21,7 @@ $e-document__body--font-family:         $f-font-family__primary !default;
 $e-document__body--font-size:           $s-core__font-size !default;
 $e-document__body--line-height:         $f-line-height--medium !default;
 $e-document__body--color:               $f-color__neutral-grey--ultra-dark !default;
+$e-document__body--bgcolor:             $f-color__neutral-white !default;
 
 
 // Apply document defaults according SETTINGS > CONFIG > SCOPED
@@ -30,6 +31,7 @@ $e-document__body--color:               $f-color__neutral-grey--ultra-dark !defa
   :root & {
     font-family: $e-document__body--font-family;
     color: $e-document__body--color;
+    background-color: $e-document__body--bgcolor;
     font-size: $e-document__body--font-size;
     line-height: $e-document__body--line-height;
   }
@@ -39,6 +41,7 @@ $e-document__body--color:               $f-color__neutral-grey--ultra-dark !defa
   html {
     font-family: $e-document__body--font-family;
     color: $e-document__body--color;
+    background-color: $e-document__body--bgcolor;
     font-size: s-core-strip-units(s-core-px-to-rem($e-document__body--font-size, 16px)) * 1em; /* [1] */
     line-height: $e-document__body--line-height;
     overflow-y: scroll; /* [2] */
