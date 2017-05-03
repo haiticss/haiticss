@@ -1,0 +1,55 @@
+/* -------------------------------------------------------------------------
+ * Margins
+ *
+ * Force margins
+ *
+ */
+
+// Utility variables
+// --------------------------------------------------
+
+// Utility toggling
+
+$u-margin--enabled: true !default;
+
+// Utility spaces
+
+$u-margin__spaces: $f-spaces !default;
+$u-margin__classes: (
+  "mt": (
+    "margin-top"
+  ),
+  "mr": (
+    "margin-right"
+  ),
+  "mb": (
+    "margin-bottom"
+  ),
+  "ml": (
+    "margin-left"
+  ),
+  "mv": (
+    "margin-top",
+    "margin-bottom"
+  ),
+  "mh": (
+    "margin-left",
+    "margin-right"
+  )
+);
+
+
+// Utilities output
+// --------------------------------------------------
+
+@if ($u-margin--enabled) {
+  @each $_space-name, $_space-value in $u-margin__spaces {
+    @each $_class-name, $_class-properties in $u-margin__classes {
+      .u-#{$_class-name}--#{$_space-name} {
+        @each $_property-name in $_class-properties {
+          #{$_property-name}: s-core-px-to-rem($_space-value) !important;
+        }
+      }
+    }
+  }
+}
