@@ -1,0 +1,55 @@
+/* -------------------------------------------------------------------------
+ * Paddings
+ *
+ * Force paddings
+ *
+ */
+
+// Utility variables
+// --------------------------------------------------
+
+// Utility toggling
+
+$u-padding--enabled:            true !default;
+
+// Utility spaces
+
+$u-padding__spaces:             $f-spaces !default;
+$u-padding__classes: (
+  "pt": (
+    "padding-top"
+  ),
+  "pr": (
+    "padding-right"
+  ),
+  "pb": (
+    "padding-bottom"
+  ),
+  "pl": (
+    "padding-left"
+  ),
+  "pv": (
+    "padding-top",
+    "padding-bottom"
+  ),
+  "ph": (
+    "padding-left",
+    "padding-right"
+  )
+);
+
+
+// Utilities output
+// --------------------------------------------------
+
+@if ($u-padding--enabled) {
+  @each $_space-name, $_space-value in $u-padding__spaces {
+    @each $_class-name, $_class-properties in $u-padding__classes {
+      .u-#{$_class-name}--#{$_space-name} {
+        @each $_property-name in $_class-properties {
+          #{$_property-name}: s-core-px-to-rem($_space-value) !important;
+        }
+      }
+    }
+  }
+}
