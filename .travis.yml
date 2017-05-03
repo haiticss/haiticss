@@ -1,5 +1,7 @@
 language: node_js
 node_js:
   - "6"
-script: npm run check
+script: yarn run check
 cache: yarn
+env:
+  - BUILD_ENV=travisci
