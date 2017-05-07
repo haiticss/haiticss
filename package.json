@@ -1,10 +1,10 @@
 {
-  "name": "haiticss",
+  "name": "@haiticss/haiticss",
   "version": "1.0.0-alpha",
   "description": "Just another baseline perspective to wear any project with the ITCSS architecture",
   "repository": {
     "type": "git",
-    "url": "https://github.com/haiticss/haiticss.git"
+    "url": "git+https://github.com/haiticss/haiticss.git"
   },
   "keywords": [
     "sass",
@@ -32,5 +32,6 @@
     "npm-run-all": "^4.0.2",
     "stylelint": "^7.1.0",
     "stylelint-scss": "^1.3.4"
-  }
+  },
+  "main": "src/haiticss.scss"
 }
