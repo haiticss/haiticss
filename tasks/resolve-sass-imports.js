@@ -1,9 +1,9 @@
 // some-node-thing.js
 let importResolve = require('import-resolve'),
     files = [
-        'src/settings/_settings__core.scss',
-        'src/settings/_settings__config.scss',
-        'src/settings/_settings__core-functions.scss',
+        'src/settings/_settings__core',
+        'src/settings/_settings__config',
+        'src/settings/_settings__core-functions',
         'src/foundations/_foundations',
         'src/tools/_tools',
         'src/generic/_generic',
