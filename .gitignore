@@ -11,6 +11,9 @@ bower_components/
 # Sass/Scss Cache
 .sass-cache/
 
+# Sass resolved imports
+src-resolved/
+
 # CSS maps
 *.css.map
 
