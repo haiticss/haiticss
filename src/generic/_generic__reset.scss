@@ -97,3 +97,8 @@ ol,
 ul {
   margin-left: s-core-px-to-rem($g-reset__spacing--horizontal);
 }
+
+hr {
+  border-top-width: 0;
+  border-bottom-width: 1px;
+}
