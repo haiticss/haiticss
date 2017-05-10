@@ -52,9 +52,9 @@ $t-sass-mq__debug--border-color:    $f-color__neutral-grey--light !default;
   @if $from {
 
     @if type-of($from) == number {
-      $min-width: s-core-px-to-em($from);
+      $min-width: $from;
     } @else {
-      $min-width: s-core-px-to-em(t-sass-mq__get-breakpoint-width($from, $breakpoints));
+      $min-width: t-sass-mq__get-breakpoint-width($from, $breakpoints);
     }
   }
 
@@ -63,9 +63,9 @@ $t-sass-mq__debug--border-color:    $f-color__neutral-grey--light !default;
   @if $until {
 
     @if type-of($until) == number {
-      $max-width: s-core-px-to-em($until);
+      $max-width: $until;
     } @else {
-      $max-width: s-core-px-to-em(t-sass-mq__get-breakpoint-width($until, $breakpoints) - 1px);
+      $max-width: t-sass-mq__get-breakpoint-width($until, $breakpoints) - 1px;
     }
   }
 
@@ -106,7 +106,7 @@ $t-sass-mq__debug--border-color:    $f-color__neutral-grey--light !default;
     background-color: $t-sass-mq__debug--bg-color;
     border-bottom: 1px solid $t-sass-mq__debug--border-color;
     border-left: 1px solid $t-sass-mq__debug--border-color;
-    color: $t-sass-mq__debug--border-color;
+    color: $t-sass-mq__debug--color;
     font: small-caption;
     padding: 3px 6px;
     pointer-events: none;
@@ -118,7 +118,7 @@ $t-sass-mq__debug--border-color:    $f-color__neutral-grey--light !default;
     // Loop through the breakpoints that should be shown
     @each $_bp-name, $_bp-value in $_breakpoints {
       @include t-mq($from: $_bp-name) {
-        content: "#{$_bp-name} ≥ #{$_bp-value} (#{s-core-px-to-em($_bp-value)})";
+        content: "#{$_bp-name} ≥ #{$_bp-value}";
       }
     }
   }
