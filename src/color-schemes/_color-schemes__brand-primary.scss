@@ -1,0 +1,73 @@
+/* -------------------------------------------------------------------------
+ * Color Schemes > PRIMARY
+ *
+ */
+
+
+// Scheme variables
+// --------------------------------------------------
+
+$cs-brand-primary--enabled                :      true !default;
+
+$cs-brand-primary__bg-color               :      $f-color__brand-primary--ultra-light !default;
+$cs-brand-primary__color                  :      $f-color__brand-primary--dark !default;
+$cs-brand-primary__selection-bgcolor      :      $f-color__brand-primary--dark !default;
+$cs-brand-primary__selection-color        :      $f-color__brand-primary--ultra-light !default;
+$cs-brand-primary__border-color           :      rgba($f-color__brand-primary--light, .25) !default;
+$cs-brand-primary__link-color             :      $f-color__brand-secondary !default;
+$cs-brand-primary__link-hovercolor        :      $f-color__brand-primary--dark !default;
+$cs-brand-primary__heading-color          :      $f-color__brand-primary !default;
+
+
+// Scheme mixin
+// --------------------------------------------------
+
+@mixin cs-brand-primary() {
+  background-color: $cs-brand-primary__bg-color;
+  color: $cs-brand-primary__color;
+
+  &,
+  & * {
+    border-color: $cs-brand-primary__border-color;
+  }
+
+  &::selection,
+  & *::selection {
+    background-color: $cs-brand-primary__selection-bgcolor;
+    color: $cs-brand-primary__selection-color;
+  }
+
+  a {
+    color: $cs-brand-primary__link-color;
+
+    &:hover,
+    &:focus {
+      color: $cs-brand-primary__link-hovercolor;
+
+    }
+  }
+
+  hr {
+    border-color: $cs-brand-primary__border-color;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: $cs-brand-primary__heading-color;
+  }
+
+}
+
+
+// Scheme selector output
+// --------------------------------------------------
+
+@if $cs-brand-primary--enabled {
+  .cs-brand-primary {
+    @include cs-brand-primary();
+  }
+}
