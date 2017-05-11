@@ -27,7 +27,7 @@ $u-bg-colors__maps:            $f-colors !default;
     @each $_bg-color-name, $_bg-color-value in $_bg-color-group__map {
 
       @if ($_bg-color-group__name != "others") {
-        $_color-name: unquote("#{$_bg-color-group__name}-#{$_bg-color-name}");
+        $_bg-color-name: unquote("#{$_bg-color-group__name}-#{$_bg-color-name}");
       }
 
       .u-bg-color__#{$_bg-color-name} {
