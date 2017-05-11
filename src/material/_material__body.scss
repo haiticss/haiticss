@@ -1,0 +1,109 @@
+/* -------------------------------------------------------------------------
+ * BODY
+ *
+ * body known as a material not as a tag
+ *
+ */
+
+
+// Material variables
+// --------------------------------------------------
+
+// Material toggling
+
+$m-body--enabled:              true !default;
+
+
+// Material default properties
+
+$m-body__properties: (
+  "font-family" :  $e-document__body--font-family,
+  "font-size"   :  $e-document__body--font-size,
+  "line-height" :  $e-document__body--line-height
+) !default;
+
+// Material Size Modifiers
+
+$m-body__mod-sizes--enabled :   true !default;
+$m-body__mod-sizes          :   (
+  "tiny" :                   (
+    "font-family" :    $e-document__body--font-family,
+    "font-size"   :    $f-font-size--xs,
+    "line-height" :    $e-document__body--line-height
+  ),
+  "small" :                  (
+    "font-family" :    $e-document__body--font-family,
+    "font-size"   :    $f-font-size--s,
+    "line-height" :    $e-document__body--line-height
+  ),
+  "medium"        :    $m-body__properties,
+  "large" :                  (
+    "font-family":    $e-document__body--font-family,
+    "font-size":      $f-font-size--l,
+    "line-height":    $e-document__body--line-height
+  ),
+  "huge":                   (
+    "font-family":    $e-document__body--font-family,
+    "font-size":      $f-font-size--xl,
+    "line-height":    $e-document__body--line-height
+  )
+) !default;
+
+
+// Material as a mixin
+// --------------------------------------------------
+
+@mixin m-body($_properties: $m-body__properties, $_default-properties: $m-body__properties) {
+
+  // Try to resolve properties from a given string
+
+  @if (type-of($_properties) == "string") {
+
+    @if (map_has_key($_properties, $m-body__mod-sizes)) {
+      $_properties: map_get($m-body__mod-sizes, $_properties);
+    } @else {
+      @error "m-body: `#{$_properties}` needs to be a map or a valid key for $m-body__mod-sizes";
+    }
+
+  }
+
+  @each $_property, $_value in map_merge($_default-properties, $_properties) {
+
+    @if (type_of($_value) == "number") and (unit($_value) == "px") {
+
+      $_value: s-core-px-to-rem($_value);
+    }
+
+    #{$_property}: $_value;
+
+  }
+}
+
+
+// Material selector output
+// --------------------------------------------------
+
+@if $m-body--enabled {
+  .m-body {
+    @include m-body($m-body__properties);
+  }
+}
+
+
+// Material sizes modifiers output
+// --------------------------------------------------
+
+@if $m-body--enabled and $m-body__mod-sizes--enabled {
+  @each $_mod-name, $_mod-properties in $m-body__mod-sizes {
+    .m-body--#{$_mod-name} {
+      @each $_property, $_value in s-core-map-diff($m-body__properties, $_mod-properties) {
+
+        @if (type_of($_value) == "number") and (unit($_value) == "px") {
+          $_value: s-core-px-to-rem($_value);
+        }
+
+        #{$_property}: $_value;
+      }
+    }
+  }
+}
