@@ -1,0 +1,117 @@
+/* -------------------------------------------------------------------------
+ * HEADINGS
+ *
+ * Headings known as a material not as a tag
+ *
+ */
+
+// Material variables
+// --------------------------------------------------
+
+// Material toggling
+
+$m-heading--enabled: true !default;
+
+// Material default properties
+
+$m-heading__properties: (
+  "font-family"   : $f-font-family__secondary,
+  "font-weight"   : 400,
+  "font-size"     : $f-font-size--xxl,
+  "line-height"   : $e-headings__line-height,
+  "margin-bottom" : $e-headings__margin-bottom
+) !default;
+
+// Material Size Modifiers
+
+$m-heading__mod-sizes--enabled : true !default;
+$m-heading__mod-sizes          : (
+  "tiny": (
+    "font-family"   : $f-font-family__primary,
+    "font-weight"   : 700,
+    "font-size"     : $f-font-size--l,
+    "line-height"   : $f-line-height--small,
+    "margin-bottom" : $g-reset__spacing--vertical
+  ),
+  "small": (
+    "font-family"   : $f-font-family__primary,
+    "font-weight"   : 400,
+    "font-size"     : $f-font-size--xl,
+    "line-height"   : $f-line-height--small,
+    "margin-bottom" : $g-reset__spacing--vertical
+  ),
+  "medium"          : $m-heading__properties,
+  "large": (
+    "font-family"   : $f-font-family__secondary,
+    "font-weight"   : 400,
+    "font-size"     : $f-font-size--xxxl,
+    "line-height"   : $e-headings__line-height,
+    "margin-bottom" : $e-headings__margin-bottom
+  ),
+  "huge": (
+    "font-family"   : $f-font-family__secondary,
+    "font-weight"   : 400,
+    "font-size"     : $f-font-size--xxxl + $f-font-size--m,
+    "line-height"   : $e-headings__line-height,
+    "margin-bottom" : $e-headings__margin-bottom
+  )
+) !default;
+
+// Headings as a mixin
+// --------------------------------------------------
+
+@mixin m-heading($_properties: $m-heading__properties, $_default-properties: $m-heading__properties) {
+
+  // Try to resolve properties from a given string
+
+  @if (type-of($_properties) == "string") {
+
+    @if (map_has_key($_properties, $m-heading__mod-sizes)) {
+
+      $_properties: map_get($m-heading__mod-sizes, $_properties);
+    } @else {
+      @error "m-heading: `#{$_properties}` needs to be a map or a valid key for $m-heading__mod-sizes";
+    }
+
+  }
+
+  @each $_property, $_value in map_merge($_default-properties, $_properties) {
+
+    @if (type_of($_value) == "number") and (unit($_value) == "px") {
+
+      $_value: s-core-px-to-rem($_value);
+    }
+
+    #{$_property}: $_value;
+
+  }
+}
+
+// Material selector output
+// --------------------------------------------------
+
+@if $m-heading--enabled {
+  .m-heading {
+    @include m-heading($m-heading__properties);
+  }
+}
+
+// Material sizes modifiers output
+// --------------------------------------------------
+
+@if $m-heading--enabled and $m-heading__mod-sizes--enabled {
+  @each $_mod-name, $_mod-properties in $m-heading__mod-sizes {
+    .m-heading--#{$_mod-name} {
+      @each $_property, $_value in s-core-map-diff($m-heading__properties, $_mod-properties) {
+
+        @if (type_of($_value) == "number") and (unit($_value) == "px") {
+
+          $_value: s-core-px-to-rem($_value);
+        }
+
+        #{$_property}: $_value;
+
+      }
+    }
+  }
+}
