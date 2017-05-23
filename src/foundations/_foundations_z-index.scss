@@ -1,0 +1,89 @@
+/* -------------------------------------------------------------------------
+ * Z INDEX
+ *
+ * Define Z-index names and values. It comes in two flavors:
+ * 1) z-index = simple z-index for standard projects
+ * 2) z-index-md = Z index based on Googles material design.
+ * @more https://material.io/guidelines/material-design/elevation-shadows.html#elevation-shadows-elevation-android
+ */
+
+// depth of layers
+
+$f-z-index-base:                        0 !default;
+$f-z-index-offcanvas:                   1 !default;
+$f-z-index-dropdown:                    10 !default;
+$f-z-index-tooltip:                     15 !default;
+$f-z-index-lightbox:                    500 !default;
+
+// depth of Material Design Layers
+
+$f-z-index--md-dialog:                  24 !default;
+$f-z-index--md-picker:                  24 !default;
+
+$f-z-index--md-nav-drawer:              16 !default;
+$f-z-index--md-right-drawer:            16 !default;
+$f-z-index--md-modal-bottom-sheet:      16 !default;
+
+$f-z-index--md-floating-action-button:  12 !default;
+
+$f-z-index--md-sub-menu:                9 !default;
+
+$f-z-index--md-bottom-navigation-bar:   8 !default;
+$f-z-index--md-menu:                    8 !default;
+$f-z-index--md-card-pick-up:            8 !default;
+$f-z-index--md-raised-button:           8 !default;
+
+$f-z-index--md-floating-action-button:  6 !default;
+$f-z-index--md-snackbar:                6 !default;
+
+$f-z-index--md-app-bar:                 4 !default;
+
+$f-z-index--md-refresh-indicator:       3 !default;
+$f-z-index--md-quick-entry-scrolled:    3 !default;
+$f-z-index--md-search-bar-scrolled:     3 !default;
+
+$f-z-index--md-card-resting:            2 !default;
+$f-z-index--md-raised-button-resting:   2 !default;
+$f-z-index--md-quick-entry-resting:     2 !default;
+$f-z-index--md-search-bar-resting:      2 !default;
+
+$f-z-index--md-switch:                  1 !default;
+
+
+// Z-Index Map
+
+$f-z-index-map: (
+  "base":                               $f-z-index-base,
+  "offcanvas":                          $f-z-index-offcanvas,
+  "dropdown":                           $f-z-index-dropdown,
+  "tooltip":                            $f-z-index-tooltip,
+  "lightbox":                           $f-z-index-lightbox
+) !default;
+
+
+// Z-Index Map based on Googles MAterial Design
+
+$f-z-index-map-md: (
+  "dialog":                             $f-z-index--md-dialog,
+  "picker":                             $f-z-index--md-picker,
+  "nav-drawer":                         $f-z-index--md-nav-drawer,
+  "right-drawer":                       $f-z-index--md-right-drawer,
+  "modal-bottom-sheet":                 $f-z-index--md-modal-bottom-sheet,
+  "floating-action-button":             $f-z-index--md-floating-action-button,
+  "sub-menu":                           $f-z-index--md-sub-menu,
+  "bottom-navigation-bar":              $f-z-index--md-bottom-navigation-bar,
+  "menu":                               $f-z-index--md-menu,
+  "card-pick-up":                       $f-z-index--md-card-pick-up,
+  "raised-button":                      $f-z-index--md-raised-button,
+  "floating-action-button":             $f-z-index--md-floating-action-button,
+  "snackbar":                           $f-z-index--md-snackbar,
+  "app-bar":                            $f-z-index--md-app-bar,
+  "refresh-indicator":                  $f-z-index--md-refresh-indicator,
+  "quick-entry-scrolled":               $f-z-index--md-quick-entry-scrolled,
+  "search-bar-scrolled":                $f-z-index--md-search-bar-scrolled,
+  "card-resting":                       $f-z-index--md-card-resting,
+  "raised-button-resting":              $f-z-index--md-raised-button-resting,
+  "quick-entry-resting":                $f-z-index--md-quick-entry-resting,
+  "search-bar-resting":                 $f-z-index--md-search-bar-resting,
+  "switch":                             $f-z-index--md-switch,
+) !default;
