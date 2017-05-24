@@ -33,11 +33,3 @@
     clear: both !important;
   }
 }
-
-@mixin t-clearfix-important() {
-  &::after {
-    content: "" !important;
-    display: block !important;
-    clear: both !important;
-  }
-}
