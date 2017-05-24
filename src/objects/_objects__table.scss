@@ -28,27 +28,16 @@ $o-table__mod-spaces:                   map_remove($f-spaces, "large", "huge") !
 
 $o-table__mod-fixed--enabled:           true !default;
 
-// Object as a mixin
-// --------------------------------------------------
-
-@mixin o-table() {
-  width: 100%;
-}
-
-@mixin o-table__cell($_space-value: $o-table__space) {
-  padding: s-core-px-to-rem($_space-value);
-}
-
 // Object selector output
 // --------------------------------------------------
 
 @if ($o-table--enabled) {
   .o-table {
-    @include o-table();
+    width: 100%;
 
     th,
     td {
-      @include o-table__cell();
+      padding: s-core-px-to-rem($o-table__space);
     }
   }
 
