@@ -1,0 +1,29 @@
+/* -------------------------------------------------------------------------
+ * LINE-HEIGHTS
+ *
+ * Forces the line-heights
+ *
+ */
+
+// Utility variables
+// --------------------------------------------------
+
+// Utility toggling
+
+$u-line-height--enabled:         true !default;
+
+// Line-heights maps
+
+$u-line-height__maps:            $f-line-heights !default;
+
+
+// Utilities output
+// --------------------------------------------------
+
+@if ($u-line-height--enabled) {
+  @each $_line-height__name, $_line-height__value in $u-line-height__maps {
+    .u-line-height__#{$_line-height__name} {
+      line-height: $_line-height__value !important;
+    }
+  }
+}

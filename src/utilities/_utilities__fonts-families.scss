@@ -1,0 +1,29 @@
+/* -------------------------------------------------------------------------
+ * FONT-FAMILIES
+ *
+ * Forces the font-families
+ *
+ */
+
+// Utility variables
+// --------------------------------------------------
+
+// Utility toggling
+
+$u-font-families--enabled:         true !default;
+
+// Font-families maps
+
+$u-font-families__maps:            $f-font-families !default;
+
+
+// Utilities output
+// --------------------------------------------------
+
+@if ($u-font-families--enabled) {
+  @each $_font-family__name, $_font-family__value in $u-font-families__maps {
+    .u-font-family__#{$_font-family__name} {
+      font-family: $_font-family__value !important;
+    }
+  }
+}

@@ -5,13 +5,13 @@
  *
  */
 
-// Headings variables
+// Paragraphs variables
 
 $e-paragraphs__spacing-vertical:            $g-reset__spacing--vertical !default;
 $e-paragraphs__space-within:                $f-space--small !default;
 
 
-// Links output
+// Paragraphs output
 
 p + p {
   margin-top: ($e-paragraphs__spacing-vertical - $e-paragraphs__space-within) * -1;
