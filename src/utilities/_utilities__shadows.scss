@@ -1,0 +1,29 @@
+/* -------------------------------------------------------------------------
+ * SHADOWS
+ *
+ * Utility for defining shadows.
+ *
+ */
+
+// Utility variables
+// --------------------------------------------------
+
+// Utility toggling
+
+$u-shadows--enabled:         true !default;
+
+// Shadows maps
+
+$u-shadows__maps:            $f-shadows !default;
+
+
+// Utilities output
+// --------------------------------------------------
+
+@if ($u-shadows--enabled) {
+  @each $_shadow-name, $_shadow-value in $u-shadows__maps {
+    .u-shadow--#{$_shadow-name} {
+      box-shadow: $_shadow-value !important;
+    }
+  }
+}
