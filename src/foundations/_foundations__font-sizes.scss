@@ -3,8 +3,11 @@
  * FONT SIZES
  *
  * Values should be expressed in PX.
+ * The values here are for sample proposes, consider add your owns
+ *
  * If you need a relative unit based on that values, use the core functions
- * on used context.
+ * on context usage.
+ *
  */
 
 
@@ -19,7 +22,8 @@ $f-font-size--xl:                 24px !default;
 $f-font-size--xxl:                32px !default;
 $f-font-size--xxxl:               48px !default;
 
-// FONT SIZES MAP
+
+// Font sizes map
 
 $f-font-sizes: (
   "xxs":        $f-font-size--xxs,

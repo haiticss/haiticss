@@ -1,0 +1,15 @@
+
+/* -------------------------------------------------------------------------
+ * SETTINGS
+ *
+ * Main configuration, settings and core functions.
+ *
+ * core ....................... Core font size
+ * config ..................... Global configuration: env, paths, scoped, ...
+ * core-functions ............. Functions related to units, math, ...
+ *
+ */
+
+@import "settings__core";
+@import "settings__config";
+@import "settings__core-functions";

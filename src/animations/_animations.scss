@@ -1,10 +1,15 @@
 
-/* ==========================================================================
+/* -------------------------------------------------------------------------
  * ANIMATIONS
- * Unstyled movement patterns
  *
-   ========================================================================== */
+ * Movement and transition patterns
+ * Consider extend with your owns
+ *
+ * reveal-opacity ......... Reveal from transparent to opaque
+ * reveal-slide ........... Reveal from translated to untranslated position
+ *
+ */
 
 
-@import '_animations__reveal-opacity';
-@import '_animations__reveal-slide';
+@import 'animations__reveal-opacity';
+@import 'animations__reveal-slide';

@@ -2,41 +2,49 @@
 /* -------------------------------------------------------------------------
  * CONFIG
  *
- * Global configuration
+ * Global configuration: env, paths, scoped, ...
+ *
  */
 
 
-/* SCOPED
- * enable if you are scoping the output in a selector
+/* -------------------------------------------------------------------------
+ * SCOPED
+ * enable if you are scoping the output in a scope selector
  */
 
 $s-config__scoped:                    false !default;
 
 
-/* ENVIRONMENT
+/* -------------------------------------------------------------------------
+ * ENVIRONMENT
  * dev .................. Development
  * prod ................. Production
  */
 
-$s-config__env:                       "dev" !default;
+$s-config__env:                       "prod" !default;
 
 
-/* DEBUG
+/* -------------------------------------------------------------------------
+ * DEBUG
  * for debugging proposes
  */
 
 $s-config__debug:                     if($s-config__env == "dev", true, false) !default;
 
 
-/* PATHS
- * Define assets paths here
+/* -------------------------------------------------------------------------
+ * PATHS
+ * where to refer for fonts, images and other resources
  */
 
 $s-config__path--img:                 "../img" !default;
 $s-config__path--fonts:               "../fonts" !default;
 
-/* SPECIAL CHARS
- * Define special chars
+
+/* -------------------------------------------------------------------------
+ * SPECIAL CHARS
+ * peculiar chars used on strings, separators and suffixes
  */
-$s-config__breakpoint--separator:     \@ !default;
-$s-config__ratio--separator:          \: !default;
+
+$s-config__special-char--breakpoint-separator:     \@ !default;
+$s-config__special-char--ratio-separator:          \: !default;

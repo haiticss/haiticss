@@ -1,3 +1,4 @@
+
 /* -------------------------------------------------------------------------
  * WIDTHS
  *
@@ -26,6 +27,7 @@
  * N.B. This option is turned off by default.
  */
 
+
 // Utility variables
 // --------------------------------------------------
 
@@ -46,6 +48,7 @@ $u-widths__bp:                        map_remove($f-breakpoints, "xxs") !default
 
 $u-widths__offset-push--enabled:      false !default;
 $u-widths__offset-pull--enabled:      false !default;
+
 
 // Utility mixin
 // --------------------------------------------------
@@ -101,12 +104,14 @@ $u-widths__offset-pull--enabled:      false !default;
   }
 }
 
+
 // Build classes
 // --------------------------------------------------
 
 @if ($u-widths--enabled) {
   @include u-widths($u-widths__fractions);
 }
+
 
 // Build classes with breakpoint suffixes
 // --------------------------------------------------
@@ -116,7 +121,7 @@ $u-widths__offset-pull--enabled:      false !default;
   @each $_bp-name, $_bp-value in $u-widths__bp {
 
     @include t-mq($from: $_bp-name) {
-      @include u-widths($u-widths__fractions, s-core-breakpoint-suffix($_bp-name));
+      @include u-widths($u-widths__fractions, s-core-string-breakpoint($_bp-name));
     }
   }
 }

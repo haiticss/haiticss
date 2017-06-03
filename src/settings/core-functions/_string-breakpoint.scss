@@ -1,13 +1,14 @@
 
 /* -------------------------------------------------------------------------
- * BREAKPOINT SUFFIX
+ * STRING BREAKPOINT
  *
  * Returns a breakpoint string with its escaped separator
  * Useful for utilities that uses breakpoints modifiers
  *
- * s-core-breakpoint-suffix(md) == \@md
+ * s-core-string-breakpoint(md) == \@md
  */
 
-@function s-core-breakpoint-suffix($_bp-name) {
-  @return unquote("#{$s-config__breakpoint--separator}#{$_bp-name}");
+
+@function s-core-string-breakpoint($_bp-name) {
+  @return unquote("#{$s-config__special-char--breakpoint-separator}#{$_bp-name}");
 }

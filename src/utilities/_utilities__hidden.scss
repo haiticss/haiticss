@@ -1,9 +1,11 @@
+
 /* -------------------------------------------------------------------------
  * HIDDEN
  *
  * Force hide elements on certain breakpoints range
  *
  */
+
 
 // Utility variables
 // --------------------------------------------------
@@ -20,6 +22,7 @@ $u-hidden__bp-from:                 map_remove($f-breakpoints, "xxs") !default;
 $u-hidden__bp-until--enabled:       true !default;
 $u-hidden__bp-until:                map_remove($f-breakpoints, "xxs") !default;
 
+
 // Utility Selector output
 // --------------------------------------------------
 
@@ -29,11 +32,12 @@ $u-hidden__bp-until:                map_remove($f-breakpoints, "xxs") !default;
   }
 }
 
+
 // Utility breakpoints mixin
 // --------------------------------------------------
 
 @mixin u-hidden--bp($_direction: "from", $_breakpoint: null) {
-  .u-hidden-#{$_direction}#{s-core-breakpoint-suffix($_breakpoint)} {
+  .u-hidden-#{$_direction}#{s-core-string-breakpoint($_breakpoint)} {
 
     @if ($_direction == "from") and ($_breakpoint != null) {
       @include t-mq($from: $_breakpoint) {
@@ -49,6 +53,7 @@ $u-hidden__bp-until:                map_remove($f-breakpoints, "xxs") !default;
   }
 }
 
+
 // Utility breakpoints FROM output
 // --------------------------------------------------
 
@@ -57,6 +62,7 @@ $u-hidden__bp-until:                map_remove($f-breakpoints, "xxs") !default;
     @include u-hidden--bp("from", $_bp-name);
   }
 }
+
 
 // Utility breakpoints UNTIL output
 // --------------------------------------------------

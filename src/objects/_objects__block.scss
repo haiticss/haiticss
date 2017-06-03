@@ -1,14 +1,15 @@
 /* -------------------------------------------------------------------------
  * BLOCK
  *
- * Stacked image-with-text object. A simple abstraction to cover a very commonly
- * occurring design pattern.
+ * Stacked content object with or without header and footer.
+ * A simple abstraction to cover a very commonly occurring design pattern.
  *
  * Params:
  * SPACE .............................. Vertical separation between image and body
  * ALIGNMENT .......................... Horizontal text alignment
  *
  */
+
 
 // Object variables
 // --------------------------------------------------
@@ -65,6 +66,7 @@ $o-block__mod-stretch--enabled:           true !default;
   display: block;
 }
 
+
 // Object selector output
 // --------------------------------------------------
 
@@ -86,6 +88,7 @@ $o-block__mod-stretch--enabled:           true !default;
   }
 }
 
+
 // Space modifiers output
 // --------------------------------------------------
 
@@ -101,6 +104,7 @@ $o-block__mod-stretch--enabled:           true !default;
   }
 }
 
+
 // Alignment modifiers
 // --------------------------------------------------
 
@@ -115,6 +119,7 @@ $o-block__mod-stretch--enabled:           true !default;
     @include o-block__mod-alignment($_alignment-direction);
   }
 }
+
 
 // Stretch modifier output
 // --------------------------------------------------

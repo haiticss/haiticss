@@ -2,9 +2,13 @@
 /* -------------------------------------------------------------------------
  * BREAKPOINTS
  *
- * Define all breakpoints
+ * Viewport breakpoints
+ * Values should be expressed in PX.
+ * The values here are for sample proposes, consider add your owns
+ *
  * Extracted from [Google Material Design]
  * (https://www.google.com/design/spec/layout/adaptive-ui.html)
+ *
  */
 
 
@@ -21,7 +25,7 @@ $f-breakpoint--xxl:         1600px !default;
 $f-breakpoint--xxxl:        1920px !default;
 
 
-// BREAKPOINTS MAP
+// Breakpoints map
 
 $f-breakpoints: (
   "xxs":                    $f-breakpoint--xxs,
@@ -34,3 +38,24 @@ $f-breakpoints: (
   "xxl":                    $f-breakpoint--xxl,
   "xxxl":                   $f-breakpoint--xxxl,
 ) !default;
+
+
+////////////////////////////////////////////////////////////////////////////////
+//                               W A R N I N G                                //
+//                  DO NOT MODIFY ANYTHING BEYOND THIS POINT                  //
+////////////////////////////////////////////////////////////////////////////////
+
+/* SAFE CHECKING
+ * Check that the chosen breakpoints are pixels.
+ */
+
+@each $_name, $_size in $f-breakpoints {
+
+  @if (type-of($_size) != number) {
+    @error "`$f-breakpoints: #{$_name}` needs to be a number.";
+  }
+
+  @if (unit($_size) != "px") {
+    @error "`$f-breakpoints: #{$_name}` needs to be a pixel value.";
+  }
+}

@@ -2,7 +2,9 @@
 /* -------------------------------------------------------------------------
  * DOCUMENT
  *
- * Extracted from inuitcss
+ * Based on inuitcss reference
+ * Adapted to haiticss scoped mode
+ *
  * Simple page-level setup
  *
  * 1. Set the default `font-size` and `line-height` for the entire project,
@@ -12,6 +14,7 @@
  *    navigating between pages that do/do not have enough content to produce
  *    scrollbars naturally.
  * 3. Ensure the page always fills at least the entire height of the viewport.
+ *
  */
 
 
@@ -27,7 +30,9 @@ $e-document__body--bgcolor:             $f-color__neutral-white !default;
 // Apply document defaults according SETTINGS > CONFIG > SCOPED
 
 @if ($s-config__scoped) {
+
   // If the output is scoped into a selector, apply box sizing on all elements
+
   :root & {
     font-family: $e-document__body--font-family;
     color: $e-document__body--color;
@@ -37,7 +42,9 @@ $e-document__body--bgcolor:             $f-color__neutral-white !default;
   }
 
 } @else {
+
   // Otherwise, apply box sizing from root html tag
+
   html {
     font-family: $e-document__body--font-family;
     color: $e-document__body--color;

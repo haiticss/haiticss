@@ -10,8 +10,9 @@
 $e-links__color:                          $f-color__digital-blue !default;
 $e-links__hover-color:                    $f-color__digital-blue !default;
 
-$e-links__decoration:                     $f-color__digital-blue !default;
-$e-links__hover-decoration:               $f-color__digital-blue !default;
+$e-links__decoration:                     none !default;
+$e-links__hover-decoration:               underline !default;
+
 
 // Links output
 
@@ -27,7 +28,7 @@ a {
       }
 
       @if ($e-links__decoration != $e-links__hover-decoration) {
-        text-decoration: underline;
+        text-decoration: $e-links__hover-decoration;
       }
     }
   }

@@ -9,6 +9,7 @@
  *
  */
 
+
 // Animation variables
 // --------------------------------------------------
 
@@ -22,7 +23,6 @@ $a-reveal-slide__duration:                    $f-duration !default;
 $a-reveal-slide__direction:                   "right" !default;
 $a-reveal-slide__easing-in:                   $f-easing--in !default;
 $a-reveal-slide__easing-out:                  $f-easing--out !default;
-
 
 // Modifiers durations
 
@@ -89,6 +89,7 @@ $a-reveal-slide__mod-directions:              (
   }
 }
 
+
 // Duration modifiers output
 // --------------------------------------------------
 
@@ -104,6 +105,7 @@ $a-reveal-slide__mod-directions:              (
   }
 }
 
+
 // Direction modifiers output
 // --------------------------------------------------
 
@@ -118,6 +120,7 @@ $a-reveal-slide__mod-directions:              (
     @include a-reveal-slide__mod-direction($_direction-name);
   }
 }
+
 
 // Unset as mixin
 // --------------------------------------------------

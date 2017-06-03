@@ -1,6 +1,8 @@
 /* -------------------------------------------------------------------------
  * FLAG
  *
+ * A media object based on tables
+ *
  * The flag object is a design pattern similar to the media object, however it
  * utilises `display: table[-cell];` to give us control over the vertical
  * alignments of the text and image.

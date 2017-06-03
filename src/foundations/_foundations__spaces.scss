@@ -2,9 +2,13 @@
 /* -------------------------------------------------------------------------
  * SPACES
  *
+ * Base spaces naming and value pairing
+ * The values here are for sample proposes, consider add your owns
+ *
  * Modifying these variables can break the vertical rhythm.
  * Should be modified with caution.
  * Values should be expressed in PX.
+ *
  * If you need a relative unit based on that values, use the core functions
  * on used context.
  *
@@ -25,7 +29,7 @@ $f-space--large:              round($f-space * 2) !default;
 $f-space--huge:               round($f-space * 4) !default;
 
 
-// SPACES MAP
+// Spaces map
 
 $f-spaces: (
   "none":                     $f-space--none,

@@ -10,6 +10,13 @@
  */
 
 
+// Import function dependencies
+
+@import "strip-units";
+
+
+// Function definition and code
+
 @function s-core-rem-to-px($_value, $_rounded: true, $_root-font-size: $s-core__font-size) {
 
   @if ($_value == 0) {

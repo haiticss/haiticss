@@ -1,13 +1,14 @@
 /* -------------------------------------------------------------------------
  * MEDIA
  *
- * Place any image- and text-like content side-by-side, as per:
+ * Place any image-like and text-like content side-by-side, as per:
  * http://www.stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code
  *
  * Params:
  * SPACE .............................. Horizontal separation between image and body
  *
  */
+
 
 // Object variables
 // --------------------------------------------------
@@ -57,6 +58,7 @@ $o-media__mod-reverse--enabled:         true !default;
   }
 }
 
+
 // Object selector output
 // --------------------------------------------------
 
@@ -73,6 +75,7 @@ $o-media__mod-reverse--enabled:         true !default;
     @include o-media__body();
   }
 }
+
 
 // Space modifiers
 // --------------------------------------------------
@@ -96,6 +99,7 @@ $o-media__mod-reverse--enabled:         true !default;
     @include o-media--space($_space-name, $_space-value);
   }
 }
+
 
 // Reverse modifier
 // --------------------------------------------------

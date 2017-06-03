@@ -1,43 +1,89 @@
-/* ==========================================================================
- * WARNING
- * The scoped version of CSS output may not work on lib-sass 3.4
- * Both ruby and node based compilers do not fail to compile but wrong output
- * Use any compiler based on versions <=3.3 or >=3.5
- * https://github.com/sass/libsass/issues/2295
- * https://github.com/sass/libsass/pull/2296
-   ========================================================================== */
 
-
-/* ==========================================================================
- * SETTINGS
- * Project configuration, functions and variables
+/* -------------------------------------------------------------------------
+ * CONFIG
  *
- * core ................... Core and setup settings
- * config ................. Global configuration: env, paths
- * core functions ......... SASS core functions (core- prefixed)
- * foundations ............ Design foundations vars
-   ========================================================================== */
+ * Main configuration, settings, foundations and tools. No CSS output from
+ * them. Should be modified with caution. Values should be expressed in PX,
+ * if you plan to convert them into relative units, please, do so on usage.
+ *
+ * settings ................... Main configuration, settings and core functions
+ * foundations ................ Visual language expressed into SASS vars
+ * tools ...................... Helper mixins for mq, quantities, ...
+ *
+ */
 
-@import "settings/settings__core";
-
-// Override default config
+// Enable scoped flag
 $s-config__scoped: true;
 
-@import "settings/settings__config";
-@import "settings/settings__core-functions";
+@import "settings/settings";
 @import "foundations/foundations";
+@import "tools/tools";
 
-/* ==========================================================================
- * SCOPED CONTENT
-   ========================================================================== */
+
+/* -------------------------------------------------------------------------
+ * SCOPED CLASS AND CONTENT
+ */
 
 .s-haiticss {
-  @import "tools/tools";
+  /* -------------------------------------------------------------------------
+   * BASE
+   *
+   * Main HTML elements reset and setup, and base material
+   *
+   * generic .................... Normalize browser behaviour
+   * elements ................... HTML elements default appearance
+   * material ................... Class based elements: headings, icons, ...
+   *
+   */
+
   @import "generic/generic";
   @import "elements/elements";
   @import "material/material";
+
+
+  /* -------------------------------------------------------------------------
+   * ABSTRACTIONS
+   *
+   * Reusable design abstractions and patterns
+   *
+   * objects .................... Unstyled design patterns
+   * animations ................. Movement and transition patterns
+   * color-schemes .............. Color combination schemes
+   *
+   */
+
   @import "objects/objects";
   @import "animations/animations";
   @import "color-schemes/color-schemes";
+
+
+  /* -------------------------------------------------------------------------
+   * CONTENT
+   *
+   * Tangible content. Empty group on haiticss. Organize and put your
+   * content here. A proposal on how to organize your content could be:
+   *
+   * components ................. Abstract named components
+   * widgets .................... Data and business driven components
+   * templates .................. Template layouts
+   * renderings ................. Concrete use cases of components and widgets
+   * pages ...................... Concrete use cases of templates
+   *
+   */
+
+  // @import "components/components";
+
+
+  /* -------------------------------------------------------------------------
+   * OVERRIDES
+   *
+   * Safe belt scopes and utilities
+   *
+   * scopes ..................... Untrusted or corrupted sources under control
+   * utilities .................. Helper classes with important statements
+   *
+   */
+
   @import "utilities/utilities";
+
 }

@@ -3,6 +3,8 @@
  * COLORS STATE
  *
  * Define all state colors
+ * The values here are for sample proposes, consider add your owns
+ *
  */
 
 
@@ -50,7 +52,7 @@ $f-color__state-danger--semi-dark:        darken($f-color__state-danger, 5%) !de
 $f-color__state-danger--dark:             darken($f-color__state-danger, 15%) !default;
 
 
-// STATE COLOR MAP
+// State color map
 
 $f-colors-state: (
   "success":                            $f-color__state-success,

@@ -3,6 +3,8 @@
  * COLORS BRAND
  *
  * Define brand colors and its priorities
+ * The values here are for sample proposes, consider add your owns
+ *
  */
 
 
@@ -40,7 +42,7 @@ $f-color__brand-accent--semi-dark:        darken($f-color__brand-accent, 5%) !de
 $f-color__brand-accent--dark:             darken($f-color__brand-accent, 15%) !default;
 
 
-// BRAND COLOR MAP
+// Brand color map
 
 $f-colors-brand: (
   "primary":                   $f-color__brand-primary,

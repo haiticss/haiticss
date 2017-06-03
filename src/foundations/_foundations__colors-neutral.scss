@@ -3,6 +3,8 @@
  * COLORS NEUTRAL
  *
  * Neutral colors are the ones without saturation
+ * The values here are for sample proposes, consider add your owns
+ *
  */
 
 
@@ -27,7 +29,7 @@ $f-color__neutral-white--transparent:   rgba($f-color__neutral-white, 0) !defaul
 $f-color__neutral-black--transparent:   rgba($f-color__neutral-black, 0) !default;
 
 
-// NEUTRAL COLOR MAP
+// Neutral color map
 
 $f-colors-neutral: (
   "white":                              $f-color__neutral-white,

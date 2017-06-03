@@ -1,12 +1,14 @@
 
-/* ==========================================================================
+/* -------------------------------------------------------------------------
  * GENERIC
- * Normalize and bootstrapping
  *
- * box-sizing ............. sets a better default 'box-sizing'
+ * Normalize browser behaviour and bootstrap box model
+ *
+ * box-sizing ............. Sets a better default 'box-sizing'
  * normalize .............. @necolas' normalize.css
- * reset .................. a tiny reset to complement normalize
-   ========================================================================== */
+ * reset .................. A tiny reset to complement normalize
+ *
+ */
 
 
 @import 'generic__box-sizing';

@@ -3,7 +3,7 @@
  * RESET
  *
  * A very simple reset that sits on top of Normalize.css.
- * Extracted from inuitcss
+ *
  */
 
 
@@ -38,9 +38,7 @@ legend {
 }
 
 
-/**
- * Remove trailing margins from nested lists.
- */
+// Remove trailing margins from nested lists.
 
 li > {
   ol,
@@ -50,9 +48,7 @@ li > {
 }
 
 
-/**
- * Remove default table spacing.
- */
+// Remove default table spacing.
 
 table {
   border-collapse: collapse;
@@ -60,12 +56,7 @@ table {
 }
 
 
-/* -------------------------------------------------------------------------
- * SHARED
- *
- * Shared declarations for certain elements.
- * Extracted from inuitcss
- */
+// Vertical spacing
 
 address,
 h1,
@@ -88,18 +79,10 @@ fieldset {
 }
 
 
-/**
- * Consistent indentation for lists.
- */
+// Consistent indentation for lists.
 
 dd,
 ol,
 ul {
   margin-left: s-core-px-to-rem($g-reset__spacing--horizontal);
-}
-
-hr {
-  border-top-width: 0;
-  border-bottom-width: 1px;
-  border-color: #000;
 }

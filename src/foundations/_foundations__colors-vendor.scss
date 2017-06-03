@@ -3,6 +3,8 @@
  * COLORS VENDOR
  *
  * Define all vendor colors
+ * The values here are for sample proposes, consider add your owns
+ *
  */
 
 
@@ -25,7 +27,7 @@ $f-color__vendor-twitter--semi-light:     #1dcaff !default;
 $f-color__vendor-twitter--dark:           #0084b4 !default;
 
 
-// VENDOR COLOR MAP
+// Vendor color map
 
 $f-colors-vendor: (
   "facebook":                             $f-color__vendor-facebook,
