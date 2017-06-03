@@ -5,6 +5,7 @@
  *
  */
 
+
 // Object variables
 // --------------------------------------------------
 
@@ -16,6 +17,7 @@ $o-list-inline--enabled:                      true !default;
 
 $o-list-inline__mod-spaces--enabled:          true !default;
 $o-list-inline__mod-spaces:                   map_remove($f-spaces, "large", "huge") !default;
+
 
 // Object as a mixin
 // --------------------------------------------------
@@ -29,6 +31,7 @@ $o-list-inline__mod-spaces:                   map_remove($f-spaces, "large", "hu
   }
 }
 
+
 // Object selector output
 // --------------------------------------------------
 
@@ -37,6 +40,7 @@ $o-list-inline__mod-spaces:                   map_remove($f-spaces, "large", "hu
     @include o-list-inline();
   }
 }
+
 
 // Space modifiers output
 // --------------------------------------------------
@@ -52,6 +56,7 @@ $o-list-inline__mod-spaces:                   map_remove($f-spaces, "large", "hu
     @include o-list-inline__mod-space($_space-name, $_space-value);
   }
 }
+
 
 // Unset as mixin
 // --------------------------------------------------

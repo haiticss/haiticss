@@ -8,6 +8,7 @@
  *
  */
 
+
 // Object variables
 // --------------------------------------------------
 
@@ -28,6 +29,7 @@ $o-table__mod-spaces:                   map_remove($f-spaces, "large", "huge") !
 
 $o-table__mod-fixed--enabled:           true !default;
 
+
 // Object as a mixin
 // --------------------------------------------------
 
@@ -38,6 +40,7 @@ $o-table__mod-fixed--enabled:           true !default;
 @mixin o-table__cell($_space-value: $o-table__space) {
   padding: s-core-px-to-rem($_space-value);
 }
+
 
 // Object selector output
 // --------------------------------------------------
@@ -53,6 +56,7 @@ $o-table__mod-fixed--enabled:           true !default;
   }
 
 }
+
 
 // Space modifiers
 // --------------------------------------------------
@@ -71,6 +75,7 @@ $o-table__mod-fixed--enabled:           true !default;
     @include o-table__mod-space($_space-name, $_space-value);
   }
 }
+
 
 // Fixed modifier
 // --------------------------------------------------

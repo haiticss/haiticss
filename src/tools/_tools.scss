@@ -1,12 +1,15 @@
 
-/* ==========================================================================
+/* -------------------------------------------------------------------------
  * TOOLS
- * SCSS mixins where project is built on
+ *
+ * Helper SASS mixins where project is built on
  *
  * clearfix ............... Micro clearfix
  * sass-mq ................ Media query manager based on sass-mq
  * quantity-queries ....... Third party quantity queries
-   ========================================================================== */
+ *
+ */
+
 
 @import 'tools__clearfix';
 @import 'tools__sass-mq';

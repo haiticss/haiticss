@@ -3,6 +3,7 @@
  * FONTS
  *
  * Font families & fallback
+ * The values here are for sample proposes, consider add your owns
  *
  */
 
@@ -17,7 +18,7 @@ $f-font-family__secondary:        Verdana, $f-font-family__sans-fallback !defaul
 $f-font-family__accent:           Georgia, $f-font-family__sans-fallback !default;
 
 
-// FONT FAMILIES MAP
+// Font families map
 
 $f-font-families: (
   "primary":    $f-font-family__primary,

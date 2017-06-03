@@ -2,7 +2,9 @@
 /* -------------------------------------------------------------------------
  * ASPECT RATIOS
  *
- * Used to support some objects, material and components
+ * Used to preserve relation between with and heights
+ * The values here are for sample proposes, consider add your owns
+ *
  */
 
 
@@ -19,11 +21,11 @@ $f-aspect-ratio--golden:    1.618 !default;
 // Aspect ratios map
 
 $f-aspect-ratios: (
-  quote(s-core-ratio-suffix(1, 1)):  $f-aspect-ratio--1-1,
-  quote(s-core-ratio-suffix(4, 3)):  $f-aspect-ratio--4-3,
-  quote(s-core-ratio-suffix(3, 2)):  $f-aspect-ratio--3-2,
-  quote(s-core-ratio-suffix(16, 9)): $f-aspect-ratio--16-9,
-  quote(s-core-ratio-suffix(2, 1)):  $f-aspect-ratio--2-1,
+  quote(s-core-string-ratio(1, 1)):  $f-aspect-ratio--1-1,
+  quote(s-core-string-ratio(4, 3)):  $f-aspect-ratio--4-3,
+  quote(s-core-string-ratio(3, 2)):  $f-aspect-ratio--3-2,
+  quote(s-core-string-ratio(16, 9)): $f-aspect-ratio--16-9,
+  quote(s-core-string-ratio(2, 1)):  $f-aspect-ratio--2-1,
   "golden-h" : 1 / $f-aspect-ratio--golden,
   "golden-v" : $f-aspect-ratio--golden
 ) !default;

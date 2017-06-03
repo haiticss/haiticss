@@ -1,7 +1,7 @@
 /* -------------------------------------------------------------------------
- * Paragraphs
+ * PARAGRAPHS
  *
- * Define multiple paragraphs space
+ * Appearance & behaviour for paragraphs
  *
  */
 
@@ -16,4 +16,3 @@ $e-paragraphs__space-within:                $f-space--small !default;
 p + p {
   margin-top: ($e-paragraphs__spacing-vertical - $e-paragraphs__space-within) * -1;
 }
-

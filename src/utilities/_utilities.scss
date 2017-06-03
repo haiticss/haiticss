@@ -1,25 +1,34 @@
 
-/* ==========================================================================
+/* -------------------------------------------------------------------------
  * UTILITIES
+ *
  * Helper classes with important statements
  *
- * alignments ............. force text alignment
- * colors ................. force font color and background color
- * hidden ................. force hide elements on certain breakpoints range
- * margins ................ force margins
- * paddings ............... force paddings
- * widths ................. set fraction widths
-   ========================================================================== */
+ * alignments ............. Force text alignment
+ * bgcolors ............... Foundation colors as a background color
+ * colors ................. Foundation colors as color
+ * font-families .......... Foundation font-families
+ * font-sizes ............. Foundation font-sizes
+ * hidden ................. Force hide elements on certain breakpoints range
+ * line-heights ........... Foundation line-heights
+ * margins ................ Margin utilities based on foundations spaces
+ * paddings ............... Padding utilities based on foundations spaces
+ * radiuses ............... Foundation radiuses as border-radius
+ * shadows ................ Foundation shadows
+ * widths ................. Fraction widths
+ *
+ */
 
 
-@import '_utilities__alignments';
-@import '_utilities__bgcolors';
-@import '_utilities__colors';
-@import '_utilities__font-families';
-@import '_utilities__font-sizes';
-@import '_utilities__hidden';
-@import '_utilities__line-heights';
-@import '_utilities__margins';
-@import '_utilities__paddings';
-@import '_utilities__radiuses';
-@import '_utilities__widths';
+@import 'utilities__alignments';
+@import 'utilities__bgcolors';
+@import 'utilities__colors';
+@import 'utilities__font-families';
+@import 'utilities__font-sizes';
+@import 'utilities__hidden';
+@import 'utilities__line-heights';
+@import 'utilities__margins';
+@import 'utilities__paddings';
+@import 'utilities__radiuses';
+@import 'utilities__shadows';
+@import 'utilities__widths';

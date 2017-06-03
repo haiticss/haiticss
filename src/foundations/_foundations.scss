@@ -1,16 +1,26 @@
 
-/* DESIGN FOUNDATIONS
+/* -------------------------------------------------------------------------
+ * FOUNDATIONS
+ *
+ * A visual language defined by close collaboration between developers and
+ * designers
+ *
+ * The contained values here are for sample proposes, consider add your owns
  *
  * aspect-ratios ......... to support some objects, material and components
  * breakpoints ........... to determine screen sizes and media queries
  * colors ................ brand, neutral, vendor, state and other colors
- * durations ............. to be used on animations and transitions
+ * durations ............. time durations to be used on animations
+ * easings ............... easing functions to be used on animations
  * font-families ......... to import and define the families
  * font-sizes ............ fixed sizes catalog
  * line-heights .......... unit less line heights
  * radiuses .............. to be used as a border radius
+ * shadows ............... uncolored shadow sizes
  * spaces ................ to determine common spacing and gutters
+ *
  */
+
 
 @import "foundations__aspect-ratios";
 @import "foundations__breakpoints";

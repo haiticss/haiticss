@@ -1,10 +1,15 @@
 
-/* ==========================================================================
+/* -------------------------------------------------------------------------
  * MATERIAL
  *
- * Body  .................. add font-sizes modifiers for element body
- * Heading ................  add font-sizes and margin bottom modifiers for element heading
-   ========================================================================== */
+ * Class based elements
+ * Too simple to be a component
+ * Icons, sprites, ...
+ *
+ * Body  .................. Element agnostic body variants
+ * Heading ................ Element agnostic heading variants
+ *
+ */
 
-@import '_material__body';
-@import '_material__heading';
+@import 'material__body';
+@import 'material__heading';

@@ -7,11 +7,19 @@
  *
  * Params:
  * MAP-A .............................. Main map to compare with
- * MAP-B .............................. Secondary map
+ * MAP-B .............................. Secondary map to reduce
  *
- * Returns a map with the differences
+ * Returns:
+ * MAP-B skipping key/values if they are the same on MAP-A
+ *
+ * Example
+ * map-a: ("foo": 1, "bar": 3)
+ * map-b: ("foo": 2, "bar": 3)
+ * map-c: s-core-map-diff(map-a, map-b)
+ * map-c: ("foo": 2)
  *
  */
+
 
 @function s-core-map-diff($_map-a: (), $_map-b: ()) {
 

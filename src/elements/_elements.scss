@@ -1,20 +1,23 @@
 
-/* ==========================================================================
+/* -------------------------------------------------------------------------
  * ELEMENTS
- * Basic HTML elements styles
+ * HTML elements default appearance
  *
- * document ............... document defaults (html, body)
- * headings ............... minimal heading styles
- * images ................. minimal images styles
- * links .................. minimal links styles
- * paragraphs ............. minimal paragraphs styles
- * tables ................. ensure tables fill up as much space as possible.
-   ========================================================================== */
+ * document ............... Document defaults (html, body)
+ * headings ............... Minimal heading styles
+ * hr ..................... Horizontal rules
+ * images ................. Image fluidity and alt text
+ * links .................. Minimal links styles
+ * paragraphs ............. Minimal paragraphs styles
+ * tables ................. Ensure tables fill up as much space as possible.
+ *
+ */
 
 
-@import '_elements__document';
-@import '_elements__headings';
-@import '_elements__images';
-@import '_elements__links';
-@import '_elements__paragraphs';
-@import '_elements__tables';
+@import 'elements__document';
+@import 'elements__headings';
+@import 'elements__hr';
+@import 'elements__images';
+@import 'elements__links';
+@import 'elements__paragraphs';
+@import 'elements__tables';

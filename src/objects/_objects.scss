@@ -1,22 +1,35 @@
 
-/* ==========================================================================
+/* -------------------------------------------------------------------------
  * OBJECTS
+ *
  * Unstyled design patterns
+ * Consider extend with your owns
  *
- * block .................. stacked image-with-text object
+ * block .................. Stacked content object with or without header and footer
+ * box .................... The box object simply boxes off content
+ * crop ................... A cropping wrapper with preserved ratio
+ * flag ................... A media object based on tables
+ * layout ................. Grid-like layout system
+ * list-bare .............. Strip list-like appearance
+ * list-inline ............ List of items in one line
+ * media .................. Image-like and text-like content side-by-side
+ * pack ................... Pack up elements horizontally to fill an equal
+ * ratio .................. Ratio-bound content block
+ * table .................. For manipulating the structure of HTML tables
+ * wrapper ................ Page-level constraining and wrapping elements
  *
-   ========================================================================== */
+ */
 
 
-@import '_objects__block';
-@import '_objects__box';
-@import '_objects__crop';
-@import '_objects__flag';
-@import '_objects__layout';
-@import '_objects__list-bare';
-@import '_objects__list-inline';
-@import '_objects__media';
-@import '_objects__pack';
-@import '_objects__ratio';
-@import '_objects__table';
-@import '_objects__wrapper';
+@import 'objects__block';
+@import 'objects__box';
+@import 'objects__crop';
+@import 'objects__flag';
+@import 'objects__layout';
+@import 'objects__list-bare';
+@import 'objects__list-inline';
+@import 'objects__media';
+@import 'objects__pack';
+@import 'objects__ratio';
+@import 'objects__table';
+@import 'objects__wrapper';

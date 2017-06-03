@@ -1,9 +1,10 @@
 /* -------------------------------------------------------------------------
  * RATIO
  *
- * Create ratio-bound content blocks
+ * Ratio-bound content block
  *
  */
+
 
 // Object variables
 // --------------------------------------------------
@@ -42,6 +43,7 @@ $o-ratio__mod-ratios:                   $f-aspect-ratios !default;
   width: 100%;
 }
 
+
 // Object selector output
 // -------------------------------------------
 
@@ -54,6 +56,7 @@ $o-ratio__mod-ratios:                   $f-aspect-ratios !default;
     @include o-ratio__content();
   }
 }
+
 
 // Ratio modifiers output
 // -------------------------------------------

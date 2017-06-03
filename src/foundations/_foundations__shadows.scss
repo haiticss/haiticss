@@ -1,29 +1,25 @@
 
 /* -------------------------------------------------------------------------
- * shadowS
+ * SHADOWS
  *
- * Define shadows foundation
- *
- * Values should be expressed in PX.
- * If you need a relative unit based on that values, use the core functions
- * on used context.
- *
- * Colors are not included
+ * Define uncolored shadow sizes
+ * The values here are for sample proposes, consider add your owns
  *
  */
+
 
 // Main shadow
 
 $f-shadow:                    2px 2px 2px 2px !default;
 
-// shadow variants
+// Shadow variants
 
 $f-shadow--discrete:          $f-shadow !default;
 $f-shadow--elevated:          0 14px 28px 0 !default;
 $f-shadow--sunken:            inset 0 0 28px 0 !default;
 
 
-// shadowS MAP
+// Shadows map
 
 $f-shadows: (
   "discrete":                 $f-shadow--discrete,

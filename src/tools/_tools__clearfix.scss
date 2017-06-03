@@ -7,6 +7,7 @@
  *
  */
 
+
 @mixin t-clearfix() {
   &::after {
     content: "";
@@ -17,14 +18,11 @@
 
 @mixin t-clearfix--unset() {
   &::after {
-    content: inherit;
-    display: block;
-    clear: both;
+    content: initial;
+    display: initial;
+    clear: initial;
   }
 }
-
-// Important mixins
-// --------------------------------------------------
 
 @mixin t-clearfix-important() {
   &::after {

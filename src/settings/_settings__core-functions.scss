@@ -1,20 +1,23 @@
 
-/* CORE FUNCTIONS
- * SASS core functions (core- prefixed)
+/* -------------------------------------------------------------------------
+ * CORE FUNCTIONS
+ * SASS core functions (s-core- prefixed)
  *
- * breakpoint-suffix ..... returns a string with breakpoint separator concatenated to a given breakpoint
  * map-diff .............. returns the differences between two maps, skipping equal values
- * strip-units ........... returns the unitless number of a given value
- * ratio-suffix .......... returns a ratio string with its escaped separator of a given width and height
- * rem-to-px ............. returns PX equivalent value using a given REM value
- * px-to-rem ............. returns REM equivalent value using a given PX value
  * px-to-em .............. returns EM equivalent value using a given PX value and a REM reference
+ * px-to-rem ............. returns REM equivalent value using a given PX value
+ * rem-to-px ............. returns PX equivalent value using a given REM value
+ * string-breakpoint ..... returns a string with breakpoint separator concatenated to a given breakpoint
+ * string-ratio .......... returns a ratio string with its escaped separator of a given width and height
+ * strip-units ........... returns the unitless number of a given value
+ *
  */
 
-@import "core-functions/_breakpoint-suffix";
-@import "core-functions/_map-diff";
-@import "core-functions/_strip-units";
-@import "core-functions/_ratio-suffix";
-@import "core-functions/_rem-to-px";
-@import "core-functions/_px-to-rem";
-@import "core-functions/_px-to-em";
+
+@import "core-functions/map-diff";
+@import "core-functions/px-to-em";
+@import "core-functions/px-to-rem";
+@import "core-functions/rem-to-px";
+@import "core-functions/string-breakpoint";
+@import "core-functions/string-ratio";
+@import "core-functions/strip-units";

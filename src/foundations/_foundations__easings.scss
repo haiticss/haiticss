@@ -3,8 +3,10 @@
  * EASINGS
  *
  * Define easings foundation
- * Based on Polaris:
- * https://github.com/Shopify/polaris/blob/master/src/styles/foundation/easing.scss
+ * The values here are for sample proposes, consider add your owns
+ *
+ * Extracted from [Polaris]
+ * (https://github.com/Shopify/polaris/blob/master/src/styles/foundation/easing.scss)
  *
  */
 
@@ -22,7 +24,7 @@ $f-easing--overshoot:         cubic-bezier(.07, .28, .32, 1.22) !default;
 $f-easing--anticipate:        cubic-bezier(.38, -.4, .88, .65) !default;
 
 
-// EASINGS MAP
+// Easings map
 
 $f-easings: (
   "base":                     $f-easing--base,

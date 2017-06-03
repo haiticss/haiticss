@@ -8,6 +8,7 @@
  *
  */
 
+
 // Animation variables
 // --------------------------------------------------
 
@@ -57,7 +58,8 @@ $a-reveal-opacity__mod-durations:             $f-durations !default;
   }
 }
 
-// Space modifiers output
+
+// Duration modifiers output
 // --------------------------------------------------
 
 @mixin a-reveal-opacity__mod-duration($_duration-name: "normal", $_duration-value: $f-duration--normal) {
@@ -71,6 +73,7 @@ $a-reveal-opacity__mod-durations:             $f-durations !default;
     @include a-reveal-opacity__mod-duration($_duration-name, $_duration-value);
   }
 }
+
 
 // Unset as mixin
 // --------------------------------------------------

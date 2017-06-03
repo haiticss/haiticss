@@ -2,10 +2,11 @@
 /* -------------------------------------------------------------------------
  * CORE
  *
- * This core file sets up most important setup variables. They underpin a
- * lot of calculations based on that values.
+ * This core file sets up the most important setup variable, core font size.
+ * It underpin some calculations based on that value.
  * Should be modified with caution.
- * Values should be expressed in PX and will be converted into REM/EM.
+ * Values should be expressed in PX.
+ *
  */
 
 $s-core__font-size:          16px !default;
