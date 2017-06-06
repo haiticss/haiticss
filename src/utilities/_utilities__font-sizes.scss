@@ -25,7 +25,7 @@ $u-font-sizes__maps:            $f-font-sizes !default;
 @if ($u-font-sizes--enabled) {
 
   @each $_font-size__name, $_font-size__value in $u-font-sizes__maps {
-    .u-font-size__#{$_font-size__name} {
+    .u-font-size--#{$_font-size__name} {
       font-size: $_font-size__value !important;
     }
   }

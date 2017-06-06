@@ -24,7 +24,7 @@ $u-radiuses__maps:              $f-radiuses !default;
 
 @if ($u-radiuses--enabled) {
   @each $_radius__name, $_radius__value in $u-radiuses__maps {
-    .u-radius__#{$_radius__name} {
+    .u-radius--#{$_radius__name} {
       border-radius: $_radius__value !important;
     }
   }

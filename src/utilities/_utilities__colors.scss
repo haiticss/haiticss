@@ -31,7 +31,7 @@ $u-colors__maps:            $f-colors !default;
         $_color-name: unquote("#{$_color-group__name}-#{$_color-name}");
       }
 
-      .u-color__#{$_color-name} {
+      .u-color--#{$_color-name} {
         color: $_color-value !important;
       }
 

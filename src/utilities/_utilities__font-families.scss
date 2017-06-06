@@ -24,7 +24,7 @@ $u-font-families__maps:            $f-font-families !default;
 
 @if ($u-font-families--enabled) {
   @each $_font-family__name, $_font-family__value in $u-font-families__maps {
-    .u-font-family__#{$_font-family__name} {
+    .u-font-family--#{$_font-family__name} {
       font-family: $_font-family__value !important;
     }
   }
