@@ -31,7 +31,7 @@ $u-bg-colors__maps:            $f-colors !default;
         $_bg-color-name: unquote("#{$_bg-color-group__name}-#{$_bg-color-name}");
       }
 
-      .u-bg-color__#{$_bg-color-name} {
+      .u-bg-color--#{$_bg-color-name} {
         background-color: $_bg-color-value !important;
       }
 

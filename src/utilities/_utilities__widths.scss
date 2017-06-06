@@ -19,7 +19,7 @@
  * Optionally, offset classes can br generated which can push and pull
  * elements left and right by a specified amount, e.g.:
  *
- *   <div class="o-layout__item  u-2/3  u-pull-1/3">
+ *   <div class="o-layout__item  u-2/3  u-pull--1/3">
  *
  * This is useful for making very granular changes to the rendered order of
  * items in a layout.
@@ -65,13 +65,13 @@ $u-widths__offset-pull--enabled:      false !default;
         }
 
         @if ($u-widths__offset-push--enabled) and ($_denominator > 1) {
-          .u-push-#{$_numerator}\/#{$_denominator}#{$_bp-suffix} {
+          .u-push--#{$_numerator}\/#{$_denominator}#{$_bp-suffix} {
             left: ($_numerator / $_denominator) * 100% !important;
           }
         }
 
         @if ($u-widths__offset-pull--enabled) and ($_denominator > 1) {
-          .u-pull-#{$_numerator}\/#{$_denominator}#{$_bp-suffix} {
+          .u-pull--#{$_numerator}\/#{$_denominator}#{$_bp-suffix} {
             right: ($_numerator / $_denominator) * 100% !important;
           }
         }
@@ -86,7 +86,7 @@ $u-widths__offset-pull--enabled:      false !default;
       right: auto !important;
     }
 
-    .u-push-0#{$_bp-suffix} {
+    .u-push--0#{$_bp-suffix} {
       left: auto !important;
     }
   }
@@ -98,7 +98,7 @@ $u-widths__offset-pull--enabled:      false !default;
       left: auto !important;
     }
 
-    .u-pull-0#{$_bp-suffix} {
+    .u-pull--0#{$_bp-suffix} {
       right: auto !important;
     }
   }

@@ -24,7 +24,7 @@ $u-line-height__maps:            $f-line-heights !default;
 
 @if ($u-line-height--enabled) {
   @each $_line-height__name, $_line-height__value in $u-line-height__maps {
-    .u-line-height__#{$_line-height__name} {
+    .u-line-height--#{$_line-height__name} {
       line-height: $_line-height__value !important;
     }
   }

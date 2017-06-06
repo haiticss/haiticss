@@ -37,7 +37,7 @@ $u-hidden__bp-until:                map_remove($f-breakpoints, "xxs") !default;
 // --------------------------------------------------
 
 @mixin u-hidden--bp($_direction: "from", $_breakpoint: null) {
-  .u-hidden-#{$_direction}#{s-core-string-breakpoint($_breakpoint)} {
+  .u-hidden--#{$_direction}#{s-core-string-breakpoint($_breakpoint)} {
 
     @if ($_direction == "from") and ($_breakpoint != null) {
       @include t-mq($from: $_breakpoint) {

@@ -32,7 +32,7 @@ $u-align__mod-bp:                       map_remove($f-breakpoints, "xxs") !defau
 
 @if ($u-align--enabled) {
   @each $_alignment in $u-align__alignments {
-    .u-align-#{$_alignment} {
+    .u-align--#{$_alignment} {
       text-align: $_alignment !important;
     }
   }
@@ -46,7 +46,7 @@ $u-align__mod-bp:                       map_remove($f-breakpoints, "xxs") !defau
   @each $_bp-name, $_bp-value in $u-align__mod-bp {
     @include t-mq($from: $_bp-name) {
       @each $_alignment in $u-align__alignments {
-        .u-align-#{$_alignment}#{s-core-string-breakpoint($_bp-name)} {
+        .u-align--#{$_alignment}#{s-core-string-breakpoint($_bp-name)} {
           text-align: $_alignment !important;
         }
       }
