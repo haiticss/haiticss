@@ -1,0 +1,74 @@
+/* -------------------------------------------------------------------------
+ * Color Schemes > DEFAULT
+ *
+ */
+
+
+// Scheme variables
+// --------------------------------------------------
+
+$cs-default--enabled                :      true !default;
+
+$cs-default__bg-color               :      $e-document__body--bgcolor !default;
+$cs-default__color                  :      $e-document__body--color !default;
+$cs-default__selection-bgcolor      :      $f-color__brand-primary !default;
+$cs-default__selection-color        :      $f-color__neutral-white !default;
+$cs-default__border-color           :      $f-color__neutral-grey--ultra-light !default;
+$cs-default__hr-color               :      $f-color__neutral-grey--light !default;
+$cs-default__link-color             :      $e-links__color !default;
+$cs-default__link-hovercolor        :      $e-links__hover-color !default;
+$cs-default__heading-color          :      $f-color__brand-primary !default;
+
+
+// Scheme mixin
+// --------------------------------------------------
+
+@mixin cs-default() {
+  background-color: $cs-default__bg-color;
+  color: $cs-default__color;
+
+  &,
+  & * {
+    border-color: $cs-default__border-color;
+  }
+
+  &::selection,
+  & *::selection {
+    background-color: $cs-default__selection-bgcolor;
+    color: $cs-default__selection-color;
+  }
+
+  a {
+    color: $cs-default__link-color;
+
+    &:hover,
+    &:focus {
+      color: $cs-default__link-hovercolor;
+
+    }
+  }
+
+  hr {
+    border-color: $cs-default__hr-color;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: $cs-default__heading-color;
+  }
+
+}
+
+
+// Scheme selector output
+// --------------------------------------------------
+
+@if $cs-default--enabled {
+  .cs-default {
+    @include cs-default();
+  }
+}
