@@ -1,0 +1,25 @@
+/* -------------------------------------------------------------------------
+ * INSET SQUISH
+ *
+ * To give space between container and content emphasizing top and bottom spaces
+ *
+ * TIP:
+ * You can modify the amount of generated spaces by overriding the $sp-inset-squish__spaces variable.
+ *
+ */
+
+$sp-inset-squish__enabled: true !default;
+$sp-inset-squish__spaces: $f-spaces !default;
+
+
+@mixin sp-inset-squish($_spacing-modifier, $_spacing-value) {
+  .sp-inset-squish--#{$_spacing-modifier} {
+    padding: ($_spacing-value * .5) $_spacing-value;
+  }
+}
+
+@if ($sp-inset-squish__enabled) {
+  @each $_spacing-modifier, $_spacing-value in $sp-inset-squish__spaces {
+    @include sp-inset-squish($_spacing-modifier, $_spacing-value);
+  }
+}

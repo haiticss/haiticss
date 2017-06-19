@@ -1,0 +1,26 @@
+/* -------------------------------------------------------------------------
+ * INLINE
+ *
+ * To separate inline items.
+ *
+ * TIP:
+ * You can modify the amount of generated spaces by overriding the $sp-inline__spaces variable.
+ *
+ */
+
+
+$sp-inline__enabled: true !default;
+$sp-inline__spaces: $f-spaces !default;
+
+
+@mixin sp-inline($_spacing-modifier, $_spacing-value) {
+  .sp-inline--#{$_spacing-modifier} {
+    margin-right: $_spacing-value;
+  }
+}
+
+@if ($sp-inline__enabled) {
+  @each $_spacing-modifier, $_spacing-value in $sp-inline__spaces {
+    @include sp-inline($_spacing-modifier, $_spacing-value);
+  }
+}

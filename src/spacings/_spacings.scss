@@ -1,0 +1,19 @@
+/* -------------------------------------------------------------------------
+ * SPACINGS
+ *
+ * An abstraction about spaces, it's implemented according to a Nathan Curtis article about spacing in design systems
+ * you can find the article here: https://medium.com/eightshapes-llc/space-in-design-systems-188bcbae0d62
+ *
+ * Inline ............... To separate inline items
+ * Inset ................ To give space between container and content
+ * Inset Squish ......... To give space between container and content emphasizing top and bottom spaces
+ * Inset Stretch ........ To give space between container and content emphasizing right and left spaces
+ * Stack ................ To separate stacked elements
+ *
+ */
+
+@import 'spacings__inline';
+@import 'spacings__inset';
+@import 'spacings__inset-squish';
+@import 'spacings__inset-stretch';
+@import 'spacings__stack';
