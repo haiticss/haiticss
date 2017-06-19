@@ -160,7 +160,7 @@
   }
 
   @if $first > $last {
-    @error '#{$first} can´t be larger that #{$last} for `between`';
+    @error '#{$first} can\'t be larger that #{$last} for `between`';
   }
 
   @if $selector != null and (type-of($selector) != 'string' or length($selector) > 1) {
