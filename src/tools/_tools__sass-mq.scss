@@ -119,7 +119,7 @@ $t-sass-mq__debug--border-color:    $f-color__neutral-grey--light !default;
     // Loop through the breakpoints that should be shown
     @each $_bp-name, $_bp-value in $_breakpoints {
       @include t-mq($from: $_bp-name) {
-        content: "#{$_bp-name} ≥ #{$_bp-value}";
+        content: "#{$_bp-name} >= #{$_bp-value}";
       }
     }
   }
