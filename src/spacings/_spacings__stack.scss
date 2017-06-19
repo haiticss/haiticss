@@ -1,0 +1,25 @@
+/* -------------------------------------------------------------------------
+ * STACK
+ *
+ * To separate stacked elements.
+ *
+ * TIP:
+ * You can modify the amount of generated spaces by overriding the $sp-stack__spaces variable.
+ *
+ */
+
+$sp-stack__enabled: true !default;
+$sp-stack__spaces: $f-spaces !default;
+
+
+@mixin sp-stack($_spacing-modifier, $_spacing-value) {
+  .sp-stack--#{$_spacing-modifier} {
+    margin-bottom: $_spacing-value;
+  }
+}
+
+@if ($sp-stack__enabled) {
+  @each $_spacing-modifier, $_spacing-value in $sp-stack__spaces {
+    @include sp-stack($_spacing-modifier, $_spacing-value);
+  }
+}
