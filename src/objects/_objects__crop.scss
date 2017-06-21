@@ -56,25 +56,27 @@ $o-crop__mod-alignments--enabled:      true !default;
 // Alignment modifiers
 // --------------------------------------------------
 
-.o-crop__content--left {
-  top: 0;
-  left: 0;
-}
+@if ($o-crop--enabled and $o-crop__mod-alignments--enabled) {
+  .o-crop__content--left {
+    top: 0;
+    left: 0;
+  }
 
-.o-crop__content--right {
-  right: 0;
-  left: auto;
-}
+  .o-crop__content--right {
+    right: 0;
+    left: auto;
+  }
 
-.o-crop__content--bottom {
-  top: auto;
-  bottom: 0;
-}
+  .o-crop__content--bottom {
+    top: auto;
+    bottom: 0;
+  }
 
-.o-crop__content--center {
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  .o-crop__content--center {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
 }
 
 // Crop ratios

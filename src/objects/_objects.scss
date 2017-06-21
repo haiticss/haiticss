@@ -7,6 +7,7 @@
  *
  * block .................. Stacked content object with or without header and footer
  * box .................... The box object simply boxes off content
+ * bullet ................. The bullet pattern is used to align an icon with some text
  * crop ................... A cropping wrapper with preserved ratio
  * flag ................... A media object based on tables
  * layout ................. Grid-like layout system
@@ -23,6 +24,7 @@
 
 @import 'objects__block';
 @import 'objects__box';
+@import 'objects__bullet';
 @import 'objects__crop';
 @import 'objects__flag';
 @import 'objects__layout';
