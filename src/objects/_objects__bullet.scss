@@ -1,0 +1,118 @@
+/* -------------------------------------------------------------------------
+ * BULLET
+ *
+ * The bullet pattern is used to align an icon with some text,
+ * similar to how a bullet point has the icon and the text
+ *
+ *
+ */
+
+// Object variables
+// --------------------------------------------------
+
+// Object toggling
+
+$o-bullet--enabled: true !default;
+
+$o-bullet__space--top: .15em !default;
+$o-bullet__space--left: .3em !default;
+$o-bullet__icon-size: 1em !default;
+
+// Modifier Block
+
+$o-bullet__mod-block--enabled: true !default;
+
+// Modifier Reverse
+
+$o-bullet__mod-reverse--enabled: true !default;
+
+// Object as a mixin
+// --------------------------------------------------
+
+@mixin o-bullet() {
+  display: inline-block;
+}
+
+@mixin o-bullet__icon() {
+  width: $o-bullet__icon-size;
+  height: $o-bullet__icon-size;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+@mixin o-bullet__text() {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+// Object selector output
+// --------------------------------------------------
+
+@if ($o-bullet--enabled) {
+  .o-bullet {
+    @include o-bullet();
+  }
+
+  .o-bullet__icon {
+    @include o-bullet__icon();
+  }
+
+  .o-bullet__text {
+    @include o-bullet__text();
+  }
+}
+
+// Block modifiers
+// --------------------------------------------------
+
+@mixin o-bullet__icon--block() {
+  left: 0;
+  top: $o-bullet__space--top;
+  position: absolute;
+}
+
+@mixin o-bullet__text--block() {
+  padding-left: $o-bullet__icon-size + $o-bullet__space--left;
+}
+
+@mixin o-bullet__mod-block() {
+  .o-bullet--block {
+    position: relative;
+
+    > .o-bullet__icon {
+      @include o-bullet__icon--block();
+    }
+
+    > .o-bullet__text {
+      @include o-bullet__text--block();
+    }
+  }
+}
+
+@if ($o-bullet--enabled and $o-bullet__mod-block--enabled) {
+  @include o-bullet__mod-block();
+}
+
+// Reverse modifiers
+// --------------------------------------------------
+
+@mixin o-bullet__mod-reverse() {
+  .o-bullet--reverse {
+    direction: rtl;
+  }
+}
+
+@if ($o-bullet--enabled and $o-bullet__mod-reverse--enabled) {
+  @include o-bullet__mod-reverse();
+}
+
+// Unset as mixin
+// --------------------------------------------------
+
+@mixin o-bullet--unset() {
+  display: inherit;
+}
+
+@mixin o-bullet__icon--unset() {
+  display: inherit;
+}
