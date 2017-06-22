@@ -36,6 +36,7 @@ $o-bullet__mod-reverse--enabled: true !default;
 @mixin o-bullet__icon() {
   width: $o-bullet__icon-size;
   height: $o-bullet__icon-size;
+  line-height: $o-bullet__icon-size;
   display: inline-block;
   vertical-align: middle;
 }
