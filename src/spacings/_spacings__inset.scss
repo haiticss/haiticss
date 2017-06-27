@@ -8,18 +8,34 @@
  *
  */
 
-$sp-inset__enabled: true !default;
-$sp-inset__spaces: $f-spaces !default;
+// Spacing variables
+// --------------------------------------------------
+
+// Spacing toggling
+
+$sp-inset__enabled:           true !default;
 
 
-@mixin sp-inset($_spacing-modifier, $_spacing-value) {
-  .sp-inset--#{$_spacing-modifier} {
-    padding: $_spacing-value;
-  }
+// Spaces
+
+$sp-inset__spaces:            $f-spaces !default;
+
+
+// Space as a mixin
+// --------------------------------------------------
+
+@mixin sp-inset($_spacing-value) {
+  padding: $_spacing-value;
 }
 
+
+// Space selector output
+// --------------------------------------------------
+
 @if ($sp-inset__enabled) {
-  @each $_spacing-modifier, $_spacing-value in $sp-inset__spaces {
-    @include sp-inset($_spacing-modifier, $_spacing-value);
+  @each $_spacing-name, $_spacing-value in $sp-inset__spaces {
+    .sp-inset--#{$_spacing-name} {
+      @include sp-inset($_spacing-value);
+    }
   }
 }

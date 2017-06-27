@@ -5,7 +5,6 @@
  * A simple abstraction to cover a very commonly occurring design pattern.
  *
  * Params:
- * SPACE .............................. Vertical separation between image and body
  * ALIGNMENT .......................... Horizontal text alignment
  *
  */
@@ -20,13 +19,7 @@ $o-block--enabled:                        true !default;
 
 // Object Params
 
-$o-block__space:                          $g-reset__spacing--vertical !default;
 $o-block__alignment:                      center !default;
-
-// Modifiers Spaces
-
-$o-block__mod-spaces--enabled:            true !default;
-$o-block__mod-spaces:                     $f-spaces !default;
 
 // Modifiers Alignments
 
@@ -41,17 +34,9 @@ $o-block__mod-stretch--enabled:           true !default;
 // Object as a mixin
 // --------------------------------------------------
 
-@mixin o-block($_alignment-direction: $o-block__alignment, $_space-value: $o-block__space) {
+@mixin o-block($_alignment-direction: $o-block__alignment) {
   display: block;
   text-align: $_alignment-direction;
-
-  > * {
-    margin-bottom: s-core-px-to-rem($_space-value);
-
-    &:last-child {
-      margin-bottom: 0;
-    }
-  }
 }
 
 @mixin o-block__header() {
@@ -87,23 +72,6 @@ $o-block__mod-stretch--enabled:           true !default;
     @include o-block__footer();
   }
 }
-
-
-// Space modifiers output
-// --------------------------------------------------
-
-@mixin o-block__mod-space($_space-name: "none", $_space-value: 0) {
-  .o-block--space-#{$_space-name} > *:not(:last-child) {
-    margin-bottom: s-core-px-to-rem($_space-value);
-  }
-}
-
-@if ($o-block--enabled and $o-block__mod-spaces--enabled) {
-  @each $_space-name, $_space-value in $o-block__mod-spaces {
-    @include o-block__mod-space($_space-name, $_space-value);
-  }
-}
-
 
 // Alignment modifiers
 // --------------------------------------------------
@@ -157,14 +125,6 @@ $o-block__mod-stretch--enabled:           true !default;
 @mixin o-block--unset() {
   display: inherit;
   text-align: inherit;
-
-  > * {
-    margin-bottom: inherit;
-
-    &:last-child {
-      margin-bottom: inherit;
-    }
-  }
 }
 
 @mixin o-block__header--unset() {

@@ -5,9 +5,6 @@
  * The box object simply boxes off content.
  * Extend with cosmetic styles in the components layer.
  *
- * Params:
- * SPACE .............................. Global object padding
- *
  */
 
 
@@ -18,27 +15,12 @@
 
 $o-box--enabled:                        true !default;
 
-// Object Params
-
-$o-box__space:                          $g-reset__spacing--vertical !default;
-
-// Modifiers Spaces
-
-$o-box__mod-spaces--enabled:            true !default;
-$o-box__mod-spaces:                     $f-spaces !default;
-
-
 // Object as a mixin
 // --------------------------------------------------
 
-@mixin o-box($_space-value: $o-box__space) {
+@mixin o-box() {
   display: block;
-  padding: s-core-px-to-rem($_space-value);
   @include t-clearfix();
-
-  > :last-child {
-    margin-bottom: 0;
-  }
 }
 
 
@@ -52,31 +34,10 @@ $o-box__mod-spaces:                     $f-spaces !default;
 }
 
 
-// Space modifiers output
-// --------------------------------------------------
-
-@mixin o-box__mod-space($_space-name: "none", $_space-value: 0) {
-  .o-box--space-#{$_space-name} {
-    padding: s-core-px-to-rem($_space-value);
-  }
-}
-
-@if ($o-box--enabled and $o-box__mod-spaces--enabled) {
-  @each $_space-name, $_space-value in $o-box__mod-spaces {
-    @include o-box__mod-space($_space-name, $_space-value);
-  }
-}
-
-
 // Unset as mixin
 // --------------------------------------------------
 
 @mixin o-box--unset() {
   display: inherit;
-  padding: inherit;
   @include t-clearfix--unset();
-
-  > :last-child {
-    margin-bottom: inherit;
-  }
 }

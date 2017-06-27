@@ -8,18 +8,31 @@
  *
  */
 
+// Spacing variables
+// --------------------------------------------------
+
+// Spacing toggling
+
 $sp-stack__enabled: true !default;
+
+// Spaces
+
 $sp-stack__spaces: $f-spaces !default;
 
+// Space as a mixin
+// --------------------------------------------------
 
-@mixin sp-stack($_spacing-modifier, $_spacing-value) {
-  .sp-stack--#{$_spacing-modifier} {
-    margin-bottom: $_spacing-value;
-  }
+@mixin sp-stack($_spacing-value) {
+  margin-bottom: $_spacing-value;
 }
 
+// Space selector output
+// --------------------------------------------------
+
 @if ($sp-stack__enabled) {
-  @each $_spacing-modifier, $_spacing-value in $sp-stack__spaces {
-    @include sp-stack($_spacing-modifier, $_spacing-value);
+  @each $_spacing-name, $_spacing-value in $sp-stack__spaces {
+    .sp-stack--#{$_spacing-name} {
+      @include sp-stack($_spacing-value);
+    }
   }
 }

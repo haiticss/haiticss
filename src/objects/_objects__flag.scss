@@ -8,7 +8,6 @@
  * alignments of the text and image.
  *
  * Params:
- * SPACE .............................. Horizontal separation between image and body
  * ALIGNMENT .......................... Vertical image and body alignment
  *
  */
@@ -22,13 +21,7 @@ $o-flag--enabled:                     true !default;
 
 // Object Params
 
-$o-flag__space:                       $g-reset__spacing--horizontal !default;
 $o-flag__alignment:                   middle !default;
-
-// Modifiers Spaces
-
-$o-flag__mod-spaces--enabled:         true !default;
-$o-flag__mod-spaces:                  map_remove($f-spaces, "large", "huge") !default;
 
 // Modifiers Alignments
 
@@ -48,10 +41,9 @@ $o-flag__mod-reverse--enabled:        true !default;
   width: 100%;
 }
 
-@mixin o-flag__img($_vertical-alignment: $o-flag__alignment, $_space-value: $o-flag__space) {
+@mixin o-flag__img($_vertical-alignment: $o-flag__alignment) {
   display: table-cell;
   vertical-align: $_vertical-alignment;
-  padding-right: s-core-px-to-rem($_space-value);
   width: 1px;
 
   > img {
@@ -63,11 +55,6 @@ $o-flag__mod-reverse--enabled:        true !default;
   display: table-cell;
   vertical-align: $_vertical-alignment;
   width: auto;
-
-  &,
-  > :last-child {
-    margin-bottom: 0;
-  }
 }
 
 // Object selector output
@@ -84,29 +71,6 @@ $o-flag__mod-reverse--enabled:        true !default;
 
   .o-flag__body {
     @include o-flag__body();
-  }
-}
-
-// Space modifiers
-// --------------------------------------------------
-
-@mixin o-flag__mod-space($_space-name: "none", $_space-value: 0) {
-  .o-flag--space-#{$_space-name} {
-    > .o-flag__img {
-      padding-right: s-core-px-to-rem($_space-value);
-    }
-
-    @if ($o-flag__mod-reverse--enabled) {
-      &.o-flag--reverse > .o-flag__img {
-        padding-left: s-core-px-to-rem($_space-value);
-      }
-    }
-  }
-}
-
-@if ($o-flag--enabled and $o-flag__mod-spaces--enabled) {
-  @each $_space-name, $_space-value in $o-flag__mod-spaces {
-    @include o-flag__mod-space($_space-name, $_space-value);
   }
 }
 
@@ -139,10 +103,8 @@ $o-flag__mod-reverse--enabled:        true !default;
   direction: ltr;
 }
 
-@mixin o-flag__img--reverse($_space-value: $o-flag__space) {
+@mixin o-flag__img--reverse() {
   direction: ltr;
-  padding-right: 0;
-  padding-left: s-core-px-to-rem($_space-value);
 }
 
 @mixin o-flag__mod-reverse() {
@@ -175,7 +137,6 @@ $o-flag__mod-reverse--enabled:        true !default;
 @mixin o-flag__img--unset() {
   display: inherit;
   vertical-align: inherit;
-  padding-right: inherit;
   width: auto;
 
   > img {
@@ -187,9 +148,4 @@ $o-flag__mod-reverse--enabled:        true !default;
   display: inherit;
   vertical-align: inherit;
   width: inherit;
-
-  &,
-  > :last-child {
-    margin-bottom: inherit;
-  }
 }
