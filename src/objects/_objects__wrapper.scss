@@ -3,9 +3,6 @@
  *
  * Page-level constraining and wrapping elements.
  *
- * Params:
- * SPACE .............................. Side padding
- *
  */
 
 
@@ -18,7 +15,6 @@ $o-wrapper--enabled:                true !default;
 
 // Object Params
 
-$o-wrapper__space:                  $g-reset__spacing--horizontal !default;
 $o-wrapper__size-diff:              $f-space--large !default;
 $o-wrapper__sizes: (
   "xs":       map-get($f-breakpoints, "xs") - $o-wrapper__size-diff,
@@ -30,11 +26,6 @@ $o-wrapper__sizes: (
   "xxl":      map-get($f-breakpoints, "xxl") - $o-wrapper__size-diff,
   "xxxl":     map-get($f-breakpoints, "xxxl") - $o-wrapper__size-diff,
 ) !default;
-
-// Modifiers Spaces
-
-$o-wrapper__mod-spaces--enabled:      true !default;
-$o-wrapper__mod-spaces:               map_remove($f-spaces, "large", "huge") !default;
 
 // Modifiers Breakpoints
 
@@ -49,8 +40,6 @@ $o-wrapper__mod-bp-to--enabled:       true !default;
   .o-wrapper {
     margin-right: auto;
     margin-left: auto;
-    padding-right: s-core-px-to-rem($o-wrapper__space);
-    padding-left: s-core-px-to-rem($o-wrapper__space);
     @include t-clearfix;
 
     @each $bp-name, $bp-size in $o-wrapper__sizes {
@@ -59,23 +48,6 @@ $o-wrapper__mod-bp-to--enabled:       true !default;
       }
     }
 
-  }
-}
-
-
-// Space modifiers
-// --------------------------------------------------
-
-@mixin o-wrapper--space($_space-name: none, $_space-value: 0) {
-  .o-wrapper--space-#{$_space-name} {
-    padding-right: s-core-px-to-rem($_space-value);
-    padding-left: s-core-px-to-rem($_space-value);
-  }
-}
-
-@if ($o-wrapper--enabled and $o-wrapper__mod-spaces--enabled) {
-  @each $_space-name, $_space-value in $o-wrapper__mod-spaces {
-    @include o-wrapper--space($_space-name, $_space-value);
   }
 }
 

@@ -4,7 +4,6 @@
  * The bullet pattern is used to align an icon with some text,
  * similar to how a bullet point has the icon and the text
  *
- *
  */
 
 // Object variables
@@ -12,19 +11,19 @@
 
 // Object toggling
 
-$o-bullet--enabled: true !default;
+$o-bullet--enabled:                   true !default;
 
-$o-bullet__space--top: .15em !default;
-$o-bullet__space--left: .3em !default;
-$o-bullet__icon-size: 1em !default;
+$o-bullet__space--top:                .15em !default;
+$o-bullet__space--left:               .3em !default;
+$o-bullet__icon-size:                 1em !default;
 
 // Modifier Block
 
-$o-bullet__mod-block--enabled: true !default;
+$o-bullet__mod-block--enabled:        true !default;
 
 // Modifier Reverse
 
-$o-bullet__mod-reverse--enabled: true !default;
+$o-bullet__mod-reverse--enabled:      true !default;
 
 // Object as a mixin
 // --------------------------------------------------

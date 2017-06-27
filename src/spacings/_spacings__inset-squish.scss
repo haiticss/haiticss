@@ -8,18 +8,32 @@
  *
  */
 
-$sp-inset-squish__enabled: true !default;
-$sp-inset-squish__spaces: $f-spaces !default;
+// Spacing variables
+// --------------------------------------------------
+
+// Spacing toggling
+
+$sp-inset-squish__enabled:              true !default;
+
+// Spaces
+
+$sp-inset-squish__spaces:               $f-spaces !default;
 
 
-@mixin sp-inset-squish($_spacing-modifier, $_spacing-value) {
-  .sp-inset-squish--#{$_spacing-modifier} {
-    padding: ($_spacing-value * .5) $_spacing-value;
-  }
+// Space as a mixin
+// --------------------------------------------------
+
+@mixin sp-inset-squish($_spacing-value) {
+  padding: ($_spacing-value * .5) $_spacing-value;
 }
 
+// Space selector output
+// --------------------------------------------------
+
 @if ($sp-inset-squish__enabled) {
-  @each $_spacing-modifier, $_spacing-value in $sp-inset-squish__spaces {
-    @include sp-inset-squish($_spacing-modifier, $_spacing-value);
+  @each $_spacing-name, $_spacing-value in $sp-inset-squish__spaces {
+    .sp-inset-squish--#{$_spacing-name} {
+      @include sp-inset-squish($_spacing-value);
+    }
   }
 }

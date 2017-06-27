@@ -13,12 +13,6 @@
 
 $o-list-inline--enabled:                      true !default;
 
-// Modifiers Spaces
-
-$o-list-inline__mod-spaces--enabled:          true !default;
-$o-list-inline__mod-spaces:                   map_remove($f-spaces, "large", "huge") !default;
-
-
 // Object as a mixin
 // --------------------------------------------------
 
@@ -40,23 +34,6 @@ $o-list-inline__mod-spaces:                   map_remove($f-spaces, "large", "hu
     @include o-list-inline();
   }
 }
-
-
-// Space modifiers output
-// --------------------------------------------------
-
-@mixin o-list-inline__mod-space($_space-name: "none", $_space-value: 0) {
-  .o-list-inline--space-#{$_space-name} > *:not(:last-child) {
-    margin-right: s-core-px-to-rem($_space-value);
-  }
-}
-
-@if ($o-list-inline--enabled and $o-list-inline__mod-spaces--enabled) {
-  @each $_space-name, $_space-value in $o-list-inline__mod-spaces {
-    @include o-list-inline__mod-space($_space-name, $_space-value);
-  }
-}
-
 
 // Unset as mixin
 // --------------------------------------------------

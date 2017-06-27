@@ -1,0 +1,39 @@
+/* -------------------------------------------------------------------------
+ * INSET SLENDER
+ *
+ * To give space between container and content only in side spaces
+ *
+ * TIP:
+ * You can modify the amount of generated spaces by overriding the $sp-inset-slender__spaces variable.
+ *
+ */
+
+// Spacing variables
+// --------------------------------------------------
+
+// Spacing toggling
+
+$sp-inset-slender__enabled:              true !default;
+
+// Spaces
+
+$sp-inset-slender__spaces:               $f-spaces !default;
+
+
+// Space as a mixin
+// --------------------------------------------------
+
+@mixin sp-inset-slender($_spacing-value) {
+  padding: 0 $_spacing-value;
+}
+
+// Space selector output
+// --------------------------------------------------
+
+@if ($sp-inset-slender__enabled) {
+  @each $_spacing-name, $_spacing-value in $sp-inset-slender__spaces {
+    .sp-inset-slender--#{$_spacing-name} {
+      @include sp-inset-slender($_spacing-value);
+    }
+  }
+}
