@@ -13,17 +13,35 @@
 
 $o-bullet--enabled:                   true !default;
 
-$o-bullet__space--top:                .15em !default;
-$o-bullet__space--left:               .3em !default;
 $o-bullet__icon-size:                 1em !default;
+$o-bullet__icon--padding-left:       .3em !default;
+
+$o-bullet__text--line-height:         $f-line-height--small !default;
 
 // Modifier Block
 
 $o-bullet__mod-block--enabled:        true !default;
 
+// Modifier Middle
+
+$o-bullet__mod-middle--enabled:        true !default;
+
 // Modifier Reverse
 
 $o-bullet__mod-reverse--enabled:      true !default;
+
+// Icons Size Modifiers
+
+$o-bullet__mod-iconsize--enabled:     true !default;
+$o-bullet__mod-iconsizes: (
+  "s":      .5em,
+  "m":      1em,
+  "l":      1.5em,
+  "xl":     2em,
+  "xxl":    2.5em,
+  "xxxl":   3em,
+) !default;
+
 
 // Object as a mixin
 // --------------------------------------------------
@@ -32,10 +50,10 @@ $o-bullet__mod-reverse--enabled:      true !default;
   display: inline-block;
 }
 
-@mixin o-bullet__icon() {
-  width: $o-bullet__icon-size;
-  height: $o-bullet__icon-size;
-  line-height: $o-bullet__icon-size;
+@mixin o-bullet__icon($_icon-size: $o-bullet__icon-size) {
+  width: $_icon-size;
+  height: $_icon-size;
+  line-height: $_icon-size;
   display: inline-block;
   vertical-align: middle;
 }
@@ -43,6 +61,8 @@ $o-bullet__mod-reverse--enabled:      true !default;
 @mixin o-bullet__text() {
   display: inline-block;
   vertical-align: middle;
+  line-height: $o-bullet__text--line-height;
+  padding-left: $o-bullet__icon--padding-left;
 }
 
 // Object selector output
@@ -62,22 +82,31 @@ $o-bullet__mod-reverse--enabled:      true !default;
   }
 }
 
-// Block modifiers
+// Block modifier
 // --------------------------------------------------
 
-@mixin o-bullet__icon--block() {
-  left: 0;
-  top: $o-bullet__space--top;
-  position: absolute;
+@mixin o-bullet--block() {
+  display: table;
+  width: 100%;
+}
+
+@mixin o-bullet__icon--block($_icon-size: $o-bullet__icon-size) {
+  display: table-cell;
+  vertical-align: top;
+  width: $o-bullet__icon-size;
 }
 
 @mixin o-bullet__text--block() {
-  padding-left: $o-bullet__icon-size + $o-bullet__space--left;
+  display: table-cell;
+  vertical-align: top;
+  width: auto;
+  padding-left: $o-bullet__icon--padding-left * 2;
 }
 
 @mixin o-bullet__mod-block() {
   .o-bullet--block {
     position: relative;
+    @include o-bullet--block();
 
     > .o-bullet__icon {
       @include o-bullet__icon--block();
@@ -93,6 +122,43 @@ $o-bullet__mod-reverse--enabled:      true !default;
   @include o-bullet__mod-block();
 }
 
+// Middle modifier
+// --------------------------------------------------
+
+@mixin o-bullet--middle() {
+  @include o-bullet--block();
+}
+
+@mixin o-bullet__icon--middle($_icon-size: $o-bullet__icon-size) {
+  @include o-bullet__icon--block($_icon-size);
+
+  vertical-align: middle;
+}
+
+@mixin o-bullet__text--middle() {
+  @include o-bullet__text--block();
+
+  vertical-align: middle;
+}
+
+@mixin o-bullet__mod-middle() {
+  .o-bullet--middle {
+    @include o-bullet--middle();
+
+    > .o-bullet__icon {
+      @include o-bullet__icon--middle();
+    }
+
+    > .o-bullet__text {
+      @include o-bullet__text--middle();
+    }
+  }
+}
+
+@if ($o-bullet--enabled and $o-bullet__mod-middle--enabled) {
+  @include o-bullet__mod-middle();
+}
+
 // Reverse modifiers
 // --------------------------------------------------
 
@@ -105,6 +171,25 @@ $o-bullet__mod-reverse--enabled:      true !default;
 @if ($o-bullet--enabled and $o-bullet__mod-reverse--enabled) {
   @include o-bullet__mod-reverse();
 }
+
+// Icon Size modifiers
+// --------------------------------------------------
+
+@mixin o-bullet--iconsize($_iconsize-name: "m", $_iconsize-value: 1em) {
+  .o-bullet--iconsize-#{$_iconsize-name} {
+    > .o-bullet__icon {
+      width: $_iconsize-value;
+      height: $_iconsize-value;
+    }
+  }
+}
+
+@if ($o-bullet--enabled and $o-bullet__mod-iconsize--enabled) {
+  @each $_iconsize-name, $_iconsize-value in $o-bullet__mod-iconsizes {
+    @include o-bullet--iconsize($_iconsize-name, $_iconsize-value);
+  }
+}
+
 
 // Unset as mixin
 // --------------------------------------------------
