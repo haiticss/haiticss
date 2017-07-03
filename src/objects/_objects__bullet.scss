@@ -94,6 +94,7 @@ $o-bullet__mod-iconsizes: (
   display: table-cell;
   vertical-align: top;
   width: $o-bullet__icon-size;
+  max-width: $o-bullet__icon-size;
 }
 
 @mixin o-bullet__text--block() {
@@ -180,6 +181,7 @@ $o-bullet__mod-iconsizes: (
     > .o-bullet__icon {
       width: $_iconsize-value;
       height: $_iconsize-value;
+      max-width: $_iconsize-value;
     }
   }
 }
