@@ -49,6 +49,7 @@ $o-pack__mod-auto--enabled:                 true !default;
   margin-left: 0;
   display: table;
   table-layout: fixed;
+  border-collapse: separate;
   border-spacing: s-core-px-to-rem($_space-value);
 }
 
@@ -152,6 +153,7 @@ $o-pack__mod-auto--enabled:                 true !default;
   margin-left: inherit;
   display: inherit;
   table-layout: inherit;
+  border-collapse: inherit;
   border-spacing: inherit;
 }
 
