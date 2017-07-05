@@ -11,12 +11,15 @@
 
 // Object toggling
 
-$o-ratio--enabled:                      true !default;
+$o-ratio--enabled                 :       true !default;
 
 // Modifiers Ratios
 
-$o-ratio__mod-ratios--enabled:          true !default;
-$o-ratio__mod-ratios:                   $f-aspect-ratios !default;
+$o-ratio__mod-ratios--enabled     :       true !default;
+$o-ratio__mod-ratios              :       $f-aspect-ratios !default;
+
+$o-ratio__mod-bp--enabled         :       true !default;
+$o-ratio__mod-bp                  :       map_remove($f-breakpoints, "xxs") !default;
 
 
 // Object as a mixin
@@ -58,7 +61,7 @@ $o-ratio__mod-ratios:                   $f-aspect-ratios !default;
 }
 
 
-// Ratio modifiers output
+// Ratio modifiers mixin
 // -------------------------------------------
 
 @mixin o-ratio--override($ratio) {
@@ -66,11 +69,32 @@ $o-ratio__mod-ratios:                   $f-aspect-ratios !default;
     padding-top: $ratio * 100%;
   }
 }
+// Ratio modifiers output
+// -------------------------------------------
 
 @if ($o-ratio--enabled and $o-ratio__mod-ratios--enabled) {
+
   @each $_name, $_ratio in $o-ratio__mod-ratios {
     .o-ratio--#{$_name} {
       @include o-ratio--override($_ratio);
+    }
+  }
+}
+
+
+// Ratio modifiers output in breakpoints
+// -------------------------------------------
+
+@if ($o-ratio--enabled and $o-ratio__mod-ratios--enabled and $o-ratio__mod-bp--enabled) {
+
+  @each $_bp-name, $_bp-value in $o-ratio__mod-bp {
+    @each $_name, $_ratio in $o-ratio__mod-ratios {
+
+      @include t-mq($from: $_bp-name) {
+        .o-ratio--#{$_name}#{s-core-string-breakpoint($_bp-name)} {
+          @include o-ratio--override($_ratio);
+        }
+      }
     }
   }
 }
