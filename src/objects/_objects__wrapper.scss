@@ -11,26 +11,13 @@
 
 // Object toggling
 
-$o-wrapper--enabled:                true !default;
-
-// Object Params
-
-$o-wrapper__size-diff:              $f-space--large !default;
-$o-wrapper__sizes: (
-  "xs":       map-get($f-breakpoints, "xs") - $o-wrapper__size-diff,
-  "sm":       map-get($f-breakpoints, "sm") - $o-wrapper__size-diff,
-  "sml":      map-get($f-breakpoints, "sml") - $o-wrapper__size-diff,
-  "md":       map-get($f-breakpoints, "md") - $o-wrapper__size-diff,
-  "lg":       map-get($f-breakpoints, "lg") - $o-wrapper__size-diff,
-  "xl":       map-get($f-breakpoints, "xl") - $o-wrapper__size-diff,
-  "xxl":      map-get($f-breakpoints, "xxl") - $o-wrapper__size-diff,
-  "xxxl":     map-get($f-breakpoints, "xxxl") - $o-wrapper__size-diff,
-) !default;
+$o-wrapper--enabled:                  true !default;
 
 // Modifiers Breakpoints
 
 $o-wrapper__mod-bp-from--enabled:     true !default;
 $o-wrapper__mod-bp-to--enabled:       true !default;
+$o-wrapper__mod-bp:                   map-remove($f-breakpoints, "xxs") !default;
 
 
 // Object selector output
@@ -40,14 +27,8 @@ $o-wrapper__mod-bp-to--enabled:       true !default;
   .o-wrapper {
     margin-right: auto;
     margin-left: auto;
+    width: 100%;
     @include t-clearfix;
-
-    @each $bp-name, $bp-size in $o-wrapper__sizes {
-      @include t-mq($from: $bp-name) {
-        max-width: s-core-px-to-rem(map-get($o-wrapper__sizes, $bp-name));
-      }
-    }
-
   }
 }
 
@@ -55,16 +36,13 @@ $o-wrapper__mod-bp-to--enabled:       true !default;
 // Size modifiers (from)
 // --------------------------------------------------
 
-@mixin o-wrapper--from($_bp-name: "xs", $_bp-size: map-get($o-wrapper__sizes, "xs")) {
-  @each $_s-bp-name, $_s-bp-size in $f-breakpoints {
+@mixin o-wrapper--from($_bp-name: "xs") {
+  .o-wrapper--from#{s-core-string-breakpoint($_bp-name)} {
+    @each $_s-bp-name, $_s-bp-size in $o-wrapper__mod-bp {
 
-    @include t-mq($from: $_s-bp-name) {
-      .o-wrapper--from#{s-core-string-breakpoint($_bp-name)} {
-
-        @if (map-get($f-breakpoints, $_bp-name) <= $_s-bp-size) {
-          max-width: s-core-px-to-rem(map-get($o-wrapper__sizes, $_s-bp-name));
-        } @else {
-          max-width: 100%;
+      @if ($_s-bp-size >= map-get($o-wrapper__mod-bp, $_bp-name)) {
+        @include t-mq($from: $_s-bp-name) {
+          max-width: s-core-px-to-rem(map-get($o-wrapper__mod-bp, $_s-bp-name));
         }
       }
     }
@@ -72,8 +50,8 @@ $o-wrapper__mod-bp-to--enabled:       true !default;
 }
 
 @if ($o-wrapper--enabled and $o-wrapper__mod-bp-from--enabled) {
-  @each $_bp-name, $_bp-size in map_remove($o-wrapper__sizes, "xxxl") {
-    @include o-wrapper--from($_bp-name, $_bp-size);
+  @each $_bp-name, $_bp-size in $o-wrapper__mod-bp {
+    @include o-wrapper--from($_bp-name);
   }
 }
 
@@ -81,13 +59,13 @@ $o-wrapper__mod-bp-to--enabled:       true !default;
 // Size modifiers (to)
 // --------------------------------------------------
 
-@mixin o-wrapper--to($_bp-name: "xs", $_bp-size: map-get($o-wrapper__sizes, "xs")) {
-  @each $_s-bp-name, $_s-bp-size in $f-breakpoints {
+@mixin o-wrapper--to($_bp-name: "xs") {
+  .o-wrapper--to#{s-core-string-breakpoint($_bp-name)} {
+    @each $_s-bp-name, $_s-bp-size in $o-wrapper__mod-bp {
 
-    @if (map-get($f-breakpoints, $_bp-name) < $_s-bp-size) {
-      @include t-mq($from: $_s-bp-name) {
-        .o-wrapper--to#{s-core-string-breakpoint($_bp-name)} {
-          max-width: s-core-px-to-rem($_bp-size);
+      @if ($_s-bp-size >= map-get($o-wrapper__mod-bp, $_bp-name)) {
+        @include t-mq($from: $_s-bp-name) {
+          max-width: s-core-px-to-rem(map-get($o-wrapper__mod-bp, $_bp-name));
         }
       }
     }
@@ -95,7 +73,7 @@ $o-wrapper__mod-bp-to--enabled:       true !default;
 }
 
 @if ($o-wrapper--enabled and $o-wrapper__mod-bp-to--enabled) {
-  @each $_bp-name, $_bp-size in map_remove($o-wrapper__sizes, "xs") {
-    @include o-wrapper--to($_bp-name, $_bp-size);
+  @each $_bp-name, $_bp-size in $o-wrapper__mod-bp {
+    @include o-wrapper--to($_bp-name);
   }
 }
