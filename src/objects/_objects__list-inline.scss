@@ -22,6 +22,7 @@ $o-list-inline--enabled:                      true !default;
   > * {
     font-size: s-core-px-to-rem($s-core__font-size);
     display: inline-block;
+    width: auto;
   }
 }
 
@@ -44,5 +45,6 @@ $o-list-inline--enabled:                      true !default;
   > * {
     font-size: inherit;
     display: inherit;
+    width: inherit;
   }
 }
