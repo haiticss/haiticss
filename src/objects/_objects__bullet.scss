@@ -180,6 +180,7 @@ $o-bullet__mod-iconsizes: (
   .o-bullet--iconsize-#{$_iconsize-name} {
     > .o-bullet__icon {
       font-size: $_iconsize-value;
+      max-width: $_iconsize-value;
     }
   }
 }
