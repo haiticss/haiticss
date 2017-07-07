@@ -179,9 +179,7 @@ $o-bullet__mod-iconsizes: (
 @mixin o-bullet--iconsize($_iconsize-name: "m", $_iconsize-value: 1em) {
   .o-bullet--iconsize-#{$_iconsize-name} {
     > .o-bullet__icon {
-      width: $_iconsize-value;
-      height: $_iconsize-value;
-      max-width: $_iconsize-value;
+      font-size: $_iconsize-value;
     }
   }
 }
